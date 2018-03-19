@@ -1,7 +1,7 @@
 # smart_motor_driver
 This motor driver is designed to be interfaced from a host microcontroller by I2C and be able to control the motor with a PID autonomously.
 
-[[https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/2.png|alt=octocat]]
+![alt text](https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/2.png)
 
 This is a smart motor driver designed to run a Pololu micro gearmotor, the objective of this board is to be able to implement a PID control over this motors with the corresponding RPM feedback using a hall effect sensor. So it must have his own microcontroller and H bridge to be capable of do the work by itself.
 
@@ -9,7 +9,7 @@ The host microcontroller (or any system that can use I2C) will communicate by I2
 
 Also the control module will be capable of driving the motor for a desired distance and then stop when is reached. For doing that you must specify the diameter of your wheel and the gearbox relation.
 
-[[https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/6.png|alt=octocat]]
+![alt text](https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/6.png)
 
 This is a project under development, so please follow me get updates :) This will be an open source project, so if you have any ideas to improve it you are welcome! I am currently working on the firmware.
 
