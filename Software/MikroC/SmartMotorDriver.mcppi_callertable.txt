@@ -1,0 +1,25 @@
+main
+	__CC2DW
+	PWM1_Init
+	PWM1_Start
+	PWM1_Set_Duty
+		Mul_16X16_U
+	M_control
+		abs
+		PWM1_Set_Duty
+			Mul_16X16_U
+	Soft_UART_Init
+		Get_Fosc_kHz
+		Mul_32x32_U
+		Div_32x32_S
+			SDIV3232L
+			COMFREM
+	IntToStr
+		WordToStr
+			Div_16X16_U
+	strlen
+	Soft_UART_Write
+		Delay_Cyc
+interrupt
+	Mul_16X16_U
+	Div_16X16_U
