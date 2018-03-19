@@ -1,4 +1,4 @@
-# smart_motor_driver
+# Smart Motor Driver
 This motor driver is designed to be interfaced from a host microcontroller by I2C and be able to control the motor with a PID autonomously.
 
 ![alt text](https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/2.png)
