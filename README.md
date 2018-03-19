@@ -15,6 +15,7 @@ Also the control module will be capable of driving the motor for a desired dista
 
 This is a project under development, so please follow me get updates :) This will be an open source project, so if you have any ideas to improve it you are welcome! I am currently working on the firmware.
 
-![alt text](https://www.youtube.com/watch?v=lJUFUr4bWiI)
+[![Alt text](https://img.youtube.com/vi/lJUFUr4bWiI/0.jpg)](https://www.youtube.com/watch?v=lJUFUr4bWiI)
+
 
 Thank you for reading :)
