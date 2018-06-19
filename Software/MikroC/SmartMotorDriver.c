@@ -1,7 +1,14 @@
-unsigned int counter = 0;
+unsigned short counter = 0;
 unsigned int rpm = 0;
-char txt[30];
+unsigned int gear = 150;
+short kp = 1;
+short kd = 1;
+short ki = 1;
+int accumulator = 0;
+int lasterror = 0;
+char txt[10];
 int i,x;
+
 
 void interrupt() iv 0x0004 ics ICS_AUTO //interrupts
 {
@@ -16,7 +23,7 @@ void interrupt() iv 0x0004 ics ICS_AUTO //interrupts
  {
   INTCON.f3 = 0; //disable on change interrupts
   T1CON.f0 =  0; //stop timer1
-  rpm = (counter * 5 * 60)/150;  //calculate rpm
+  rpm = (counter * 300)/gear;  //calculate rpm  (multiplied 15 interrupts in 1 second, divided 3 encoder interrupts per lap, multiplied by 60 to convert to minutes, divided by gear ratio)
   counter = 0;  //clear counter
   INTCON.f3 = 1; //enable on change interrupts
   PIR1.f0 = 0; //clear interrutp flag
@@ -25,6 +32,7 @@ void interrupt() iv 0x0004 ics ICS_AUTO //interrupts
 }
 
 void M_control(int ctr); //function prototype
+void PID(int ctr); //function prototype
 
 void main() 
 {
@@ -45,11 +53,12 @@ PIE1.f0 =  1;        //enable timer1 interrupt
 T1CON.f0 =  1;       //start timer1
 INTCON.f7 = 1;       //run interrupts
 
-M_control(255);
+M_control(0);
 Soft_UART_Init(&PORTA, 2, 1, 9600, 0);
 
 while(1)
 {
+PID(100);
 IntToStr(rpm, txt);
 for (i=0;i<strlen(txt);i++)
 {
@@ -59,6 +68,25 @@ Soft_UART_Write(10);
 Soft_UART_Write(13);
 delay_ms(100);
 }
+}
+
+void PID(int ctr) //PID calculation function
+{
+  int error = ctr-rpm; //calculate actual error
+  int PID = error*kp;     // calculate proportional gain
+  accumulator += error;  // calculate accumulator, is sum of errors
+  PID += ki*accumulator; // add integral gain and error accumulator
+  PID += kd*(error-lasterror); //add differential gain
+  lasterror = error; //save the error to the next iteration
+  if(PID>=255)   //next we guarantee that the PID value is in PWM range
+  {
+    PID = 255;
+  }
+  if(PID<=-255)
+  {
+    PID = -255;
+   }
+  M_control(PID);
 }
 
 void M_control(int ctr) //motor control function

@@ -1,8 +1,15 @@
 #line 1 "C:/Users/ciro_/Documents/Smart_motor_driver/SmartMotorDriver.c"
-unsigned int counter = 0;
+unsigned short counter = 0;
 unsigned int rpm = 0;
-char txt[30];
+unsigned int gear = 150;
+short kp = 1;
+short kd = 1;
+short ki = 1;
+int accumulator = 0;
+int lasterror = 0;
+char txt[10];
 int i,x;
+
 
 void interrupt() iv 0x0004 ics ICS_AUTO
 {
@@ -17,7 +24,7 @@ void interrupt() iv 0x0004 ics ICS_AUTO
  {
  INTCON.f3 = 0;
  T1CON.f0 = 0;
- rpm = (counter * 5 * 60)/150;
+ rpm = (counter * 300)/gear;
  counter = 0;
  INTCON.f3 = 1;
  PIR1.f0 = 0;
@@ -26,6 +33,7 @@ void interrupt() iv 0x0004 ics ICS_AUTO
 }
 
 void M_control(int ctr);
+void PID(int ctr);
 
 void main()
 {
@@ -46,11 +54,12 @@ PIE1.f0 = 1;
 T1CON.f0 = 1;
 INTCON.f7 = 1;
 
-M_control(255);
+M_control(0);
 Soft_UART_Init(&PORTA, 2, 1, 9600, 0);
 
 while(1)
 {
+PID(100);
 IntToStr(rpm, txt);
 for (i=0;i<strlen(txt);i++)
 {
@@ -60,6 +69,25 @@ Soft_UART_Write(10);
 Soft_UART_Write(13);
 delay_ms(100);
 }
+}
+
+void PID(int ctr)
+{
+ int error = ctr-rpm;
+ int PID = error*kp;
+ accumulator += error;
+ PID += ki*accumulator;
+ PID += kd*(error-lasterror);
+ lasterror = error;
+ if(PID>=255)
+ {
+ PID = 255;
+ }
+ if(PID<=-255)
+ {
+ PID = -255;
+ }
+ M_control(PID);
 }
 
 void M_control(int ctr)

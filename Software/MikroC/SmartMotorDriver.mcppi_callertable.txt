@@ -14,6 +14,12 @@ main
 		Div_32x32_S
 			SDIV3232L
 			COMFREM
+	PID
+		Mul_16X16_U
+		M_control
+			abs
+			PWM1_Set_Duty
+				Mul_16X16_U
 	IntToStr
 		WordToStr
 			Div_16X16_U
