@@ -5,27 +5,60 @@ main
 	PWM1_Set_Duty
 		Mul_16X16_U
 	M_control
-		abs
 		PWM1_Set_Duty
 			Mul_16X16_U
-	Soft_UART_Init
-		Get_Fosc_kHz
-		Mul_32x32_U
-		Div_32x32_S
-			SDIV3232L
-			COMFREM
-	PID
 		Mul_16X16_U
+	PID
+		int2double
+			NRM3232
+				RES032
+				SETFUN32
+				FIXSIGN32
+		Mul_32x32_FP
+			RES032
+			SETFOV32
+			SETFUN32
+		Add_32x32_FP
+			NRM4032
+				RES032
+				SETFUN32
+				FIXSIGN32
+				SETFOV32
+			NRM3232
+				RES032
+				SETFUN32
+				FIXSIGN32
+			SETFOV32
+		Sub_32x32_FP
+			Add_32x32_FP
+				NRM4032
+					RES032
+					SETFUN32
+					FIXSIGN32
+					SETFOV32
+				NRM3232
+					RES032
+					SETFUN32
+					FIXSIGN32
+				SETFOV32
+		Compare_Double
+		Div_32x32_FP
+			SETFDZ32
+			RES032
+			SETFOV32
+			SETFUN32
+		double2int
+			SETIOV3224
 		M_control
-			abs
 			PWM1_Set_Duty
 				Mul_16X16_U
-	IntToStr
-		WordToStr
-			Div_16X16_U
-	strlen
-	Soft_UART_Write
-		Delay_Cyc
+			Mul_16X16_U
+		Ow_Reset
+			Delay_500us
+			Delay_80us
+		Ow_Write
+			Delay_80us
+			Delay_50us
 interrupt
 	Mul_16X16_U
 	Div_16X16_U

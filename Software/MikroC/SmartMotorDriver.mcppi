@@ -43,12 +43,10 @@ Count=0
 [Useses]
 File0=PWM
 File1=Software_UART
-File2=Conversions
-File3=C_String
-File4=C_Math
-File5=C_Stdlib
-File6=C_Type
-Count=7
+File2=One_Wire
+File3=C_Stdlib
+File4=C_Type
+Count=5
 [EXPANDED_NODES]
 0=SmartMotorDriver.mcppi
 Count=1
