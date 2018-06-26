@@ -1,0 +1,13 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP12F1822 -DL -O11111115 -fo32 -N"C:\Users\ciro_\Documents\Smart_motor_driver\SmartMotorDriver.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16_Enh\" -SP"C:\Users\ciro_\Documents\Smart_motor_driver\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Uses\P16_Enh\" -IP"C:\Users\ciro_\Documents\Smart_motor_driver\" "SmartMotorDriver.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_CType.mcl" "__Lib_CStdlib.mcl" "__Lib_OneWire.mcl" "__Lib_SoftUART.mcl" "__Lib_PWM_a2.mcl"	 
+hint: 0	1139	Available RAM: 112 [bytes], Available ROM: 2048 [bytes]	 
+diagnostics: 0	122	Compilation Started	SmartMotorDriver.c
+hint: 0	1004	interrupt handler (interrupt at 0x0004)	SmartMotorDriver.c
+diagnostics: 152	123	Compiled Successfully	SmartMotorDriver.c
+hint: 90	1164	Variable 'error' has been eliminated by optimizer	SmartMotorDriver.c
+diagnostics: 0	127	All files Compiled in 63 ms	 
+hint: 0	1144	Used RAM (bytes): 52 (46%)  Free RAM (bytes): 60 (54%)	Used RAM (bytes): 52 (46%)  Free RAM (bytes): 60 (54%)
+hint: 0	1144	Used ROM (program words): 1934 (94%)  Free ROM (program words): 114 (6%)	Used ROM (program words): 1934 (94%)  Free ROM (program words): 114 (6%)
+diagnostics: 0	125	Project Linked Successfully	SmartMotorDriver.mcppi
+diagnostics: 0	128	Linked in 78 ms	 
+diagnostics: 0	129	Project 'SmartMotorDriver.mcppi' completed: 172 ms	 
+diagnostics: 0	103	Finished successfully: 25 jun. 2018, 20:01:55	SmartMotorDriver.mcppi
