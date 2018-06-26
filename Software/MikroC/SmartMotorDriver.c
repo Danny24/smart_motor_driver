@@ -1,13 +1,11 @@
 unsigned short counter = 0;
 unsigned int gear = 150;
 int rpm = 0;
-float kp = 0.1;        //0.1
-float kd = 0.001;     //0.001
-float ki = 0.04;      //0.04
+float kp = 0.4;        //0.1
+float kd = 0.0001;     //0.001
+float ki = 0.02;      //0.04
 float accumulator = 0;
 float lasterror = 0;
-
-unsigned short asp = 0;
 
 void interrupt() iv 0x0004 ics ICS_AUTO //interrupts
 {
@@ -39,7 +37,7 @@ void PID(int ctr); //function prototype
 
 void main() 
 {
-OSCCON = 0b11110000; //configure internal oscilator fro 32Mhz
+OSCCON = 0b11110000; //configure internal oscilator for 32Mhz
 TRISA = 0b00011000;  //configure IO
 ANSELA = 0b00000000; //analog functions of pins disabled
 WPUA = 0b00011110;   //configure weak pull-ups on input pins
@@ -56,7 +54,7 @@ PIE1.f0 =  1;        //enable timer1 interrupt
 T1CON.f0 =  1;       //start timer1
 INTCON.f7 = 1;       //run interrupts
 
-M_control(0);
+M_control(0);        //ensure the motor is stopped at boot, extra step just in case
 
 
 while(1)
@@ -64,12 +62,22 @@ while(1)
 int x = 0;
 for(x=0;x<1000;x++)
 {
-PID(100);
+PID(150);
+delay_ms(10);
+}
+for(x=0;x<500;x++)
+{
+PID(0);
 delay_ms(10);
 }
 for(x=0;x<1000;x++)
 {
-PID(-100);
+PID(-150);
+delay_ms(10);
+}
+for(x=0;x<500;x++)
+{
+PID(0);
 delay_ms(10);
 }
 }
@@ -89,15 +97,29 @@ void PID(int set) //PID calculation function
   PID += ki*accumulator; // add integral gain and error accumulator
   PID += kd*(error-lasterror); //add differential gain
   lasterror = error; //save the error to the next iteration
-  if(PID>=511)   //next we guarantee that the PID value is in PWM range
+  if(PID >= 511)   //next we guarantee that the PID value is in range
   {
     PID = 511;
   }
-  if(PID<=0)
+  if(PID <= 0)
   {
     PID = 0;
   }
   PID = (-255+((510)*((PID)/(511)))); //scale PID result from 0,511 to -255,255
+  if(set < 600)
+  {
+   if(PID > 0)
+   {
+   PID = 0;
+   }
+  }
+  if(set > 600)
+  {
+   if(PID < 0)
+   {
+   PID = 0;
+   }
+  }
   M_control((int)PID);
 
   Ow_reset(&PORTA, 1); //debug over onewire protocol

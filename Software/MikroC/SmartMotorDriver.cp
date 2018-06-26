@@ -2,13 +2,11 @@
 unsigned short counter = 0;
 unsigned int gear = 150;
 int rpm = 0;
-float kp = 0.1;
-float kd = 0.001;
-float ki = 0.04;
+float kp = 0.4;
+float kd = 0.0001;
+float ki = 0.02;
 float accumulator = 0;
 float lasterror = 0;
-
-unsigned short asp = 0;
 
 void interrupt() iv 0x0004 ics ICS_AUTO
 {
@@ -65,12 +63,22 @@ while(1)
 int x = 0;
 for(x=0;x<1000;x++)
 {
-PID(100);
+PID(150);
+delay_ms(10);
+}
+for(x=0;x<500;x++)
+{
+PID(0);
 delay_ms(10);
 }
 for(x=0;x<1000;x++)
 {
-PID(-100);
+PID(-150);
+delay_ms(10);
+}
+for(x=0;x<500;x++)
+{
+PID(0);
 delay_ms(10);
 }
 }
@@ -90,15 +98,29 @@ void PID(int set)
  PID += ki*accumulator;
  PID += kd*(error-lasterror);
  lasterror = error;
- if(PID>=511)
+ if(PID >= 511)
  {
  PID = 511;
  }
- if(PID<=0)
+ if(PID <= 0)
  {
  PID = 0;
  }
  PID = (-255+((510)*((PID)/(511))));
+ if(set < 600)
+ {
+ if(PID > 0)
+ {
+ PID = 0;
+ }
+ }
+ if(set > 600)
+ {
+ if(PID < 0)
+ {
+ PID = 0;
+ }
+ }
  M_control((int)PID);
 
  Ow_reset(&PORTA, 1);
