@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\smart_motor_driver.production.hex">
+  <executable name="dist/default/production\MPLAB_XC8.production.hex">
     <memory name="program">
       <units>words</units>
       <length>2048</length>
-      <used>1631</used>
-      <free>417</free>
+      <used>1746</used>
+      <free>302</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>128</length>
-      <used>119</used>
-      <free>9</free>
+      <used>115</used>
+      <free>13</free>
     </memory>
   </executable>
 </project>

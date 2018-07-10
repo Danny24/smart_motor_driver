@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=smart_motor_driver
+PROJECTNAME=MPLAB XC8
 
 # Active Configuration
 DEFAULTCONF=default

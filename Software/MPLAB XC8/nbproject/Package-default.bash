@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/smart_motor_driver.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=smart_motor_driver.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=smartmotordriver/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/MPLAB_XC8.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=MPLAB_XC8.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=mplabxc8/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/smartmotordriver/bin
+makeDirectory ${TMPDIR}/mplabxc8/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/smartmotordriver.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/mplabxc8.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/smartmotordriver.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/mplabxc8.tar *
 checkReturnCode
 
 # Cleanup

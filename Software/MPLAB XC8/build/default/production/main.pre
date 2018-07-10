@@ -3044,13 +3044,13 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 43 "main.c"
+# 40 "main.c"
 unsigned short counter = 0;
 unsigned int gear = 150;
 int rpm = 0;
-float kp = 0.4;
-float kd = 0.0001;
-float ki = 0.002;
+float kp = 0.3;
+float kd = 0.001;
+float ki = 0.1;
 float accumulator = 0;
 float lasterror = 0;
 
@@ -3058,11 +3058,15 @@ float lasterror = 0;
 
 PWM_Init(void)
 {
-PR2 = 39;
+
+# 72
+PR2 = 0xFF;
 CCP1CON = 0b00001100;
 CCPR1L = 0b00000000;
 PIR1bits.TMR2IF = 0;
-T2CON = 0b00000101;
+T2CON = 0b00000100;
+
+# 86
 }
 
 
@@ -3070,15 +3074,15 @@ PWM_set_duty(int duty)
 {
 if(duty<1024)
 {
+CCPR1L = (0xFF & ((unsigned int)duty>>2));
+CCP1CON = (0x0C |(0x30 & ((unsigned int)duty<<4)));
 
-
-CCPR1L = (0xFF & ((unsigned int)duty));
 }
 }
 
 
 
-void __interrupt all_of_them (void)
+void __interrupt isr()
 {
 if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
 {
@@ -3136,15 +3140,15 @@ accumulator += error;
 pid += ki*accumulator;
 pid += kd*(error-lasterror);
 lasterror = error;
-if(pid >= 511)
+if(pid >= 2047)
 {
-pid = 511;
+pid = 2047;
 }
 if(pid <= 0)
 {
 pid = 0;
 }
-pid = (-255+((510)*((pid)/(511))));
+pid = (-1023+((2046)*((pid)/(2047))));
 if(set < 600)
 {
 if(pid > 0)
@@ -3159,7 +3163,7 @@ if(pid < 0)
 pid = 0;
 }
 }
-M_control((int)PID);
+M_control((int)pid);
 }
 
 
@@ -3181,31 +3185,19 @@ INTCON = 0b01001000;
 T1CON = 0b00110100;
 PIE1bits.TMR1IE = 1;
 T1CONbits.TMR1ON = 1;
-INTCONbits.IOCIF = 1;
-
-
+INTCONbits.GIE = 1;
 
 while(1)
 {
-for(int x=0;x<10;x++)
+for(int x = 0;x<1000;x++)
 {
-PID(50);
-_delay(1);
+PID(100);
+_delay((unsigned long)((10)*(32000000/4000.0)));
 }
-for(int x=0;x<5;x++)
+for(int x = 0;x<1000;x++)
 {
 PID(0);
-_delay(1);
-}
-for(int x=0;x<10;x++)
-{
-PID(-150);
-_delay(1);
-}
-for(int x=0;x<5;x++)
-{
-PID(0);
-_delay(1);
+_delay((unsigned long)((10)*(32000000/4000.0)));
 }
 }
 
