@@ -2,7 +2,7 @@
 # 1 "main.c"
 
 
-# 12
+# 10
 #pragma config FOSC = INTOSC
 #pragma config WDTE = OFF
 #pragma config PWRTE = ON
@@ -3044,41 +3044,17 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 40 "main.c"
+# 38 "main.c"
 unsigned short counter = 0;
-unsigned int gear = 150;
+const unsigned short gear = 150;
 int rpm = 0;
-float kp = 0.3;
-float kd = 0.001;
-float ki = 0.1;
+int lset = 0;
+bit zero_cross = 0;
+const float kp = 0.1;
+const float kd = 0.01;
+const float ki = 0.04;
 float accumulator = 0;
 float lasterror = 0;
-
-
-
-PWM_Init(void)
-{
-
-# 72
-PR2 = 0xFF;
-CCP1CON = 0b00001100;
-CCPR1L = 0b00000000;
-PIR1bits.TMR2IF = 0;
-T2CON = 0b00000100;
-
-# 86
-}
-
-
-PWM_set_duty(int duty)
-{
-if(duty<1024)
-{
-CCPR1L = (0xFF & ((unsigned int)duty>>2));
-CCP1CON = (0x0C |(0x30 & ((unsigned int)duty<<4)));
-
-}
-}
 
 
 
@@ -3087,17 +3063,17 @@ void __interrupt isr()
 if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
 {
 INTCONbits.IOCIE = 0;
-counter ++;
+counter++;
 IOCAFbits.IOCAF4 = 0;
 INTCONbits.IOCIE = 1;
 }
-if(PIR1bits.TMR1IF == 1)
+if (PIR1bits.TMR1IF == 1)
 {
 INTCONbits.IOCIE = 0;
 T1CONbits.TMR1ON = 0;
-rpm = (counter * 300)/gear;
+rpm = (counter * 300) / gear;
 counter = 0;
-if(LATAbits.LATA0 == 0)
+if (LATAbits.LATA0 == 0)
 {
 rpm = rpm *-1;
 }
@@ -3108,6 +3084,28 @@ T1CONbits.TMR1ON = 1;
 }
 
 
+
+PWM_Init(void)
+{
+
+# 99
+PR2 = 0xFF;
+CCP1CON = 0b00001100;
+CCPR1L = 0b00000000;
+PIR1bits.TMR2IF = 0;
+T2CON = 0b00000100;
+
+# 113
+}
+
+PWM_set_duty(int duty)
+{
+if (duty < 1024) {
+CCPR1L = (0xFF & ((unsigned int) duty >> 2));
+CCP1CON = (0x0C | (0x30 & ((unsigned int) duty << 4)));
+
+}
+}
 
 void M_control(int ctr)
 {
@@ -3128,49 +3126,67 @@ PWM_set_duty(ctr);
 }
 }
 
-void PID(int set)
+void calculate_pid(int set)
 {
 float error = 0;
 float pid = 0;
 int rpm2 = rpm + 600;
 set = set + 600;
-error = set-rpm2;
+error = set - rpm2;
 pid = error*kp;
 accumulator += error;
 pid += ki*accumulator;
-pid += kd*(error-lasterror);
+pid += kd * (error - lasterror);
 lasterror = error;
-if(pid >= 2047)
+if (pid >= 2047)
 {
 pid = 2047;
 }
-if(pid <= 0)
+if (pid <= 0)
 {
 pid = 0;
 }
-pid = (-1023+((2046)*((pid)/(2047))));
-if(set < 600)
+pid = (-1023 + ((2046)*((pid) / (2047))));
+if (set < 600)
 {
-if(pid > 0)
-{
-pid = 0;
-}
-}
-if(set > 600)
-{
-if(pid < 0)
+if (pid > 0)
 {
 pid = 0;
 }
 }
-M_control((int)pid);
+if (set > 600)
+{
+if (pid < 0)
+{
+pid = 0;
+}
+}
+M_control((int) pid);
+}
+
+void PID(int set)
+{
+zero_cross = ((lset^set) < 0);
+if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
+{
+zero_cross = 0;
+}
+if (zero_cross == 1)
+{
+do
+{
+calculate_pid(0);
+_delay((unsigned long)((10)*(32000000/4000.0)));
+}
+while ((rpm != 0));
+}
+lset = set;
+calculate_pid(set);
 }
 
 
 
-
-int main(int argc, char** argv)
-{
+int main(int argc, char** argv) {
 OSCCON = 0b11110000;
 TRISA = 0b00011000;
 ANSELA = 0b00000000;
@@ -3187,16 +3203,16 @@ PIE1bits.TMR1IE = 1;
 T1CONbits.TMR1ON = 1;
 INTCONbits.GIE = 1;
 
-while(1)
+while (1)
 {
-for(int x = 0;x<1000;x++)
+for (int x = 0; x < 1000; x++)
 {
-PID(100);
+PID(150);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 }
-for(int x = 0;x<1000;x++)
+for (int x = 0; x < 1000; x++)
 {
-PID(0);
+PID(-150);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 }
 }

@@ -28,20 +28,22 @@
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
 "51 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-[v _PWM_Init PWM_Init `(i  1 e 2 0 ]
-"89
-[v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
-"101
 [v _isr isr `II(v  1 e 1 0 ]
-"128
+"78
+[v _PWM_Init PWM_Init `(i  1 e 2 0 ]
+"115
+[v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
+"124
 [v _M_control M_control `(v  1 e 1 0 ]
-"147
+"143
+[v _calculate_pid calculate_pid `(v  1 e 1 0 ]
+"181
 [v _PID PID `(v  1 e 1 0 ]
-"188
+"203
 [v _main main `(i  1 e 2 0 ]
 "349 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1822.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
-[s S44 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S19 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -51,14 +53,14 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "372
-[s S53 . 1 `uc 1 . 1 0 :2:0 
+[s S28 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S58 . 1 `S44 1 . 1 0 `S53 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES58  1 e 1 @11 ]
-[s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S33 . 1 `S19 1 . 1 0 `S28 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES33  1 e 1 @11 ]
+[s S73 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -68,11 +70,11 @@
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "734
-[u S31 . 1 `S22 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES31  1 e 1 @17 ]
+[u S82 . 1 `S73 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES82  1 e 1 @17 ]
 "886
 [v _T1CON T1CON `VEuc  1 e 1 @24 ]
-[s S98 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S94 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
@@ -82,19 +84,19 @@
 `uc 1 TMR1CS1 1 0 :1:7 
 ]
 "908
-[s S107 . 1 `uc 1 . 1 0 :4:0 
+[s S103 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 T1CKPS 1 0 :2:4 
 `uc 1 TMR1CS 1 0 :2:6 
 ]
-[u S111 . 1 `S98 1 . 1 0 `S107 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES111  1 e 1 @24 ]
+[u S107 . 1 `S94 1 . 1 0 `S103 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES107  1 e 1 @24 ]
 "1055
 [v _PR2 PR2 `VEuc  1 e 1 @27 ]
 "1075
 [v _T2CON T2CON `VEuc  1 e 1 @28 ]
 "1240
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
-[s S235 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S241 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSP1IE 1 0 :1:3 
@@ -104,9 +106,9 @@
 `uc 1 TMR1GIE 1 0 :1:7 
 ]
 "1307
-[u S244 . 1 `S235 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES244  1 e 1 @145 ]
-[s S149 . 1 `uc 1 PS0 1 0 :1:0 
+[u S250 . 1 `S241 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES250  1 e 1 @145 ]
+[s S155 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 PSA 1 0 :1:3 
@@ -116,16 +118,16 @@
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1415
-[s S158 . 1 `uc 1 PS 1 0 :3:0 
+[s S164 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S163 . 1 `S149 1 . 1 0 `S158 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES163  1 e 1 @149 ]
+[u S169 . 1 `S155 1 . 1 0 `S164 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES169  1 e 1 @149 ]
 "1643
 [v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
-[s S128 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S124 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -133,9 +135,9 @@
 `uc 1 LATA5 1 0 :1:5 
 ]
 "1994
-[u S135 . 1 `S128 1 . 1 0 ]
-[v _LATAbits LATAbits `VES135  1 e 1 @268 ]
-[s S181 . 1 `uc 1 CCP1SEL 1 0 :1:0 
+[u S131 . 1 `S124 1 . 1 0 ]
+[v _LATAbits LATAbits `VES131  1 e 1 @268 ]
+[s S187 . 1 `uc 1 CCP1SEL 1 0 :1:0 
 `uc 1 P1BSEL 1 0 :1:1 
 `uc 1 TXCKSEL 1 0 :1:2 
 `uc 1 T1GSEL 1 0 :1:3 
@@ -145,12 +147,12 @@
 `uc 1 RXDTSEL 1 0 :1:7 
 ]
 "2515
-[s S190 . 1 `uc 1 . 1 0 :5:0 
+[s S196 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS1SEL 1 0 :1:5 
 `uc 1 SDO1SEL 1 0 :1:6 
 ]
-[u S194 . 1 `S181 1 . 1 0 `S190 1 . 1 0 ]
-[v _APFCONbits APFCONbits `VES194  1 e 1 @285 ]
+[u S200 . 1 `S187 1 . 1 0 `S196 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES200  1 e 1 @285 ]
 "2630
 [v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
 "3186
@@ -159,7 +161,7 @@
 [v _CCPR1L CCPR1L `VEuc  1 e 1 @657 ]
 "3975
 [v _CCP1CON CCP1CON `VEuc  1 e 1 @659 ]
-[s S211 . 1 `uc 1 IOCAN0 1 0 :1:0 
+[s S217 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 IOCAN2 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -167,11 +169,11 @@
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "4409
-[s S218 . 1 `uc 1 IOCAN 1 0 :6:0 
+[s S224 . 1 `uc 1 IOCAN 1 0 :6:0 
 ]
-[u S220 . 1 `S211 1 . 1 0 `S218 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES220  1 e 1 @914 ]
-[s S76 . 1 `uc 1 IOCAF0 1 0 :1:0 
+[u S226 . 1 `S217 1 . 1 0 `S224 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES226  1 e 1 @914 ]
+[s S51 . 1 `uc 1 IOCAF0 1 0 :1:0 
 `uc 1 IOCAF1 1 0 :1:1 
 `uc 1 IOCAF2 1 0 :1:2 
 `uc 1 IOCAF3 1 0 :1:3 
@@ -179,52 +181,62 @@
 `uc 1 IOCAF5 1 0 :1:5 
 ]
 "4467
-[s S83 . 1 `uc 1 IOCAF 1 0 :6:0 
+[s S58 . 1 `uc 1 IOCAF 1 0 :6:0 
 ]
-[u S85 . 1 `S76 1 . 1 0 `S83 1 . 1 0 ]
-[v _IOCAFbits IOCAFbits `VES85  1 e 1 @915 ]
-"40 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+[u S60 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES60  1 e 1 @915 ]
+"38 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _counter counter `us  1 e 2 0 ]
-"41
-[v _gear gear `ui  1 e 2 0 ]
-"42
+"39
+[v _gear gear `DCus  1 e 2 0 ]
+"40
 [v _rpm rpm `i  1 e 2 0 ]
+"41
+[v _lset lset `i  1 e 2 0 ]
+"42
+[v _zero_cross zero_cross `b  1 e 0 0 ]
 "43
-[v _kp kp `f  1 e 3 0 ]
+[v _kp kp `DCf  1 e 3 0 ]
 "44
-[v _kd kd `f  1 e 3 0 ]
+[v _kd kd `DCf  1 e 3 0 ]
 "45
-[v _ki ki `f  1 e 3 0 ]
+[v _ki ki `DCf  1 e 3 0 ]
 "46
 [v _accumulator accumulator `f  1 e 3 0 ]
 "47
 [v _lasterror lasterror `f  1 e 3 0 ]
-"188
+"203
 [v _main main `(i  1 e 2 0 ]
 {
-"213
-[v main@x_364 x `i  1 a 2 2 ]
-"208
+"227
+[v main@x_369 x `i  1 a 2 2 ]
+"222
 [v main@x x `i  1 a 2 0 ]
-"221
+"235
 } 0
-"51
+"78
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
 {
-"86
+"113
 } 0
-"147
+"181
 [v _PID PID `(v  1 e 1 0 ]
 {
-"150
-[v PID@pid pid `f  1 a 3 66 ]
-"149
-[v PID@error error `f  1 a 3 63 ]
-"151
-[v PID@rpm2 rpm2 `i  1 a 2 61 ]
+[v PID@set set `i  1 p 2 69 ]
+"199
+} 0
+"143
+[v _calculate_pid calculate_pid `(v  1 e 1 0 ]
+{
+"146
+[v calculate_pid@pid pid `f  1 a 3 66 ]
+"145
+[v calculate_pid@error error `f  1 a 3 63 ]
 "147
-[v PID@set set `i  1 p 2 54 ]
-"183
+[v calculate_pid@rpm2 rpm2 `i  1 a 2 61 ]
+"143
+[v calculate_pid@set set `i  1 p 2 54 ]
+"179
 } 0
 "44 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
@@ -308,22 +320,22 @@
 [v ___ftpack@sign sign `uc  1 p 1 5 ]
 "86
 } 0
-"128 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"124 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _M_control M_control `(v  1 e 1 0 ]
 {
 [v M_control@ctr ctr `i  1 p 2 15 ]
-"145
+"141
 } 0
-"89
+"115
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
 {
 [v PWM_set_duty@duty duty `i  1 p 2 1 ]
-"97
+"122
 } 0
-"101
+"51
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"124
+"74
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
