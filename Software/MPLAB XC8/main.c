@@ -28,6 +28,7 @@
 // Includes and definitions
 
 #define _XTAL_FREQ 32000000
+#define pid_time_lapse 10
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,6 +37,8 @@
 // Global variables declation
 
 unsigned short counter = 0;
+unsigned int steps = 0; 
+unsigned short diameter = 42;
 const unsigned short gear = 150;
 int rpm = 0;
 int lset = 0;
@@ -54,6 +57,10 @@ void __interrupt isr()
     {
         INTCONbits.IOCIE = 0; //disable on change interrupts
         counter++; //increment counter one in one
+        if (steps > 0)
+        {
+        steps--;
+        }
         IOCAFbits.IOCAF4 = 0; //clear interrupt flag
         INTCONbits.IOCIE = 1; //enable on change interrupts
     }
@@ -190,7 +197,7 @@ void PID(int set) //pre PID
         do 
         {
             calculate_pid(0);
-            __delay_ms(10);
+            __delay_ms(pid_time_lapse);
         } 
         while ((rpm != 0)); //wait until the motor stops completely with PID before ressuming direction change
     }
@@ -198,9 +205,15 @@ void PID(int set) //pre PID
     calculate_pid(set);
 }
 
+void auto_stop(unsigned int distance)
+{
+    steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diameter)));
+}
+
 // Main program
 
-int main(int argc, char** argv) {
+void main() 
+{
     OSCCON = 0b11110000; //configure internal oscilator for 32Mhz
     TRISA = 0b00011000; //configure IO
     ANSELA = 0b00000000; //analog functions of pins disabled
@@ -217,21 +230,28 @@ int main(int argc, char** argv) {
     T1CONbits.TMR1ON = 1; //start timer1
     INTCONbits.GIE = 1; //run interrupts
 
-    while (1) 
-    {
+/*
         for (int x = 0; x < 1000; x++)
         {
             PID(150);
-            __delay_ms(10);
+            __delay_ms(pid_time_lapse);
         }
         for (int x = 0; x < 1000; x++) 
         {
             PID(-150);
-            __delay_ms(10);
+            __delay_ms(pid_time_lapse);
         }
+*/
+    auto_stop(132);
+    while(steps != 0)
+    {
+      PID(50);
+       __delay_ms(pid_time_lapse);
     }
-
-    return (EXIT_SUCCESS);
+    while(1)
+    {
+        M_control(0);
+    }
 }
 
 

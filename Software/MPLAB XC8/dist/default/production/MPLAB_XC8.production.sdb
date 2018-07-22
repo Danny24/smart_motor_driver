@@ -1,4 +1,4 @@
-[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPEEDOPT ]
 [d version 1.1 ]
 [d edition pro ]
 [d chip 12F1822 ]
@@ -15,32 +15,37 @@
 [v ___ftge __ftge `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
-"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftneg.c
-[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
 "44 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\pic\eeprom.c
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"51 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"54 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"78
+"85
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
-"115
+"122
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
-"124
+"131
 [v _M_control M_control `(v  1 e 1 0 ]
-"143
+"150
 [v _calculate_pid calculate_pid `(v  1 e 1 0 ]
-"181
+"188
 [v _PID PID `(v  1 e 1 0 ]
-"203
-[v _main main `(i  1 e 2 0 ]
+"208
+[v _auto_stop auto_stop `(v  1 e 1 0 ]
+"215
+[v _main main `(v  1 e 1 0 ]
 "349 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1822.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 [s S19 . 1 `uc 1 IOCIF 1 0 :1:0 
@@ -185,76 +190,91 @@
 ]
 [u S60 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
 [v _IOCAFbits IOCAFbits `VES60  1 e 1 @915 ]
-"38 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"39 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _counter counter `us  1 e 2 0 ]
-"39
-[v _gear gear `DCus  1 e 2 0 ]
 "40
-[v _rpm rpm `i  1 e 2 0 ]
-"41
-[v _lset lset `i  1 e 2 0 ]
-"42
-[v _zero_cross zero_cross `b  1 e 0 0 ]
+[v _steps steps `ui  1 e 2 0 ]
 "43
-[v _kp kp `DCf  1 e 3 0 ]
+[v _rpm rpm `i  1 e 2 0 ]
 "44
-[v _kd kd `DCf  1 e 3 0 ]
+[v _lset lset `i  1 e 2 0 ]
 "45
-[v _ki ki `DCf  1 e 3 0 ]
-"46
+[v _zero_cross zero_cross `b  1 e 0 0 ]
+"49
 [v _accumulator accumulator `f  1 e 3 0 ]
-"47
+"50
 [v _lasterror lasterror `f  1 e 3 0 ]
-"203
-[v _main main `(i  1 e 2 0 ]
+"215
+[v _main main `(v  1 e 1 0 ]
 {
-"227
-[v main@x_369 x `i  1 a 2 2 ]
-"222
-[v main@x x `i  1 a 2 0 ]
-"235
+"255
 } 0
-"78
+"208
+[v _auto_stop auto_stop `(v  1 e 1 0 ]
+{
+[v auto_stop@distance distance `ui  1 p 2 54 ]
+"211
+} 0
+"28 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 8 ]
+"31
+} 0
+"85 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
 {
-"113
+"120
 } 0
-"181
+"188
 [v _PID PID `(v  1 e 1 0 ]
 {
-[v PID@set set `i  1 p 2 69 ]
-"199
+[v PID@set set `i  1 p 2 73 ]
+"206
 } 0
-"143
+"150
 [v _calculate_pid calculate_pid `(v  1 e 1 0 ]
 {
-"146
-[v calculate_pid@pid pid `f  1 a 3 66 ]
-"145
-[v calculate_pid@error error `f  1 a 3 63 ]
-"147
-[v calculate_pid@rpm2 rpm2 `i  1 a 2 61 ]
-"143
-[v calculate_pid@set set `i  1 p 2 54 ]
-"179
+"153
+[v calculate_pid@pid pid `f  1 a 3 70 ]
+"152
+[v calculate_pid@error error `f  1 a 3 67 ]
+"154
+[v calculate_pid@rpm2 rpm2 `i  1 a 2 65 ]
+"150
+[v calculate_pid@set set `i  1 p 2 59 ]
+"186
 } 0
 "44 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
 [v ___fttol __fttol `(l  1 e 4 0 ]
 {
 "47
-[v ___fttol@lval lval `ul  1 a 4 10 ]
+[v ___fttol@lval lval `ul  1 a 4 49 ]
 "46
-[v ___fttol@exp1 exp1 `uc  1 a 1 14 ]
-[v ___fttol@sign1 sign1 `uc  1 a 1 9 ]
+[v ___fttol@exp1 exp1 `uc  1 a 1 53 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 48 ]
 "44
-[v ___fttol@f1 f1 `f  1 p 3 1 ]
+[v ___fttol@f1 f1 `f  1 p 3 41 ]
 "73
 } 0
-"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftneg.c
-[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
 {
-[v ___ftneg@f1 f1 `f  1 p 3 1 ]
-"20
+[v ___ftsub@f2 f2 `f  1 p 3 53 ]
+[v ___ftsub@f1 f1 `f  1 p 3 56 ]
+"27
+} 0
+"86 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 52 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 51 ]
+[v ___ftadd@sign sign `uc  1 a 1 50 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 41 ]
+[v ___ftadd@f2 f2 `f  1 p 3 44 ]
+"148
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 3 0 ]
@@ -266,76 +286,53 @@
 [v ___ftmul@cntr cntr `uc  1 a 1 39 ]
 [v ___ftmul@exp exp `uc  1 a 1 35 ]
 "62
-[v ___ftmul@f1 f1 `f  1 p 3 25 ]
-[v ___ftmul@f2 f2 `f  1 p 3 28 ]
+[v ___ftmul@f1 f1 `f  1 p 3 26 ]
+[v ___ftmul@f2 f2 `f  1 p 3 29 ]
 "157
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
 [v ___ftge __ftge `(b  1 e 0 0 ]
 {
-[v ___ftge@ff1 ff1 `f  1 p 3 1 ]
-[v ___ftge@ff2 ff2 `f  1 p 3 4 ]
+[v ___ftge@ff1 ff1 `f  1 p 3 0 ]
+[v ___ftge@ff2 ff2 `f  1 p 3 3 ]
 "13
 } 0
 "56 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
 {
 "60
-[v ___ftdiv@f3 f3 `f  1 a 3 20 ]
+[v ___ftdiv@f3 f3 `f  1 a 3 21 ]
 "59
-[v ___ftdiv@sign sign `uc  1 a 1 24 ]
-[v ___ftdiv@exp exp `uc  1 a 1 23 ]
-[v ___ftdiv@cntr cntr `uc  1 a 1 19 ]
+[v ___ftdiv@sign sign `uc  1 a 1 25 ]
+[v ___ftdiv@exp exp `uc  1 a 1 24 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 20 ]
 "56
-[v ___ftdiv@f2 f2 `f  1 p 3 9 ]
-[v ___ftdiv@f1 f1 `f  1 p 3 12 ]
+[v ___ftdiv@f2 f2 `f  1 p 3 11 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 14 ]
 "86
-} 0
-"86 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-[v ___ftadd __ftadd `(f  1 e 3 0 ]
-{
-"88
-[v ___ftadd@exp1 exp1 `uc  1 a 1 53 ]
-[v ___ftadd@exp2 exp2 `uc  1 a 1 52 ]
-[v ___ftadd@sign sign `uc  1 a 1 51 ]
-"86
-[v ___ftadd@f1 f1 `f  1 p 3 41 ]
-[v ___ftadd@f2 f2 `f  1 p 3 44 ]
-"148
 } 0
 "32 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
 [v ___awtoft __awtoft `(f  1 e 3 0 ]
 {
 "34
-[v ___awtoft@sign sign `uc  1 a 1 14 ]
+[v ___awtoft@sign sign `uc  1 a 1 11 ]
 "32
-[v ___awtoft@c c `i  1 p 2 9 ]
+[v ___awtoft@c c `i  1 p 2 8 ]
 "42
 } 0
 "62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
 [v ___ftpack __ftpack `(f  1 e 3 0 ]
 {
-[v ___ftpack@arg arg `um  1 p 3 1 ]
-[v ___ftpack@exp exp `uc  1 p 1 4 ]
-[v ___ftpack@sign sign `uc  1 p 1 5 ]
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
 "86
 } 0
-"124 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"131 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _M_control M_control `(v  1 e 1 0 ]
 {
-[v M_control@ctr ctr `i  1 p 2 15 ]
-"141
-} 0
-"115
-[v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
-{
-[v PWM_set_duty@duty duty `i  1 p 2 1 ]
-"122
-} 0
-"51
-[v _isr isr `II(v  1 e 1 0 ]
-{
-"74
+[v M_control@ctr ctr `i  1 p 2 54 ]
+"148
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -347,13 +344,32 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
+"122 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+[v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
+{
+[v PWM_set_duty@duty duty `i  1 p 2 0 ]
+"129
+} 0
+"54
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"81
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+[v i1___wmul __wmul `(ui  1 e 2 0 ]
+{
+[v i1___wmul@product __wmul `ui  1 a 2 4 ]
+[v i1___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v i1___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "11
 [v ___lwdiv@quotient quotient `ui  1 a 2 11 ]
 "12
-[v ___lwdiv@counter counter `uc  1 a 1 13 ]
+[v ___lwdiv@counter counter `uc  1 a 1 10 ]
 "6
 [v ___lwdiv@divisor divisor `ui  1 p 2 6 ]
 [v ___lwdiv@dividend dividend `ui  1 p 2 8 ]

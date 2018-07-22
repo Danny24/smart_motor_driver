@@ -3044,8 +3044,10 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 38 "main.c"
+# 39 "main.c"
 unsigned short counter = 0;
+unsigned int steps = 0;
+unsigned short diameter = 42;
 const unsigned short gear = 150;
 int rpm = 0;
 int lset = 0;
@@ -3064,6 +3066,10 @@ if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
 {
 INTCONbits.IOCIE = 0;
 counter++;
+if (steps > 0)
+{
+steps--;
+}
 IOCAFbits.IOCAF4 = 0;
 INTCONbits.IOCIE = 1;
 }
@@ -3088,14 +3094,14 @@ T1CONbits.TMR1ON = 1;
 PWM_Init(void)
 {
 
-# 99
+# 106
 PR2 = 0xFF;
 CCP1CON = 0b00001100;
 CCPR1L = 0b00000000;
 PIR1bits.TMR2IF = 0;
 T2CON = 0b00000100;
 
-# 113
+# 120
 }
 
 PWM_set_duty(int duty)
@@ -3184,9 +3190,15 @@ lset = set;
 calculate_pid(set);
 }
 
+void auto_stop(unsigned int distance)
+{
+steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diameter)));
+}
 
 
-int main(int argc, char** argv) {
+
+void main()
+{
 OSCCON = 0b11110000;
 TRISA = 0b00011000;
 ANSELA = 0b00000000;
@@ -3203,20 +3215,16 @@ PIE1bits.TMR1IE = 1;
 T1CONbits.TMR1ON = 1;
 INTCONbits.GIE = 1;
 
-while (1)
+# 245
+auto_stop(132);
+while(steps != 0)
 {
-for (int x = 0; x < 1000; x++)
-{
-PID(150);
+PID(50);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 }
-for (int x = 0; x < 1000; x++)
+while(1)
 {
-PID(-150);
-_delay((unsigned long)((10)*(32000000/4000.0)));
+M_control(0);
 }
-}
-
-return (0);
 }
 

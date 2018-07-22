@@ -12,36 +12,36 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\MPLAB_XC8.production.obj
-cinit CODE 0 4C 4C 12 2
-text1 CODE 0 703 703 C 2
-text2 CODE 0 5AD 5AD 55 2
-text3 CODE 0 5E 5E 19C 2
-text4 CODE 0 44A 44A 87 2
-text5 CODE 0 70F 70F 9 2
-text6 CODE 0 2EF 2EF B3 2
-text7 CODE 0 602 602 3C 2
-text8 CODE 0 3A2 3A2 A8 2
-text9 CODE 0 1FA 1FA F5 2
-text10 CODE 0 6C7 6C7 21 2
-text11 CODE 0 548 548 65 2
-text12 CODE 0 672 672 2F 2
-text13 CODE 0 6A1 6A1 26 2
-text15 CODE 0 6E8 6E8 1B 2
-text16 CODE 0 63E 63E 34 2
-maintext CODE 0 4D1 4D1 77 2
-cstackCOMMON COMMON 1 70 70 E 1
+cinit CODE 0 4F 4F B 2
+text1 CODE 0 487 487 2D 2
+text2 CODE 0 584 584 10 2
+text3 CODE 0 594 594 C 2
+text4 CODE 0 387 387 52 2
+text5 CODE 0 5A 5A 150 2
+text6 CODE 0 32A 32A 5D 2
+text7 CODE 0 524 524 1B 2
+text8 CODE 0 1AA 1AA B4 2
+text9 CODE 0 25E 25E 6A 2
+text10 CODE 0 4B4 4B4 2C 2
+text11 CODE 0 2C8 2C8 62 2
+text12 CODE 0 53F 53F 1B 2
+text13 CODE 0 3D9 3D9 3E 2
+text14 CODE 0 453 453 34 2
+text15 CODE 0 55A 55A 15 2
+text16 CODE 0 505 505 1F 2
+text18 CODE 0 56F 56F 15 2
+text19 CODE 0 4E0 4E0 25 2
+maintext CODE 0 417 417 3C 2
+cstackCOMMON COMMON 1 70 70 D 1
 cstackBANK0 BANK0 1 20 20 4E 1
-cstackBANK1 BANK1 1 AC AC 4 1
-stringtext1 STRCODE 0 718 718 3 2
-stringtext2 STRCODE 0 71B 71B 3 2
-stringtext3 STRCODE 0 71E 71E 3 2
-stringtext4 STRCODE 0 721 721 2 2
+stringtext1 STRCODE 0 5A6 5A6 2 2
 bitbssBANK0 BANK0 1 370 6E 1 1
-intentry CODE 0 4 4 47 2
-bssBANK1 BANK1 1 A0 A0 C 1
-$C:\Users\ciro_\AppData\Local\Temp\sf50.obj
+intentry CODE 0 4 4 4A 2
+bssBANK1 BANK1 1 A0 A0 E 1
+clrtext CODE 0 5A0 5A0 6 2
+$C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
 reset_vec CODE 0 0 0 1 2
-end_init CODE 0 4B 4B 1 2
+end_init CODE 0 4E 4E 1 2
 config CONFIG 0 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -50,13 +50,13 @@ config CONFIG 0 8007 8007 2 2
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
 RAM 6F-6F 1
-RAM B0-BF 1
+RAM AE-BF 1
 BANK0 6F-6F 1
-BANK1 B0-BF 1
+BANK1 AE-BF 1
 CONST 1-3 2
-CONST 723-7FF 2
+CONST 5A8-7FF 2
 ENTRY 1-3 2
-ENTRY 723-7FF 2
+ENTRY 5A8-7FF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -80,9 +80,9 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2060-206F 1
+STACK 205E-206F 1
 CODE 1-3 2
-CODE 723-7FF 2
+CODE 5A8-7FF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-16F 1
@@ -94,11 +94,12 @@ SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
 BIGRAM 2000-206F 1
+COMMON 7D-7D 1
 EEDATA F000-F0FF 2
 STRCODE 1-3 2
-STRCODE 723-7FF 2
+STRCODE 5A8-7FF 2
 STRING 1-3 2
-STRING 723-7FF 2
+STRING 5A8-7FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -113,301 +114,328 @@ STRING 723-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MPLAB_XC8.production.obj
-4C cinit CODE >420:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4C cinit CODE >423:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4C cinit CODE >453:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4D cinit CODE >454:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4E cinit CODE >458:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4F cinit CODE >459:C:\Users\ciro_\AppData\Local\Temp\sf50.
-50 cinit CODE >460:C:\Users\ciro_\AppData\Local\Temp\sf50.
-51 cinit CODE >461:C:\Users\ciro_\AppData\Local\Temp\sf50.
-52 cinit CODE >462:C:\Users\ciro_\AppData\Local\Temp\sf50.
-53 cinit CODE >463:C:\Users\ciro_\AppData\Local\Temp\sf50.
-54 cinit CODE >464:C:\Users\ciro_\AppData\Local\Temp\sf50.
-55 cinit CODE >465:C:\Users\ciro_\AppData\Local\Temp\sf50.
-56 cinit CODE >466:C:\Users\ciro_\AppData\Local\Temp\sf50.
-57 cinit CODE >467:C:\Users\ciro_\AppData\Local\Temp\sf50.
-58 cinit CODE >468:C:\Users\ciro_\AppData\Local\Temp\sf50.
-59 cinit CODE >469:C:\Users\ciro_\AppData\Local\Temp\sf50.
-5A cinit CODE >470:C:\Users\ciro_\AppData\Local\Temp\sf50.
-5B cinit CODE >476:C:\Users\ciro_\AppData\Local\Temp\sf50.
-5B cinit CODE >478:C:\Users\ciro_\AppData\Local\Temp\sf50.
-5C cinit CODE >479:C:\Users\ciro_\AppData\Local\Temp\sf50.
-5D cinit CODE >480:C:\Users\ciro_\AppData\Local\Temp\sf50.
-4 intentry CODE >51:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4 intentry CODE >122:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-9 intentry CODE >53:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-E intentry CODE >55:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-F intentry CODE >56:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-14 intentry CODE >57:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-16 intentry CODE >58:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-17 intentry CODE >60:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1A intentry CODE >62:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1B intentry CODE >63:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1C intentry CODE >64:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-38 intentry CODE >65:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3A intentry CODE >66:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3D intentry CODE >68:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-43 intentry CODE >70:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-44 intentry CODE >71:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-46 intentry CODE >72:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-47 intentry CODE >74:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-63E text16 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-63E text16 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-640 text16 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-644 text16 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-646 text16 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-648 text16 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-64D text16 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-651 text16 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-652 text16 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-657 text16 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-65F text16 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-663 text16 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-664 text16 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-669 text16 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-66D text16 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
-6E8 text15 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6E8 text15 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6EA text15 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6EC text15 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6F0 text15 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6F5 text15 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6FA text15 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6FE text15 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-6A1 text13 CODE >115:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6A1 text13 CODE >117:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6AD text13 CODE >118:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6B9 text13 CODE >119:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-672 text12 CODE >124:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-672 text12 CODE >126:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-677 text12 CODE >128:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-67C text12 CODE >130:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-688 text12 CODE >132:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-68A text12 CODE >133:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-690 text12 CODE >135:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-693 text12 CODE >137:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-695 text12 CODE >138:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-69B text12 CODE >139:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-548 text11 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-548 text11 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-551 text11 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-558 text11 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-55C text11 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-562 text11 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-567 text11 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-56B text11 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-575 text11 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-57B text11 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-57B text11 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-580 text11 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-582 text11 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-588 text11 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-58E text11 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-590 text11 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-596 text11 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-598 text11 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-5A8 text11 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-5AB text11 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-5AC text11 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
-6C7 text10 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-6C7 text10 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-6C9 text10 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-6CB text10 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-6D0 text10 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-6D2 text10 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
-1FA text9 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-1FA text9 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-207 text9 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-213 text9 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-222 text9 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-229 text9 CODE >94:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-238 text9 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-23C text9 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-23D text9 CODE >98:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-23E text9 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-23F text9 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-240 text9 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-241 text9 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-247 text9 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-248 text9 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-24E text9 CODE >106:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-252 text9 CODE >110:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-258 text9 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-25A text9 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-265 text9 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-26B text9 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-26F text9 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-274 text9 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-278 text9 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-27E text9 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-280 text9 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-28B text9 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-291 text9 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-295 text9 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-299 text9 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-29B text9 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2A1 text9 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2AB text9 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2AD text9 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2B3 text9 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2BD text9 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2BE text9 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2C4 text9 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2C6 text9 CODE >142:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2CC text9 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2D6 text9 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-2D8 text9 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
-3A2 text8 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3A2 text8 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3B2 text8 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3B9 text8 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3C8 text8 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3CF text8 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3D5 text8 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3DA text8 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3EA text8 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3FA text8 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3FE text8 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-3FF text8 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-405 text8 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-406 text8 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-40C text8 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-410 text8 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-416 text8 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-422 text8 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-428 text8 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-429 text8 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-42F text8 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-433 text8 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
-602 text7 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-602 text7 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-605 text7 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-619 text7 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-61B text7 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-62F text7 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-631 text7 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-633 text7 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
-2EF text6 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-2EF text6 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-2FF text6 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-306 text6 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-315 text6 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-31C text6 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-321 text6 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-331 text6 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-341 text6 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-345 text6 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-346 text6 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-347 text6 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-34D text6 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-353 text6 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-357 text6 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-359 text6 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-35F text6 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-365 text6 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-36B text6 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-36F text6 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-373 text6 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-375 text6 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-37B text6 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-381 text6 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-387 text6 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-38B text6 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
-70F text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftneg.c
-70F text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftneg.c
-715 text5 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftneg.c
-44A text4 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-44A text4 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-45A text4 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-463 text4 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-473 text4 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-474 text4 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-47A text4 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-481 text4 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-483 text4 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-485 text4 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-48A text4 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-493 text4 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-49A text4 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4A1 text4 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4A5 text4 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4AE text4 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4B5 text4 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4B7 text4 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4B7 text4 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4BA text4 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4BD text4 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-4C8 text4 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-5E text3 CODE >143:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5E text3 CODE >145:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-65 text3 CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6B text3 CODE >147:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-75 text3 CODE >148:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-7B text3 CODE >149:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-90 text3 CODE >150:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-A8 text3 CODE >151:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-C7 text3 CODE >152:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-F4 text3 CODE >153:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-13C text3 CODE >154:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-147 text3 CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-157 text3 CODE >157:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-15E text3 CODE >159:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-16E text3 CODE >161:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-175 text3 CODE >163:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1A6 text3 CODE >164:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1B1 text3 CODE >166:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1C1 text3 CODE >168:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1C8 text3 CODE >170:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1C8 text3 CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1D4 text3 CODE >173:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1E4 text3 CODE >175:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1EB text3 CODE >178:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1F9 text3 CODE >179:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5AD text2 CODE >181:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5AD text2 CODE >183:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5BF text2 CODE >184:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5DB text2 CODE >186:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5DD text2 CODE >187:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5DD text2 CODE >188:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5E0 text2 CODE >192:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5E5 text2 CODE >193:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5EE text2 CODE >195:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5F3 text2 CODE >197:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5FB text2 CODE >198:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-601 text2 CODE >199:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-703 text1 CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-703 text1 CODE >99:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-706 text1 CODE >100:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-709 text1 CODE >101:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-70A text1 CODE >102:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-70C text1 CODE >103:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-70E text1 CODE >113:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4D1 maintext CODE >203:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4D1 maintext CODE >204:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4D4 maintext CODE >205:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4D6 maintext CODE >206:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4D8 maintext CODE >207:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4DB maintext CODE >208:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4DD maintext CODE >209:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4DF maintext CODE >210:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4E0 maintext CODE >211:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4E1 maintext CODE >212:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4E6 maintext CODE >213:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4E8 maintext CODE >214:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4EA maintext CODE >215:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4ED maintext CODE >216:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4EF maintext CODE >217:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4F1 maintext CODE >218:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4F2 maintext CODE >220:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4F2 maintext CODE >222:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-502 maintext CODE >224:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-508 maintext CODE >225:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-511 maintext CODE >222:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-523 maintext CODE >227:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-533 maintext CODE >229:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-539 maintext CODE >230:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-542 maintext CODE >227:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4F cinit CODE >386:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+4F cinit CODE >389:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+4F cinit CODE >434:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+50 cinit CODE >439:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+51 cinit CODE >435:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+52 cinit CODE >440:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+53 cinit CODE >441:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+54 cinit CODE >442:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+55 cinit CODE >443:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+56 cinit CODE >444:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+57 cinit CODE >450:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+57 cinit CODE >452:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+58 cinit CODE >453:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+59 cinit CODE >454:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+4 intentry CODE >54:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+6 intentry CODE >56:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+B intentry CODE >58:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+C intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+10 intentry CODE >60:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+14 intentry CODE >62:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+18 intentry CODE >64:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1A intentry CODE >65:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1B intentry CODE >67:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1E intentry CODE >69:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1F intentry CODE >70:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+20 intentry CODE >42:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+36 intentry CODE >72:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+38 intentry CODE >73:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B intentry CODE >75:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+48 intentry CODE >77:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+49 intentry CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4B intentry CODE >79:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4C intentry CODE >81:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4E0 text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E0 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E2 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E6 text19 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E7 text19 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E7 text19 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4E8 text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4EA text19 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4EC text19 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4ED text19 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4EF text19 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4F7 text19 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4FB text19 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4FC text19 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+4FE text19 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+500 text19 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+504 text19 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
+56F text18 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+56F text18 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+571 text18 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+573 text18 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+577 text18 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+579 text18 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+57B text18 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+57F text18 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+583 text18 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+505 text16 CODE >122:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+505 text16 CODE >124:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+510 text16 CODE >125:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+51C text16 CODE >126:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+523 text16 CODE >129:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+55A text15 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+55A text15 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+55C text15 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+55E text15 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+562 text15 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+564 text15 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+566 text15 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+56A text15 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+56E text15 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
+453 text14 CODE >131:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+453 text14 CODE >133:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+457 text14 CODE >135:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+45C text14 CODE >137:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+468 text14 CODE >139:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+46A text14 CODE >140:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+470 text14 CODE >142:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+473 text14 CODE >144:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+475 text14 CODE >145:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+482 text14 CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3D9 text13 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3D9 text13 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3E1 text13 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3E5 text13 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3E6 text13 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3E9 text13 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3EE text13 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3EF text13 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3F4 text13 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3F7 text13 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+3FC text13 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+400 text13 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+401 text13 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+404 text13 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+406 text13 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+407 text13 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+408 text13 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+409 text13 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+413 text13 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+415 text13 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+416 text13 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+53F text12 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+53F text12 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+540 text12 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+542 text12 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+547 text12 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+549 text12 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+559 text12 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\awtoft.c
+2C8 text11 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2C8 text11 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2D5 text11 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2D9 text11 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2E6 text11 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2EA text11 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2EB text11 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2EE text11 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F1 text11 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F3 text11 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F5 text11 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F7 text11 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F8 text11 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2F9 text11 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2FA text11 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2FB text11 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2FC text11 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+2FD text11 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+300 text11 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+30C text11 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+312 text11 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+313 text11 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+316 text11 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+318 text11 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+329 text11 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftdiv.c
+4B4 text10 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4B4 text10 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4B6 text10 CODE >7:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4C3 text10 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4C5 text10 CODE >9:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4D2 text10 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4D4 text10 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+4D5 text10 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftge.c
+25E text9 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+25E text9 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+26B text9 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+26F text9 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+27C text9 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+280 text9 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+283 text9 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+285 text9 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+287 text9 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+289 text9 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+28A text9 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+28B text9 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+28C text9 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+28E text9 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+28F text9 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+290 text9 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+293 text9 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+294 text9 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+296 text9 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+29C text9 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+29F text9 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2A2 text9 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2A4 text9 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2A6 text9 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2A8 text9 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2AE text9 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2B1 text9 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2B4 text9 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2B6 text9 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+2C7 text9 CODE >157:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftmul.c
+1AA text8 CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1AA text8 CODE >90:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1B4 text8 CODE >91:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1BE text8 CODE >92:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1CD text8 CODE >93:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1D4 text8 CODE >94:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E3 text8 CODE >96:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E5 text8 CODE >97:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E6 text8 CODE >98:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E7 text8 CODE >99:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E8 text8 CODE >100:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1E9 text8 CODE >101:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1EA text8 CODE >102:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1EB text8 CODE >103:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1EC text8 CODE >104:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1ED text8 CODE >106:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1F1 text8 CODE >110:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1F4 text8 CODE >111:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1F5 text8 CODE >112:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+1FF text8 CODE >114:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+202 text8 CODE >115:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+203 text8 CODE >113:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+208 text8 CODE >117:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+20C text8 CODE >121:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+20F text8 CODE >122:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+210 text8 CODE >123:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+21A text8 CODE >125:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+21D text8 CODE >126:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+21E text8 CODE >124:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+222 text8 CODE >129:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+224 text8 CODE >131:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+228 text8 CODE >132:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+22D text8 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+22F text8 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+233 text8 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+238 text8 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+239 text8 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+23F text8 CODE >141:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+241 text8 CODE >142:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+245 text8 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+24A text8 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+24C text8 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+25D text8 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+524 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+524 text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+529 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+52B text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+53E text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftsub.c
+32A text6 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+32A text6 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+337 text6 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+33C text6 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+34A text6 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+34B text6 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+34C text6 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+352 text6 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+353 text6 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+354 text6 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+355 text6 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+357 text6 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+35C text6 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+360 text6 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+363 text6 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+367 text6 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+36A text6 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+36E text6 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+36F text6 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+370 text6 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+373 text6 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+37E text6 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+386 text6 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
+5A text5 CODE >150:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A text5 CODE >152:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A text5 CODE >153:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5D text5 CODE >154:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+67 text5 CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+6B text5 CODE >156:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+7A text5 CODE >46:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+8D text5 CODE >158:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+AB text5 CODE >48:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+D0 text5 CODE >47:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+109 text5 CODE >161:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+114 text5 CODE >162:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+124 text5 CODE >164:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+12A text5 CODE >166:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+136 text5 CODE >168:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+139 text5 CODE >170:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+166 text5 CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+171 text5 CODE >173:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+17E text5 CODE >175:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+181 text5 CODE >178:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+18D text5 CODE >180:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+19A text5 CODE >182:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+19D text5 CODE >185:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+387 text4 CODE >188:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+387 text4 CODE >190:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+398 text4 CODE >191:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B4 text4 CODE >193:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B6 text4 CODE >194:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B6 text4 CODE >195:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B9 text4 CODE >199:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3BD text4 CODE >200:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3C6 text4 CODE >202:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3CB text4 CODE >204:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3D3 text4 CODE >205:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+594 text3 CODE >85:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+594 text3 CODE >106:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+597 text3 CODE >107:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59A text3 CODE >108:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59B text3 CODE >109:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59D text3 CODE >110:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59F text3 CODE >120:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+584 text2 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
+584 text2 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
+593 text2 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
+487 text1 CODE >208:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+487 text1 CODE >210:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4B3 text1 CODE >211:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+417 maintext CODE >215:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+417 maintext CODE >217:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41A maintext CODE >218:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41C maintext CODE >219:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41E maintext CODE >220:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+421 maintext CODE >221:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+423 maintext CODE >222:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+425 maintext CODE >223:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+426 maintext CODE >224:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+427 maintext CODE >225:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42A maintext CODE >226:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42C maintext CODE >227:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42E maintext CODE >228:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+431 maintext CODE >229:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+433 maintext CODE >230:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+435 maintext CODE >231:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+436 maintext CODE >245:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+43A maintext CODE >246:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+43F maintext CODE >248:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+444 maintext CODE >249:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+44D maintext CODE >246:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+44E maintext CODE >253:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A0 clrtext CODE >423:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A0 clrtext CODE >424:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A1 clrtext CODE >425:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A1 clrtext CODE >426:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A2 clrtext CODE >427:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A3 clrtext CODE >428:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A4 clrtext CODE >429:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+5A5 clrtext CODE >430:C:\Users\ciro_\AppData\Local\Temp\s9ps.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -426,96 +454,95 @@ __Hspace_1 371 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-calculate_pid@error 5F 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@exp 37 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___awtoft@sign 2E 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+calculate_pid@error 63 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@exp 38 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___awtoft@sign 2B 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _lasterror A0 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _T1CONbits 18 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-_kd E36 0 STRCODE 0 stringtext2 dist/default/production\MPLAB_XC8.production.obj
-_ki E30 0 STRCODE 0 stringtext1 dist/default/production\MPLAB_XC8.production.obj
-_kp E3C 0 STRCODE 0 stringtext3 dist/default/production\MPLAB_XC8.production.obj
-main@x AC 0 BANK1 1 cstackBANK1 dist/default/production\MPLAB_XC8.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _WPUA 20C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-_gear E42 0 STRCODE 0 stringtext4 dist/default/production\MPLAB_XC8.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
 _lset A6 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
-_main 9A2 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
+_main 82E 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 ___ftadd@f1 49 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftadd@f2 4C 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-start 96 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\sf50.obj
+start 9C 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___ftdiv 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-__size_of___ftneg 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+__size_of___ftsub 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___fttol 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___lwdiv 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-?___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+?___wmul 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@f1 2C 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@f2 29 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@f3 34 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@f1 2E 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@f2 2B 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@f3 35 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
-___ftge@ff1 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftge@ff2 24 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\sf50.obj
+___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_M_control D42 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
-___ftmul@f1 39 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftmul@f2 3C 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftneg@f1 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+__end_of_M_control 90E 0 CODE 0 text14 dist/default/production\MPLAB_XC8.production.obj
+___ftmul@f1 3A 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftmul@f2 3D 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __size_of_M_control 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___awtoft 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _CCPR1L 291 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-M_control@ctr 2F 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-__end_of___ftge C7C 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
-__end_of___wmul E06 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
-_M_control CE4 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
-___fttol@f1 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+M_control@ctr 56 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+__Hpa_nodes0 0 0 ABS 0 pa_nodes0 -
+__end_of___ftge 9C0 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
+__end_of___wmul ADE 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
+_M_control 8A6 0 CODE 0 text14 dist/default/production\MPLAB_XC8.production.obj
+___ftsub@f1 58 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftsub@f2 55 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___fttol@f1 49 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
 __size_of___ftpack 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-__end_of___ftadd 5DE 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
-__end_of___ftdiv 894 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
-__end_of___ftmul 744 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
-__end_of___ftneg E30 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
-__end_of___fttol 9A2 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
-__end_of___lwdiv CE4 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
-calculate_pid@pid 62 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-calculate_pid@set 56 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-_calculate_pid BC 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
+__end_of___ftadd 4BC 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
+__end_of___ftdiv 654 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
+__end_of___ftmul 590 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
+__end_of___ftsub A7E 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
+__end_of___fttol 70E 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
+__end_of___lwdiv A0A 0 CODE 0 text19 dist/default/production\MPLAB_XC8.production.obj
+calculate_pid@pid 66 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+calculate_pid@set 5B 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+_calculate_pid B4 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
 _INTCON B 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+__size_ofi1___wmul 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+__Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
 ___lwdiv@quotient 7B 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+__size_of___lwtoft 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-start_initialization 98 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
+start_initialization 9E 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _APFCONbits 11D 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___awtoft D8E 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
-__end_of_kd E3C 0 STRCODE 0 stringtext2 dist/default/production\MPLAB_XC8.production.obj
-__end_of_ki E36 0 STRCODE 0 stringtext1 dist/default/production\MPLAB_XC8.production.obj
-__end_of_kp E42 0 STRCODE 0 stringtext3 dist/default/production\MPLAB_XC8.production.obj
-__end_of___awtoft DD0 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
+___awtoft A7E 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
+__end_of___awtoft AB4 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
+clear_ram0 B40 0 CODE 0 clrtext dist/default/production\MPLAB_XC8.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-__pcstackBANK1 AC 0 BANK1 1 cstackBANK1 dist/default/production\MPLAB_XC8.production.obj
-___fttol@exp1 2E 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___fttol@lval 2A 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftpack A90 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
-___ftpack@arg 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftpack@exp 24 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-__end_of___ftpack B5A 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
+___fttol@exp1 55 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___fttol@lval 51 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftpack 7B2 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
+___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+i1___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+i1___wmul ADE 0 CODE 0 text18 dist/default/production\MPLAB_XC8.production.obj
+__end_of___ftpack 82E 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -526,7 +553,8 @@ __Hbank6 0 0 BANK6 1 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit BC 0 CODE 0 cinit -
+__Hcinit B4 0 CODE 0 cinit -
+i1___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
@@ -551,7 +579,7 @@ __Hsfr29 0 0 ABS 0 sfr29 -
 __Hsfr30 0 0 ABS 0 sfr30 -
 __Hsfr31 0 0 ABS 0 sfr31 -
 __Hstack 0 0 STACK 2 stack -
-___lwdiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+___lwdiv@counter 7A 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 __Hbank10 0 0 BANK10 1 bank10 -
 __Hbank11 0 0 BANK11 1 bank11 -
 __Hbank12 0 0 BANK12 1 bank12 -
@@ -579,6 +607,8 @@ __Hmaintext 0 0 ABS 0 maintext -
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
+___lwtoft B08 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
+__end_ofi1___wmul B08 0 CODE 0 text18 dist/default/production\MPLAB_XC8.production.obj
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 BANK2 1 bank2 -
@@ -589,11 +619,11 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit 98 0 CODE 0 cinit -
+__Lcinit 9E 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
-___ftadd@exp1 55 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftadd@exp2 54 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftadd@sign 53 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftadd@exp1 54 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftadd@exp2 53 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftadd@sign 52 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
 __Lsfr12 0 0 ABS 0 sfr12 -
@@ -617,11 +647,12 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
+__end_of___lwtoft B28 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
 __size_of_calculate_pid 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _INTCONbits B 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 96 0 CODE 0 init -
+__Hinit 9C 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -635,7 +666,7 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 96 0 CODE 0 init -
+__Linit 9C 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -647,61 +678,59 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 E30 0 STRCODE 0 stringtext1 dist/default/production\MPLAB_XC8.production.obj
-__pstringtext2 E36 0 STRCODE 0 stringtext2 dist/default/production\MPLAB_XC8.production.obj
-__pstringtext3 E3C 0 STRCODE 0 stringtext3 dist/default/production\MPLAB_XC8.production.obj
-__pstringtext4 E42 0 STRCODE 0 stringtext4 dist/default/production\MPLAB_XC8.production.obj
-___ftge C04 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
-___wmul DD0 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
+__pstringtext1 B4C 0 STRCODE 0 stringtext1 dist/default/production\MPLAB_XC8.production.obj
+___ftge 968 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
+___wmul AB4 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
 int$flags 7E 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_PID B5A 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
+_PID 70E 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
 _PR2 1B 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 B0 0 ABS 0 - -
+__S1 AE 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _isr 8 0 CODE 0 intentry dist/default/production\MPLAB_XC8.production.obj
-_rpm AA 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
+_rpm A8 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
 __pbitbssBANK0 370 -302 BANK0 1 bitbssBANK0 dist/default/production\MPLAB_XC8.production.obj
 _accumulator A3 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
+i1___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+auto_stop@distance 56 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-_calculate_pid$763 5A 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___awtoft@c 29 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-_PWM_set_duty D42 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
-__end_of_calculate_pid 3F4 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
-__end_of_PID C04 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
-__end_of_isr 96 0 CODE 0 intentry dist/default/production\MPLAB_XC8.production.obj
+_calculate_pid$766 5E 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___awtoft@c 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+_PWM_set_duty A0A 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
+__end_of_calculate_pid 354 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
+__end_of_PID 7B2 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
+__end_of_isr 9C 0 CODE 0 intentry dist/default/production\MPLAB_XC8.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\sf50.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
 __size_of___ftge 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
 __Lstringtext1 0 0 ABS 0 stringtext1 -
-__Lstringtext2 0 0 ABS 0 stringtext2 -
-__Lstringtext3 0 0 ABS 0 stringtext3 -
-__Lstringtext4 0 0 ABS 0 stringtext4 -
-?___awtoft 29 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___awtoft 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 _IOCAFbits 393 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _IOCANbits 392 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _PIE1bits 91 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __LbitbssBANK0 0 0 ABS 0 bitbssBANK0 -
-calculate_pid@rpm2 5D 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-__ptext10 D8E 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
-__ptext11 A90 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
-__ptext12 CE4 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
-__ptext13 D42 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
-__ptext15 DD0 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
-__ptext16 C7C 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
-___ftadd 3F4 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
-___ftdiv 744 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
-___ftmul 5DE 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
-___ftneg E1E 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
-___fttol 894 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
-___lwdiv C7C 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
+calculate_pid@rpm2 61 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+__ptext10 968 0 CODE 0 text10 dist/default/production\MPLAB_XC8.production.obj
+__ptext11 590 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
+__ptext12 A7E 0 CODE 0 text12 dist/default/production\MPLAB_XC8.production.obj
+__ptext13 7B2 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
+__ptext14 8A6 0 CODE 0 text14 dist/default/production\MPLAB_XC8.production.obj
+__ptext15 AB4 0 CODE 0 text15 dist/default/production\MPLAB_XC8.production.obj
+__ptext16 A0A 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
+__ptext18 ADE 0 CODE 0 text18 dist/default/production\MPLAB_XC8.production.obj
+__ptext19 9C0 0 CODE 0 text19 dist/default/production\MPLAB_XC8.production.obj
+___ftadd 354 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv 590 0 CODE 0 text11 dist/default/production\MPLAB_XC8.production.obj
+___ftmul 4BC 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
+___ftsub A48 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
+___fttol 654 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
+___lwdiv 9C0 0 CODE 0 text19 dist/default/production\MPLAB_XC8.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __Lbank11 0 0 BANK11 1 bank11 -
 __Lbank12 0 0 BANK12 1 bank12 -
@@ -724,23 +753,27 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 9A2 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
+__pmaintext 82E 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of_PWM_set_duty 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
-?___ftpack 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___ftpack 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___wmul@multiplier 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 _LATAbits 10C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 ___lwdiv@divisor 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
-main@x_369 AE 0 BANK1 1 cstackBANK1 dist/default/production\MPLAB_XC8.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-stacklo 2060 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\sf50.obj
-__end_of_PWM_set_duty D8E 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
+?i1___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
+___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+stackhi 206F 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+stacklo 205E 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+__end_of_auto_stop 968 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
+__end_of_PWM_set_duty A48 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
+?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+__size_of_auto_stop 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
@@ -748,75 +781,73 @@ __Lspace_3 0 0 ABS 0 - -
 ___ftmul@cntr 47 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftmul@sign 48 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
-__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
 _PIR1bits 11 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-__Lend_init 96 0 CODE 0 end_init -
+__Lend_init 9C 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization B6 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
-__Hintentry 96 0 CODE 0 intentry -
+end_of_initialization AE 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
+__Hintentry 9C 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+_auto_stop 90E 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
 __Lstrings 0 0 ABS 0 strings -
 ___lwdiv@dividend 78 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 ?___ftadd 49 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-?___ftdiv 29 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-?___ftmul 39 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-?___ftneg 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-?___fttol 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___ftdiv 2B 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___ftmul 3A 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___ftsub 55 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+?___fttol 49 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ?___lwdiv 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
-PID@set 65 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+PID@set 69 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __HbssBANK1 0 0 ABS 0 bssBANK1 -
 __size_of_PWM_Init 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _zero_cross 370 -302 BANK0 1 bitbssBANK0 dist/default/production\MPLAB_XC8.production.obj
-__ptext1 E06 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
-__ptext2 B5A 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
-__ptext3 BC 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
-__ptext4 894 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
-__ptext5 E1E 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
-__ptext6 5DE 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
-__ptext7 C04 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
-__ptext8 744 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
-__ptext9 3F4 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
+__ptext1 90E 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
+__ptext2 B08 0 CODE 0 text2 dist/default/production\MPLAB_XC8.production.obj
+__ptext3 B28 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
+__ptext4 70E 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
+__ptext5 B4 0 CODE 0 text5 dist/default/production\MPLAB_XC8.production.obj
+__ptext6 654 0 CODE 0 text6 dist/default/production\MPLAB_XC8.production.obj
+__ptext7 A48 0 CODE 0 text7 dist/default/production\MPLAB_XC8.production.obj
+__ptext8 354 0 CODE 0 text8 dist/default/production\MPLAB_XC8.production.obj
+__ptext9 4BC 0 CODE 0 text9 dist/default/production\MPLAB_XC8.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
-__Hstringtext2 0 0 ABS 0 stringtext2 -
-__Hstringtext3 0 0 ABS 0 stringtext3 -
-__Hstringtext4 0 0 ABS 0 stringtext4 -
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __HbitbssBANK0 0 0 ABS 0 bitbssBANK0 -
 ___ftmul@exp 43 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-__end_of__initialization B6 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
+__end_of__initialization AE 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-___ftpack@sign 25 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftpack@sign 24 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@cntr 33 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-___ftdiv@sign 38 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-_PWM_Init E06 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
-__Hend_init 98 0 CODE 0 end_init -
-__end_of_gear E46 0 STRCODE 0 stringtext4 dist/default/production\MPLAB_XC8.production.obj
-__end_of_main A90 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@cntr 34 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___ftdiv@sign 39 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+_PWM_Init B28 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
+__Hend_init 9E 0 CODE 0 end_init -
+__end_of_gear B50 0 STRCODE 0 stringtext1 dist/default/production\MPLAB_XC8.production.obj
+__end_of_main 8A6 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
 _T1CON 18 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _T2CON 1C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-__end_of_PWM_Init E1E 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
+__end_of_PWM_Init B40 0 CODE 0 text3 dist/default/production\MPLAB_XC8.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
+_steps AA 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
 _CCP1CON 293 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\MPLAB_XC8.production.obj
-___fttol@sign1 29 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+___fttol@sign1 50 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 __size_of_PID 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of_isr 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-__initialization 98 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
+__initialization 9E 0 CODE 0 cinit dist/default/production\MPLAB_XC8.production.obj
 __pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-_counter A8 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
-___wmul@product 74 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
-PWM_set_duty@duty 21 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+_counter AC 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
+___wmul@product 24 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
+PWM_set_duty@duty 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftmul@f3_as_product 44 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
@@ -843,10 +874,10 @@ ___ftmul@f3_as_product 44 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cstackCOMMON 1 70 70 E 1
+cstackCOMMON 1 70 70 D 1
 cstackBANK0 1 20 20 4F 1
-stringtext1 0 718 E30 B 2
-intentry 0 4 8 714 2
+stringtext1 0 5A6 B4C 2 2
+intentry 0 4 8 5A2 2
 reset_vec 0 0 0 1 2
-bssBANK1 1 A0 A0 10 1
+bssBANK1 1 A0 A0 E 1
 config 0 8007 1000E 2 2
