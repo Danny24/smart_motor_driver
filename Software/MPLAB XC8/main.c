@@ -49,6 +49,7 @@ const float ki = 0.04; //0.1
 float accumulator = 0;
 float lasterror = 0;
 
+
 // Interrupts
 
 void __interrupt isr() 
@@ -229,7 +230,7 @@ void main()
     PIE1bits.TMR1IE = 1; //enable timer1 interrupt
     T1CONbits.TMR1ON = 1; //start timer1
     INTCONbits.GIE = 1; //run interrupts
-
+    
 /*
         for (int x = 0; x < 1000; x++)
         {

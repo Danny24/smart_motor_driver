@@ -3044,156 +3044,103 @@ extern unsigned char __resetbits;
 extern __bit __powerdown;
 extern __bit __timeout;
 
-# 39 "main.c"
-unsigned short counter = 0;
-unsigned int steps = 0;
-unsigned short diameter = 42;
-const unsigned short gear = 150;
-int rpm = 0;
-int lset = 0;
-bit zero_cross = 0;
-const float kp = 0.1;
-const float kd = 0.01;
-const float ki = 0.04;
-float accumulator = 0;
-float lasterror = 0;
+# 38 "main.c"
+volatile union _i2c_buffer
+{
+struct _data
+{
+float m_kp;
+float m_kd;
+float m_ki;
+float d_kp;
+float d_kd;
+float d_ki;
+int rpm;
+int speed;
+short long distance;
+unsigned char diameter;
+unsigned int gear;
+unsigned char address;
+unsigned char ID;
+unsigned char start;
+unsigned char mode;
 
 
+} data;
+unsigned char b[];
+} i2c_buffer;
 
+# 78
+unsigned char first = 1;
+unsigned char index_i2c = 0;
 
+volatile unsigned char I2C_Array[32] =
+{'H','a','c','k','a','d','a','y',' ','P','r','i','z','e',' ','2','0','1','8',' ','R','o','b','o','t','i','c','s',' ',':',')',' '};
+
+# 88
 void __interrupt isr()
 {
-if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
+static unsigned char junk = 0;
+
+if (PIR1bits.SSP1IF)
 {
-INTCONbits.IOCIE = 0;
-counter++;
-if (steps > 0)
+if (SSP1STATbits.R_nW)
 {
-steps--;
-}
-IOCAFbits.IOCAF4 = 0;
-INTCONbits.IOCIE = 1;
-}
-if (PIR1bits.TMR1IF == 1)
+if (!SSP1STATbits.D_nA)
 {
-INTCONbits.IOCIE = 0;
-T1CONbits.TMR1ON = 0;
-rpm = (counter * 300) / gear;
-counter = 0;
-if (LATAbits.LATA0 == 0)
+SSP1BUF = I2C_Array[index_i2c++];
+SSP1CON1bits.CKP = 1;
+}
+if (SSP1STATbits.D_nA)
 {
-rpm = rpm *-1;
-}
-INTCONbits.IOCIE = 1;
-PIR1bits.TMR1IF = 0;
-T1CONbits.TMR1ON = 1;
-}
+SSP1BUF = I2C_Array[index_i2c++];
+SSP1CON1bits.CKP = 1;
 }
 
-
-
-PWM_Init(void)
+}
+if (!SSP1STATbits.R_nW)
 {
-
-# 107
-PR2 = 0xFF;
-CCP1CON = 0b00001100;
-CCPR1L = 0b00000000;
-PIR1bits.TMR2IF = 0;
-T2CON = 0b00000100;
-
-# 121
+if (!SSP1STATbits.D_nA)
+{
+first = 1;
+junk = SSP1BUF;
+SSP1CON1bits.CKP = 1;
+}
+if (SSP1STATbits.D_nA)
+{
+if (first)
+{
+index_i2c = SSP1BUF;
+first = 0;
 }
 
-PWM_set_duty(int duty)
+else
 {
-if (duty < 1024) {
-CCPR1L = (0xFF & ((unsigned int) duty >> 2));
-CCP1CON = (0x0C | (0x30 & ((unsigned int) duty << 4)));
-
+if (index_i2c < 32)
+{
+I2C_Array[index_i2c++] = SSP1BUF;
+}
+else
+{
+junk = SSP1BUF;
 }
 }
-
-void M_control(int ctr)
+if (SSP1CON1bits.WCOL)
 {
-if (ctr == 0)
-{
-PWM_set_duty(ctr);
+SSP1CON1bits.WCOL = 0;
+junk = SSP1BUF;
 }
-if (ctr > 0)
-{
-LATAbits.LATA0 = 1;
-PWM_set_duty(ctr);
-}
-if (ctr < 0)
-{
-LATAbits.LATA0 = 0;
-ctr = ctr * -1;
-PWM_set_duty(ctr);
+SSP1CON1bits.CKP = 1;
 }
 }
-
-void calculate_pid(int set)
-{
-float error = 0;
-float pid = 0;
-int rpm2 = rpm + 600;
-set = set + 600;
-error = set - rpm2;
-pid = error*kp;
-accumulator += error;
-pid += ki*accumulator;
-pid += kd * (error - lasterror);
-lasterror = error;
-if (pid >= 2047)
-{
-pid = 2047;
 }
-if (pid <= 0)
+if (PIR2bits.BCL1IF)
 {
-pid = 0;
+junk = SSP1BUF;
+PIR2bits.BCL1IF = 0;
+SSP1CON1bits.CKP = 1;
 }
-pid = (-1023 + ((2046)*((pid) / (2047))));
-if (set < 600)
-{
-if (pid > 0)
-{
-pid = 0;
-}
-}
-if (set > 600)
-{
-if (pid < 0)
-{
-pid = 0;
-}
-}
-M_control((int) pid);
-}
-
-void PID(int set)
-{
-zero_cross = ((lset^set) < 0);
-if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
-{
-zero_cross = 0;
-}
-if (zero_cross == 1)
-{
-do
-{
-calculate_pid(0);
-_delay((unsigned long)((10)*(32000000/4000.0)));
-}
-while ((rpm != 0));
-}
-lset = set;
-calculate_pid(set);
-}
-
-void auto_stop(unsigned int distance)
-{
-steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diameter)));
+PIR1bits.SSP1IF = 0;
 }
 
 
@@ -3201,31 +3148,36 @@ steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diameter)))
 void main()
 {
 OSCCON = 0b11110000;
-TRISA = 0b00011000;
+TRISA = 0b00011110;
 ANSELA = 0b00000000;
 WPUA = 0b00011110;
 OPTION_REGbits.nWPUEN = 0;
 APFCONbits.CCP1SEL = 1;
 LATAbits.LATA0 = 0;
-PWM_Init();
-PWM_set_duty(0);
-IOCANbits.IOCAN4 = 1;
+SSP1STAT = 0b10000000;
+SSP1CON1 = 0b00110110;
+SSP1CON2bits.SEN = 1;
+SSP1CON3bits.BOEN = 1;
+SSP1CON3bits.SDAHT = 1;
+SSP1CON3bits.SBCDE = 1;
+SSP1ADD = 0x24 << 1;
+PIR1bits.SSP1IF = 0;
+PIR2bits.BCL1IF = 0;
+PIE2bits.BCL1IE = 1;
+PIE1bits.SSP1IE = 1;
+INTCONbits.PEIE = 1;
+
 INTCON = 0b01001000;
 T1CON = 0b00110100;
-PIE1bits.TMR1IE = 1;
-T1CONbits.TMR1ON = 1;
+
+
 INTCONbits.GIE = 1;
 
-# 246
-auto_stop(132);
-while(steps != 0)
-{
-PID(50);
-_delay((unsigned long)((10)*(32000000/4000.0)));
-}
+
 while(1)
 {
-M_control(0);
+
 }
+
 }
 

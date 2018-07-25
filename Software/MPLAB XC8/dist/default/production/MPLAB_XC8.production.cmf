@@ -39,7 +39,7 @@ bitbssBANK0 BANK0 1 370 6E 1 1
 intentry CODE 0 4 4 4A 2
 bssBANK1 BANK1 1 A0 A0 E 1
 clrtext CODE 0 5A0 5A0 6 2
-$C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+$C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 reset_vec CODE 0 0 0 1 2
 end_init CODE 0 4E 4E 1 2
 config CONFIG 0 8007 8007 2 2
@@ -114,39 +114,39 @@ STRING 5A8-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\MPLAB_XC8.production.obj
-4F cinit CODE >386:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-4F cinit CODE >389:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-4F cinit CODE >434:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-50 cinit CODE >439:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-51 cinit CODE >435:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-52 cinit CODE >440:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-53 cinit CODE >441:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-54 cinit CODE >442:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-55 cinit CODE >443:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-56 cinit CODE >444:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-57 cinit CODE >450:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-57 cinit CODE >452:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-58 cinit CODE >453:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-59 cinit CODE >454:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-4 intentry CODE >54:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6 intentry CODE >56:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-B intentry CODE >58:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-C intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-10 intentry CODE >60:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-14 intentry CODE >62:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-18 intentry CODE >64:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1A intentry CODE >65:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1B intentry CODE >67:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1E intentry CODE >69:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-1F intentry CODE >70:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4F cinit CODE >386:C:\Users\ciro_\AppData\Local\Temp\scvg.
+4F cinit CODE >389:C:\Users\ciro_\AppData\Local\Temp\scvg.
+4F cinit CODE >434:C:\Users\ciro_\AppData\Local\Temp\scvg.
+50 cinit CODE >439:C:\Users\ciro_\AppData\Local\Temp\scvg.
+51 cinit CODE >435:C:\Users\ciro_\AppData\Local\Temp\scvg.
+52 cinit CODE >440:C:\Users\ciro_\AppData\Local\Temp\scvg.
+53 cinit CODE >441:C:\Users\ciro_\AppData\Local\Temp\scvg.
+54 cinit CODE >442:C:\Users\ciro_\AppData\Local\Temp\scvg.
+55 cinit CODE >443:C:\Users\ciro_\AppData\Local\Temp\scvg.
+56 cinit CODE >444:C:\Users\ciro_\AppData\Local\Temp\scvg.
+57 cinit CODE >450:C:\Users\ciro_\AppData\Local\Temp\scvg.
+57 cinit CODE >452:C:\Users\ciro_\AppData\Local\Temp\scvg.
+58 cinit CODE >453:C:\Users\ciro_\AppData\Local\Temp\scvg.
+59 cinit CODE >454:C:\Users\ciro_\AppData\Local\Temp\scvg.
+4 intentry CODE >55:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+6 intentry CODE >57:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+B intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+C intentry CODE >60:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+10 intentry CODE >61:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+14 intentry CODE >63:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+18 intentry CODE >65:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1A intentry CODE >66:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1B intentry CODE >68:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1E intentry CODE >70:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+1F intentry CODE >71:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 20 intentry CODE >42:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-36 intentry CODE >72:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-38 intentry CODE >73:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3B intentry CODE >75:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-48 intentry CODE >77:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-49 intentry CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4B intentry CODE >79:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4C intentry CODE >81:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+36 intentry CODE >73:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+38 intentry CODE >74:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B intentry CODE >76:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+48 intentry CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+49 intentry CODE >79:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4B intentry CODE >80:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4C intentry CODE >82:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 4E0 text19 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
 4E0 text19 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
 4E2 text19 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwdiv.c
@@ -173,11 +173,11 @@ C intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB 
 57B text18 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 57F text18 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 583 text18 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-505 text16 CODE >122:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-505 text16 CODE >124:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-510 text16 CODE >125:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-51C text16 CODE >126:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-523 text16 CODE >129:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+505 text16 CODE >123:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+505 text16 CODE >125:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+510 text16 CODE >126:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+51C text16 CODE >127:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+523 text16 CODE >130:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 55A text15 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 55A text15 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 55C text15 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
@@ -187,16 +187,16 @@ C intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB 
 566 text15 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 56A text15 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 56E text15 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
-453 text14 CODE >131:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-453 text14 CODE >133:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-457 text14 CODE >135:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-45C text14 CODE >137:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-468 text14 CODE >139:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-46A text14 CODE >140:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-470 text14 CODE >142:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-473 text14 CODE >144:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-475 text14 CODE >145:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-482 text14 CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+453 text14 CODE >132:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+453 text14 CODE >134:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+457 text14 CODE >136:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+45C text14 CODE >138:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+468 text14 CODE >140:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+46A text14 CODE >141:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+470 text14 CODE >143:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+473 text14 CODE >145:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+475 text14 CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+482 text14 CODE >147:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 3D9 text13 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
 3D9 text13 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
 3E1 text13 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
@@ -359,83 +359,83 @@ C intentry CODE >59:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB 
 373 text6 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
 37E text6 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
 386 text6 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\fttol.c
-5A text5 CODE >150:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5A text5 CODE >152:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A text5 CODE >151:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 5A text5 CODE >153:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5D text5 CODE >154:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-67 text5 CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-6B text5 CODE >156:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A text5 CODE >154:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5D text5 CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+67 text5 CODE >156:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+6B text5 CODE >157:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 7A text5 CODE >46:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-8D text5 CODE >158:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+8D text5 CODE >159:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 AB text5 CODE >48:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 D0 text5 CODE >47:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-109 text5 CODE >161:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-114 text5 CODE >162:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-124 text5 CODE >164:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-12A text5 CODE >166:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-136 text5 CODE >168:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-139 text5 CODE >170:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-166 text5 CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-171 text5 CODE >173:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-17E text5 CODE >175:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-181 text5 CODE >178:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-18D text5 CODE >180:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-19A text5 CODE >182:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-19D text5 CODE >185:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-387 text4 CODE >188:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-387 text4 CODE >190:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-398 text4 CODE >191:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3B4 text4 CODE >193:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3B6 text4 CODE >194:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+109 text5 CODE >162:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+114 text5 CODE >163:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+124 text5 CODE >165:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+12A text5 CODE >167:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+136 text5 CODE >169:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+139 text5 CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+166 text5 CODE >172:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+171 text5 CODE >174:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+17E text5 CODE >176:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+181 text5 CODE >179:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+18D text5 CODE >181:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+19A text5 CODE >183:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+19D text5 CODE >186:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+387 text4 CODE >189:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+387 text4 CODE >191:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+398 text4 CODE >192:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B4 text4 CODE >194:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 3B6 text4 CODE >195:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3B9 text4 CODE >199:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3BD text4 CODE >200:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3C6 text4 CODE >202:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3CB text4 CODE >204:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-3D3 text4 CODE >205:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-594 text3 CODE >85:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-594 text3 CODE >106:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-597 text3 CODE >107:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-59A text3 CODE >108:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-59B text3 CODE >109:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-59D text3 CODE >110:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-59F text3 CODE >120:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B6 text4 CODE >196:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3B9 text4 CODE >200:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3BD text4 CODE >201:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3C6 text4 CODE >203:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3CB text4 CODE >205:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+3D3 text4 CODE >206:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+594 text3 CODE >86:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+594 text3 CODE >107:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+597 text3 CODE >108:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59A text3 CODE >109:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59B text3 CODE >110:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59D text3 CODE >111:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+59F text3 CODE >121:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 584 text2 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
 584 text2 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
 593 text2 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\lwtoft.c
-487 text1 CODE >208:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-487 text1 CODE >210:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-4B3 text1 CODE >211:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-417 maintext CODE >215:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-417 maintext CODE >217:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-41A maintext CODE >218:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-41C maintext CODE >219:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-41E maintext CODE >220:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-421 maintext CODE >221:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-423 maintext CODE >222:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-425 maintext CODE >223:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-426 maintext CODE >224:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-427 maintext CODE >225:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-42A maintext CODE >226:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-42C maintext CODE >227:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-42E maintext CODE >228:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-431 maintext CODE >229:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-433 maintext CODE >230:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-435 maintext CODE >231:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-436 maintext CODE >245:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-43A maintext CODE >246:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-43F maintext CODE >248:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-444 maintext CODE >249:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-44D maintext CODE >246:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-44E maintext CODE >253:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
-5A0 clrtext CODE >423:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A0 clrtext CODE >424:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A1 clrtext CODE >425:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A1 clrtext CODE >426:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A2 clrtext CODE >427:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A3 clrtext CODE >428:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A4 clrtext CODE >429:C:\Users\ciro_\AppData\Local\Temp\s9ps.
-5A5 clrtext CODE >430:C:\Users\ciro_\AppData\Local\Temp\s9ps.
+487 text1 CODE >209:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+487 text1 CODE >211:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+4B3 text1 CODE >212:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+417 maintext CODE >216:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+417 maintext CODE >218:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41A maintext CODE >219:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41C maintext CODE >220:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+41E maintext CODE >221:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+421 maintext CODE >222:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+423 maintext CODE >223:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+425 maintext CODE >224:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+426 maintext CODE >225:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+427 maintext CODE >226:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42A maintext CODE >227:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42C maintext CODE >228:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+42E maintext CODE >229:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+431 maintext CODE >230:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+433 maintext CODE >231:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+435 maintext CODE >232:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+436 maintext CODE >246:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+43A maintext CODE >247:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+43F maintext CODE >249:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+444 maintext CODE >250:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+44D maintext CODE >247:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+44E maintext CODE >254:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+5A0 clrtext CODE >423:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A0 clrtext CODE >424:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A1 clrtext CODE >425:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A1 clrtext CODE >426:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A2 clrtext CODE >427:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A3 clrtext CODE >428:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A4 clrtext CODE >429:C:\Users\ciro_\AppData\Local\Temp\scvg.
+5A5 clrtext CODE >430:C:\Users\ciro_\AppData\Local\Temp\scvg.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -463,13 +463,13 @@ __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 _T1CONbits 18 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _WPUA 20C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 _lset A6 0 BANK1 1 bssBANK1 dist/default/production\MPLAB_XC8.production.obj
 _main 82E 0 CODE 0 maintext dist/default/production\MPLAB_XC8.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 ___ftadd@f1 49 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftadd@f2 4C 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-start 9C 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+start 9C 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 __size_of___ftadd 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___ftdiv 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
@@ -485,12 +485,12 @@ ___ftdiv@f3 35 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.productio
 __Hpowerup 0 0 CODE 0 powerup -
 ___ftge@ff1 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftge@ff2 23 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 wtemp0 7E 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
@@ -540,7 +540,7 @@ ___ftpack 7B2 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
 ___ftpack@arg 20 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 ___ftpack@exp 23 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
 i1___wmul@multiplicand 72 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 i1___wmul ADE 0 CODE 0 text18 dist/default/production\MPLAB_XC8.production.obj
 __end_of___ftpack 82E 0 CODE 0 text13 dist/default/production\MPLAB_XC8.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
@@ -705,7 +705,7 @@ __end_of_PID 7B2 0 CODE 0 text4 dist/default/production\MPLAB_XC8.production.obj
 __end_of_isr 9C 0 CODE 0 intentry dist/default/production\MPLAB_XC8.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 __size_of___ftge 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
@@ -767,8 +767,8 @@ _LATAbits 10C 0 ABS 0 - dist/default/production\MPLAB_XC8.production.obj
 ___lwdiv@divisor 76 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 ?i1___wmul 70 0 COMMON 1 cstackCOMMON dist/default/production\MPLAB_XC8.production.obj
 ___lwtoft@c 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
-stacklo 205E 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+stackhi 206F 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\scvg.obj
+stacklo 205E 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\scvg.obj
 __end_of_auto_stop 968 0 CODE 0 text1 dist/default/production\MPLAB_XC8.production.obj
 __end_of_PWM_set_duty A48 0 CODE 0 text16 dist/default/production\MPLAB_XC8.production.obj
 ?___lwtoft 28 0 BANK0 1 cstackBANK0 dist/default/production\MPLAB_XC8.production.obj

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.43\dat\en_msgs.txt -cs \
   -h+dist/default/production\MPLAB_XC8.production.sym \
   --cmf=dist/default/production\MPLAB_XC8.production.cmf -z -Q12F1822 \
-  -oC:\Users\ciro_\AppData\Local\Temp\s9ps.2 \
+  -oC:\Users\ciro_\AppData\Local\Temp\scvg.2 \
   -Mdist/default/production/MPLAB_XC8.production.map -E1 -ver=XC8 \
   -ASTACK=0205Eh-0206fh -pstack=STACK -ACODE=00h-07FFh -ASTRCODE=00h-07FFh \
   -ASTRING=00h-0FFhx8 -ACONST=00h-0FFhx8 -AENTRY=00h-0FFhx8 \
@@ -26,7 +26,7 @@ Linker command line:
   -pfunctab=ENTRY -ACONFIG=08007h-08008h -pconfig=CONFIG -DCONFIG=2 \
   -AIDLOC=08000h-08003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-0FFh/0F000h \
   -peeprom_data=EEDATA -DEEDATA=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
-  -DENTRY=2 -k C:\Users\ciro_\AppData\Local\Temp\s9ps.obj \
+  -DENTRY=2 -k C:\Users\ciro_\AppData\Local\Temp\scvg.obj \
   dist/default/production\MPLAB_XC8.production.obj 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Machine type is 12F1822
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ciro_\AppData\Local\Temp\s9ps.obj
+C:\Users\ciro_\AppData\Local\Temp\scvg.obj
                 end_init                             4E       4E        1        8       0
                 reset_vec                             0        0        1        0       0
                 config                             8007     8007        2    1000E       0
@@ -732,7 +732,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 215 in file "main.c"
+		line 216 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -765,7 +765,7 @@ Total ram usage:        1 bytes
 
  *************** function _auto_stop *****************
  Defined at:
-		line 208 in file "main.c"
+		line 209 in file "main.c"
  Parameters:    Size  Location     Type
   distance        2   54[BANK0 ] unsigned int 
  Auto vars:     Size  Location     Type
@@ -828,7 +828,7 @@ Total ram usage:        3 bytes
 
  *************** function _PWM_Init *****************
  Defined at:
-		line 85 in file "main.c"
+		line 86 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -858,7 +858,7 @@ Total ram usage:        0 bytes
 
  *************** function _PID *****************
  Defined at:
-		line 188 in file "main.c"
+		line 189 in file "main.c"
  Parameters:    Size  Location     Type
   set             2   73[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -888,7 +888,7 @@ Total ram usage:        4 bytes
 
  *************** function _calculate_pid *****************
  Defined at:
-		line 150 in file "main.c"
+		line 151 in file "main.c"
  Parameters:    Size  Location     Type
   set             2   59[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -1192,7 +1192,7 @@ Total ram usage:        8 bytes
 
  *************** function _M_control *****************
  Defined at:
-		line 131 in file "main.c"
+		line 132 in file "main.c"
  Parameters:    Size  Location     Type
   ctr             2   54[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -1255,7 +1255,7 @@ Total ram usage:        6 bytes
 
  *************** function _PWM_set_duty *****************
  Defined at:
-		line 122 in file "main.c"
+		line 123 in file "main.c"
  Parameters:    Size  Location     Type
   duty            2    0[BANK0 ] int 
  Auto vars:     Size  Location     Type
@@ -1286,7 +1286,7 @@ Total ram usage:        4 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 54 in file "main.c"
+		line 55 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type

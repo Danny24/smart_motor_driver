@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC PRO Macro Assembler V1.43 build -156212558 
-                                                                                               Wed Jul 11 15:05:49 2018
+                                                                                               Wed Jul 25 12:46:57 2018
 
 Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 201707250354
      1                           	processor	12F1822
@@ -612,7 +612,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    598 ;;
    599 ;; *************** function _main *****************
    600 ;; Defined at:
-   601 ;;		line 215 in file "main.c"
+   601 ;;		line 216 in file "main.c"
    602 ;; Parameters:    Size  Location     Type
    603 ;;		None
    604 ;; Auto vars:     Size  Location     Type
@@ -647,7 +647,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    633                           ;psect for function _main
    634  0417                     _main:	
    635                           
-   636                           ;main.c: 217: OSCCON = 0b11110000;
+   636                           ;main.c: 218: OSCCON = 0b11110000;
    637                           
    638                           ;incstack = 0
    639                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
@@ -655,69 +655,69 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    641  0418  0021               	movlb	1	; select bank1
    642  0419  0099               	movwf	25	;volatile
    643                           
-   644                           ;main.c: 218: TRISA = 0b00011000;
+   644                           ;main.c: 219: TRISA = 0b00011000;
    645  041A  3018               	movlw	24
    646  041B  008C               	movwf	12	;volatile
    647                           
-   648                           ;main.c: 219: ANSELA = 0b00000000;
+   648                           ;main.c: 220: ANSELA = 0b00000000;
    649  041C  0023               	movlb	3	; select bank3
    650  041D  018C               	clrf	12	;volatile
    651                           
-   652                           ;main.c: 220: WPUA = 0b00011110;
+   652                           ;main.c: 221: WPUA = 0b00011110;
    653  041E  301E               	movlw	30
    654  041F  0024               	movlb	4	; select bank4
    655  0420  008C               	movwf	12	;volatile
    656                           
-   657                           ;main.c: 221: OPTION_REGbits.nWPUEN = 0;
+   657                           ;main.c: 222: OPTION_REGbits.nWPUEN = 0;
    658  0421  0021               	movlb	1	; select bank1
    659  0422  1395               	bcf	21,7	;volatile
    660                           
-   661                           ;main.c: 222: APFCONbits.CCP1SEL = 1;
+   661                           ;main.c: 223: APFCONbits.CCP1SEL = 1;
    662  0423  0022               	movlb	2	; select bank2
    663  0424  141D               	bsf	29,0	;volatile
    664                           
-   665                           ;main.c: 223: LATAbits.LATA0 = 0;
+   665                           ;main.c: 224: LATAbits.LATA0 = 0;
    666  0425  100C               	bcf	12,0	;volatile
    667                           
-   668                           ;main.c: 224: PWM_Init();
+   668                           ;main.c: 225: PWM_Init();
    669  0426  2594               	fcall	_PWM_Init
    670                           
-   671                           ;main.c: 225: PWM_set_duty(0);
+   671                           ;main.c: 226: PWM_set_duty(0);
    672  0427  01A0               	clrf	PWM_set_duty@duty
    673  0428  01A1               	clrf	PWM_set_duty@duty+1
    674  0429  2505               	fcall	_PWM_set_duty
    675                           
-   676                           ;main.c: 226: IOCANbits.IOCAN4 = 1;
+   676                           ;main.c: 227: IOCANbits.IOCAN4 = 1;
    677  042A  0027               	movlb	7	; select bank7
    678  042B  1612               	bsf	18,4	;volatile
    679                           
-   680                           ;main.c: 227: INTCON = 0b01001000;
+   680                           ;main.c: 228: INTCON = 0b01001000;
    681  042C  3048               	movlw	72
    682  042D  008B               	movwf	11	;volatile
    683                           
-   684                           ;main.c: 228: T1CON = 0b00110100;
+   684                           ;main.c: 229: T1CON = 0b00110100;
    685  042E  3034               	movlw	52
    686  042F  0020               	movlb	0	; select bank0
    687  0430  0098               	movwf	24	;volatile
    688                           
-   689                           ;main.c: 229: PIE1bits.TMR1IE = 1;
+   689                           ;main.c: 230: PIE1bits.TMR1IE = 1;
    690  0431  0021               	movlb	1	; select bank1
    691  0432  1411               	bsf	17,0	;volatile
    692                           
-   693                           ;main.c: 230: T1CONbits.TMR1ON = 1;
+   693                           ;main.c: 231: T1CONbits.TMR1ON = 1;
    694  0433  0020               	movlb	0	; select bank0
    695  0434  1418               	bsf	24,0	;volatile
    696                           
-   697                           ;main.c: 231: INTCONbits.GIE = 1;
+   697                           ;main.c: 232: INTCONbits.GIE = 1;
    698  0435  178B               	bsf	11,7	;volatile
    699                           
-   700                           ;main.c: 245: auto_stop(132);
+   700                           ;main.c: 246: auto_stop(132);
    701  0436  3084               	movlw	132
    702  0437  00D6               	movwf	auto_stop@distance
    703  0438  01D7               	clrf	auto_stop@distance+1
    704  0439  2487               	fcall	_auto_stop
    705  043A                     l2083:	
-   706                           ;main.c: 246: while(steps != 0)
+   706                           ;main.c: 247: while(steps != 0)
    707                           
    708  043A  0021               	movlb	1	; select bank1
    709  043B  082A               	movf	_steps^(0+128),w
@@ -725,15 +725,15 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    711  043D  1903               	btfsc	3,2
    712  043E  2C4E               	goto	l2085
    713                           
-   714                           ;main.c: 247: {
-   715                           ;main.c: 248: PID(50);
+   714                           ;main.c: 248: {
+   715                           ;main.c: 249: PID(50);
    716  043F  3032               	movlw	50
    717  0440  0020               	movlb	0	; select bank0
    718  0441  00E9               	movwf	PID@set
    719  0442  01EA               	clrf	PID@set+1
    720  0443  2387               	fcall	_PID
    721                           
-   722                           ;main.c: 249: _delay((unsigned long)((10)*(32000000/4000.0)));
+   722                           ;main.c: 250: _delay((unsigned long)((10)*(32000000/4000.0)));
    723  0444  3068               	movlw	104
    724  0445  0020               	movlb	0	; select bank0
    725  0446  00ED               	movwf	??_main
@@ -747,8 +747,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    733  044D  2C3A               	goto	l2083
    734  044E                     l2085:	
    735                           
-   736                           ;main.c: 252: {
-   737                           ;main.c: 253: M_control(0);
+   736                           ;main.c: 253: {
+   737                           ;main.c: 254: M_control(0);
    738  044E  0020               	movlb	0	; select bank0
    739  044F  01D6               	clrf	M_control@ctr
    740  0450  01D7               	clrf	M_control@ctr+1
@@ -760,7 +760,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    746  0487                     __ptext1:	
    747 ;; *************** function _auto_stop *****************
    748 ;; Defined at:
-   749 ;;		line 208 in file "main.c"
+   749 ;;		line 209 in file "main.c"
    750 ;; Parameters:    Size  Location     Type
    751 ;;  distance        2   54[BANK0 ] unsigned int 
    752 ;; Auto vars:     Size  Location     Type
@@ -795,7 +795,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    781                           ;psect for function _auto_stop
    782  0487                     _auto_stop:	
    783                           
-   784                           ;main.c: 210: steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diame
+   784                           ;main.c: 211: steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diame
       +                          ter)));
    785                           
    786                           ;incstack = 0
@@ -907,7 +907,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    892  0594                     __ptext3:	
    893 ;; *************** function _PWM_Init *****************
    894 ;; Defined at:
-   895 ;;		line 85 in file "main.c"
+   895 ;;		line 86 in file "main.c"
    896 ;; Parameters:    Size  Location     Type
    897 ;;		None
    898 ;; Auto vars:     Size  Location     Type
@@ -939,7 +939,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    924                           ;psect for function _PWM_Init
    925  0594                     _PWM_Init:	
    926                           
-   927                           ;main.c: 106: PR2 = 0xFF;
+   927                           ;main.c: 107: PR2 = 0xFF;
    928                           
    929                           ;incstack = 0
    930                           ; Regs used in _PWM_Init: [wreg+status,2]
@@ -947,19 +947,19 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    932  0595  0020               	movlb	0	; select bank0
    933  0596  009B               	movwf	27	;volatile
    934                           
-   935                           ;main.c: 107: CCP1CON = 0b00001100;
+   935                           ;main.c: 108: CCP1CON = 0b00001100;
    936  0597  300C               	movlw	12
    937  0598  0025               	movlb	5	; select bank5
    938  0599  0093               	movwf	19	;volatile
    939                           
-   940                           ;main.c: 108: CCPR1L = 0b00000000;
+   940                           ;main.c: 109: CCPR1L = 0b00000000;
    941  059A  0191               	clrf	17	;volatile
    942                           
-   943                           ;main.c: 109: PIR1bits.TMR2IF = 0;
+   943                           ;main.c: 110: PIR1bits.TMR2IF = 0;
    944  059B  0020               	movlb	0	; select bank0
    945  059C  1091               	bcf	17,1	;volatile
    946                           
-   947                           ;main.c: 110: T2CON = 0b00000100;
+   947                           ;main.c: 111: T2CON = 0b00000100;
    948  059D  3004               	movlw	4
    949  059E  009C               	movwf	28	;volatile
    950  059F  0008               	return
@@ -969,7 +969,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    954  0387                     __ptext4:	
    955 ;; *************** function _PID *****************
    956 ;; Defined at:
-   957 ;;		line 188 in file "main.c"
+   957 ;;		line 189 in file "main.c"
    958 ;; Parameters:    Size  Location     Type
    959 ;;  set             2   73[BANK0 ] int 
    960 ;; Auto vars:     Size  Location     Type
@@ -1001,7 +1001,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
    986                           ;psect for function _PID
    987  0387                     _PID:	
    988                           
-   989                           ;main.c: 190: zero_cross = ((lset^set) < 0);
+   989                           ;main.c: 191: zero_cross = ((lset^set) < 0);
    990                           
    991                           ;incstack = 0
    992                           ; Regs used in _PID: [wreg+status,2+status,0+pclath+cstack]
@@ -1025,7 +1025,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1010  0397  106E               	bcf	_zero_cross/(0+8),_zero_cross& (0+7)
   1011  0398                     u2264:	
   1012                           
-  1013                           ;main.c: 191: if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
+  1013                           ;main.c: 192: if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
   1014  0398  086A               	movf	PID@set+1,w
   1015  0399  3A80               	xorlw	128
   1016  039A  00EB               	movwf	??_PID
@@ -1057,27 +1057,27 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1042  03B2  1803               	skipnc
   1043  03B3  2BB6               	goto	l98
   1044                           
-  1045                           ;main.c: 192: {
-  1046                           ;main.c: 193: zero_cross = 0;
+  1045                           ;main.c: 193: {
+  1046                           ;main.c: 194: zero_cross = 0;
   1047  03B4  0020               	movlb	0	; select bank0
   1048  03B5  106E               	bcf	_zero_cross/(0+8),_zero_cross& (0+7)
   1049  03B6                     l98:	
   1050                           
-  1051                           ;main.c: 194: }
-  1052                           ;main.c: 195: if (zero_cross == 1)
+  1051                           ;main.c: 195: }
+  1052                           ;main.c: 196: if (zero_cross == 1)
   1053  03B6  0020               	movlb	0	; select bank0
   1054  03B7  1C6E               	btfss	_zero_cross/(0+8),_zero_cross& (0+7)
   1055  03B8  2BCB               	goto	l1967
   1056  03B9                     l1961:	
   1057                           
-  1058                           ;main.c: 198: {
-  1059                           ;main.c: 199: calculate_pid(0);
+  1058                           ;main.c: 199: {
+  1059                           ;main.c: 200: calculate_pid(0);
   1060  03B9  0020               	movlb	0	; select bank0
   1061  03BA  01DB               	clrf	calculate_pid@set
   1062  03BB  01DC               	clrf	calculate_pid@set+1
   1063  03BC  205A               	fcall	_calculate_pid
   1064                           
-  1065                           ;main.c: 200: _delay((unsigned long)((10)*(32000000/4000.0)));
+  1065                           ;main.c: 201: _delay((unsigned long)((10)*(32000000/4000.0)));
   1066  03BD  3068               	movlw	104
   1067  03BE  0020               	movlb	0	; select bank0
   1068  03BF  00EB               	movwf	??_PID
@@ -1089,8 +1089,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1074  03C4  2BC1               	goto	u2457
   1075  03C5  0000               	nop
   1076                           
-  1077                           ;main.c: 201: }
-  1078                           ;main.c: 202: while ((rpm != 0));
+  1077                           ;main.c: 202: }
+  1078                           ;main.c: 203: while ((rpm != 0));
   1079  03C6  0021               	movlb	1	; select bank1
   1080  03C7  0828               	movf	_rpm^(0+128),w
   1081  03C8  0429               	iorwf	(_rpm+1)^(0+128),w
@@ -1098,8 +1098,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1083  03CA  2BB9               	goto	l1961
   1084  03CB                     l1967:	
   1085                           
-  1086                           ;main.c: 203: }
-  1087                           ;main.c: 204: lset = set;
+  1086                           ;main.c: 204: }
+  1087                           ;main.c: 205: lset = set;
   1088  03CB  0020               	movlb	0	; select bank0
   1089  03CC  086A               	movf	PID@set+1,w
   1090  03CD  0021               	movlb	1	; select bank1
@@ -1109,7 +1109,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1094  03D1  0021               	movlb	1	; select bank1
   1095  03D2  00A6               	movwf	_lset^(0+128)
   1096                           
-  1097                           ;main.c: 205: calculate_pid(set);
+  1097                           ;main.c: 206: calculate_pid(set);
   1098  03D3  0020               	movlb	0	; select bank0
   1099  03D4  086A               	movf	PID@set+1,w
   1100  03D5  00DC               	movwf	calculate_pid@set+1
@@ -1122,7 +1122,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1107  005A                     __ptext5:	
   1108 ;; *************** function _calculate_pid *****************
   1109 ;; Defined at:
-  1110 ;;		line 150 in file "main.c"
+  1110 ;;		line 151 in file "main.c"
   1111 ;; Parameters:    Size  Location     Type
   1112 ;;  set             2   59[BANK0 ] int 
   1113 ;; Auto vars:     Size  Location     Type
@@ -1167,12 +1167,12 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1152                           ; Regs used in _calculate_pid: [wreg+status,2+status,0+pclath+cstack]
   1153                           
   1154                           
-  1155                           ;main.c: 153: float pid = 0;
+  1155                           ;main.c: 154: float pid = 0;
   1156  005A  01E6               	clrf	calculate_pid@pid
   1157  005B  01E7               	clrf	calculate_pid@pid+1
   1158  005C  01E8               	clrf	calculate_pid@pid+2
   1159                           
-  1160                           ;main.c: 154: int rpm2 = rpm + 600;
+  1160                           ;main.c: 155: int rpm2 = rpm + 600;
   1161  005D  0021               	movlb	1	; select bank1
   1162  005E  0828               	movf	_rpm^(0+128),w
   1163  005F  3E58               	addlw	88
@@ -1184,13 +1184,13 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1169  0065  0020               	movlb	0	; select bank0
   1170  0066  00E2               	movwf	calculate_pid@rpm2+1
   1171                           
-  1172                           ;main.c: 155: set = set + 600;
+  1172                           ;main.c: 156: set = set + 600;
   1173  0067  3058               	movlw	88
   1174  0068  07DB               	addwf	calculate_pid@set,f
   1175  0069  3002               	movlw	2
   1176  006A  3DDC               	addwfc	calculate_pid@set+1,f
   1177                           
-  1178                           ;main.c: 156: error = set - rpm2;
+  1178                           ;main.c: 157: error = set - rpm2;
   1179  006B  085C               	movf	calculate_pid@set+1,w
   1180  006C  00A9               	movwf	___awtoft@c+1
   1181  006D  085B               	movf	calculate_pid@set,w
@@ -1207,7 +1207,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1192  0078  082A               	movf	?___awtoft+2,w
   1193  0079  00E5               	movwf	calculate_pid@error+2
   1194                           
-  1195                           ;main.c: 157: pid = error*kp;
+  1195                           ;main.c: 158: pid = error*kp;
   1196  007A  30CD               	movlw	205
   1197  007B  00BA               	movwf	___ftmul@f1
   1198  007C  30CC               	movlw	204
@@ -1228,7 +1228,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1213  008B  083C               	movf	?___ftmul+2,w
   1214  008C  00E8               	movwf	calculate_pid@pid+2
   1215                           
-  1216                           ;main.c: 158: accumulator += error;
+  1216                           ;main.c: 159: accumulator += error;
   1217  008D  0863               	movf	calculate_pid@error,w
   1218  008E  00C9               	movwf	___ftadd@f1
   1219  008F  0864               	movf	calculate_pid@error+1,w
@@ -1260,7 +1260,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1245  00A9  0021               	movlb	1	; select bank1
   1246  00AA  00A5               	movwf	(_accumulator+2)^(0+128)
   1247                           
-  1248                           ;main.c: 159: pid += ki*accumulator;
+  1248                           ;main.c: 160: pid += ki*accumulator;
   1249  00AB  0823               	movf	_accumulator^(0+128),w
   1250  00AC  0020               	movlb	0	; select bank0
   1251  00AD  00BD               	movwf	___ftmul@f2
@@ -1299,7 +1299,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1284  00CE  084B               	movf	?___ftadd+2,w
   1285  00CF  00E8               	movwf	calculate_pid@pid+2
   1286                           
-  1287                           ;main.c: 160: pid += kd * (error - lasterror);
+  1287                           ;main.c: 161: pid += kd * (error - lasterror);
   1288  00D0  0863               	movf	calculate_pid@error,w
   1289  00D1  00D8               	movwf	___ftsub@f1
   1290  00D2  0864               	movf	calculate_pid@error+1,w
@@ -1339,7 +1339,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1324  00F4  083C               	movf	?___ftmul+2,w
   1325  00F5  00E0               	movwf	_calculate_pid$766+2
   1326                           
-  1327                           ;main.c: 160: pid += kd * (error - lasterror);
+  1327                           ;main.c: 161: pid += kd * (error - lasterror);
   1328  00F6  085E               	movf	_calculate_pid$766,w
   1329  00F7  00C9               	movwf	___ftadd@f1
   1330  00F8  085F               	movf	_calculate_pid$766+1,w
@@ -1360,7 +1360,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1345  0107  084B               	movf	?___ftadd+2,w
   1346  0108  00E8               	movwf	calculate_pid@pid+2
   1347                           
-  1348                           ;main.c: 161: lasterror = error;
+  1348                           ;main.c: 162: lasterror = error;
   1349  0109  0863               	movf	calculate_pid@error,w
   1350  010A  0021               	movlb	1	; select bank1
   1351  010B  00A0               	movwf	_lasterror^(0+128)
@@ -1373,7 +1373,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1358  0112  0021               	movlb	1	; select bank1
   1359  0113  00A2               	movwf	(_lasterror+2)^(0+128)
   1360                           
-  1361                           ;main.c: 162: if (pid >= 2047)
+  1361                           ;main.c: 163: if (pid >= 2047)
   1362  0114  0020               	movlb	0	; select bank0
   1363  0115  0866               	movf	calculate_pid@pid,w
   1364  0116  00A0               	movwf	___ftge@ff1
@@ -1391,8 +1391,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1376  0122  1C03               	btfss	3,0
   1377  0123  292A               	goto	l1929
   1378                           
-  1379                           ;main.c: 163: {
-  1380                           ;main.c: 164: pid = 2047;
+  1379                           ;main.c: 164: {
+  1380                           ;main.c: 165: pid = 2047;
   1381  0124  30E0               	movlw	224
   1382  0125  00E6               	movwf	calculate_pid@pid
   1383  0126  30FF               	movlw	255
@@ -1401,8 +1401,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1386  0129  00E8               	movwf	calculate_pid@pid+2
   1387  012A                     l1929:	
   1388                           
-  1389                           ;main.c: 165: }
-  1390                           ;main.c: 166: if (pid <= 0)
+  1389                           ;main.c: 166: }
+  1390                           ;main.c: 167: if (pid <= 0)
   1391  012A  01A0               	clrf	___ftge@ff1
   1392  012B  01A1               	clrf	___ftge@ff1+1
   1393  012C  01A2               	clrf	___ftge@ff1+2
@@ -1416,15 +1416,15 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1401  0134  1C03               	btfss	3,0
   1402  0135  2939               	goto	l1933
   1403                           
-  1404                           ;main.c: 167: {
-  1405                           ;main.c: 168: pid = 0;
+  1404                           ;main.c: 168: {
+  1405                           ;main.c: 169: pid = 0;
   1406  0136  01E6               	clrf	calculate_pid@pid
   1407  0137  01E7               	clrf	calculate_pid@pid+1
   1408  0138  01E8               	clrf	calculate_pid@pid+2
   1409  0139                     l1933:	
   1410                           
-  1411                           ;main.c: 169: }
-  1412                           ;main.c: 170: pid = (-1023 + ((2046)*((pid) / (2047))));
+  1411                           ;main.c: 170: }
+  1412                           ;main.c: 171: pid = (-1023 + ((2046)*((pid) / (2047))));
   1413  0139  30C0               	movlw	192
   1414  013A  00C9               	movwf	___ftadd@f1
   1415  013B  307F               	movlw	127
@@ -1471,7 +1471,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1456  0164  084B               	movf	?___ftadd+2,w
   1457  0165  00E8               	movwf	calculate_pid@pid+2
   1458                           
-  1459                           ;main.c: 171: if (set < 600)
+  1459                           ;main.c: 172: if (set < 600)
   1460  0166  085C               	movf	calculate_pid@set+1,w
   1461  0167  3A80               	xorlw	128
   1462  0168  00DD               	movwf	??_calculate_pid
@@ -1485,8 +1485,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1470  016F  1803               	skipnc
   1471  0170  2981               	goto	l1941
   1472                           
-  1473                           ;main.c: 172: {
-  1474                           ;main.c: 173: if (pid > 0)
+  1473                           ;main.c: 173: {
+  1474                           ;main.c: 174: if (pid > 0)
   1475  0171  0020               	movlb	0	; select bank0
   1476  0172  01A0               	clrf	___ftge@ff1
   1477  0173  01A1               	clrf	___ftge@ff1+1
@@ -1501,16 +1501,16 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1486  017C  1803               	btfsc	3,0
   1487  017D  2981               	goto	l1941
   1488                           
-  1489                           ;main.c: 174: {
-  1490                           ;main.c: 175: pid = 0;
+  1489                           ;main.c: 175: {
+  1490                           ;main.c: 176: pid = 0;
   1491  017E  01E6               	clrf	calculate_pid@pid
   1492  017F  01E7               	clrf	calculate_pid@pid+1
   1493  0180  01E8               	clrf	calculate_pid@pid+2
   1494  0181                     l1941:	
   1495                           
-  1496                           ;main.c: 176: }
-  1497                           ;main.c: 177: }
-  1498                           ;main.c: 178: if (set > 600)
+  1496                           ;main.c: 177: }
+  1497                           ;main.c: 178: }
+  1498                           ;main.c: 179: if (set > 600)
   1499  0181  0020               	movlb	0	; select bank0
   1500  0182  085C               	movf	calculate_pid@set+1,w
   1501  0183  3A80               	xorlw	128
@@ -1525,8 +1525,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1510  018B  1C03               	skipc
   1511  018C  299D               	goto	l1947
   1512                           
-  1513                           ;main.c: 179: {
-  1514                           ;main.c: 180: if (pid < 0)
+  1513                           ;main.c: 180: {
+  1514                           ;main.c: 181: if (pid < 0)
   1515  018D  0020               	movlb	0	; select bank0
   1516  018E  0866               	movf	calculate_pid@pid,w
   1517  018F  00A0               	movwf	___ftge@ff1
@@ -1541,16 +1541,16 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   1526  0198  1803               	btfsc	3,0
   1527  0199  299D               	goto	l1947
   1528                           
-  1529                           ;main.c: 181: {
-  1530                           ;main.c: 182: pid = 0;
+  1529                           ;main.c: 182: {
+  1530                           ;main.c: 183: pid = 0;
   1531  019A  01E6               	clrf	calculate_pid@pid
   1532  019B  01E7               	clrf	calculate_pid@pid+1
   1533  019C  01E8               	clrf	calculate_pid@pid+2
   1534  019D                     l1947:	
   1535                           
-  1536                           ;main.c: 183: }
-  1537                           ;main.c: 184: }
-  1538                           ;main.c: 185: M_control((int) pid);
+  1536                           ;main.c: 184: }
+  1537                           ;main.c: 185: }
+  1538                           ;main.c: 186: M_control((int) pid);
   1539  019D  0020               	movlb	0	; select bank0
   1540  019E  0866               	movf	calculate_pid@pid,w
   1541  019F  00C9               	movwf	___fttol@f1
@@ -2598,7 +2598,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2583  0453                     __ptext14:	
   2584 ;; *************** function _M_control *****************
   2585 ;; Defined at:
-  2586 ;;		line 131 in file "main.c"
+  2586 ;;		line 132 in file "main.c"
   2587 ;; Parameters:    Size  Location     Type
   2588 ;;  ctr             2   54[BANK0 ] int 
   2589 ;; Auto vars:     Size  Location     Type
@@ -2636,14 +2636,14 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2621                           ; Regs used in _M_control: [wreg+status,2+status,0+pclath+cstack]
   2622                           
   2623                           
-  2624                           ;main.c: 133: if (ctr == 0)
+  2624                           ;main.c: 134: if (ctr == 0)
   2625  0453  0856               	movf	M_control@ctr,w
   2626  0454  0457               	iorwf	M_control@ctr+1,w
   2627  0455  1D03               	btfss	3,2
   2628  0456  2C5C               	goto	l1721
   2629                           
-  2630                           ;main.c: 134: {
-  2631                           ;main.c: 135: PWM_set_duty(ctr);
+  2630                           ;main.c: 135: {
+  2631                           ;main.c: 136: PWM_set_duty(ctr);
   2632  0457  0857               	movf	M_control@ctr+1,w
   2633  0458  00A1               	movwf	PWM_set_duty@duty+1
   2634  0459  0856               	movf	M_control@ctr,w
@@ -2651,8 +2651,8 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2636  045B  2505               	fcall	_PWM_set_duty
   2637  045C                     l1721:	
   2638                           
-  2639                           ;main.c: 136: }
-  2640                           ;main.c: 137: if (ctr > 0)
+  2639                           ;main.c: 137: }
+  2640                           ;main.c: 138: if (ctr > 0)
   2641  045C  0020               	movlb	0	; select bank0
   2642  045D  0857               	movf	M_control@ctr+1,w
   2643  045E  3A80               	xorlw	128
@@ -2667,12 +2667,12 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2652  0466  1C03               	skipc
   2653  0467  2C70               	goto	l1727
   2654                           
-  2655                           ;main.c: 138: {
-  2656                           ;main.c: 139: LATAbits.LATA0 = 1;
+  2655                           ;main.c: 139: {
+  2656                           ;main.c: 140: LATAbits.LATA0 = 1;
   2657  0468  0022               	movlb	2	; select bank2
   2658  0469  140C               	bsf	12,0	;volatile
   2659                           
-  2660                           ;main.c: 140: PWM_set_duty(ctr);
+  2660                           ;main.c: 141: PWM_set_duty(ctr);
   2661  046A  0020               	movlb	0	; select bank0
   2662  046B  0857               	movf	M_control@ctr+1,w
   2663  046C  00A1               	movwf	PWM_set_duty@duty+1
@@ -2681,18 +2681,18 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2666  046F  2505               	fcall	_PWM_set_duty
   2667  0470                     l1727:	
   2668                           
-  2669                           ;main.c: 141: }
-  2670                           ;main.c: 142: if (ctr < 0)
+  2669                           ;main.c: 142: }
+  2670                           ;main.c: 143: if (ctr < 0)
   2671  0470  0020               	movlb	0	; select bank0
   2672  0471  1FD7               	btfss	M_control@ctr+1,7
   2673  0472  0008               	return
   2674                           
-  2675                           ;main.c: 143: {
-  2676                           ;main.c: 144: LATAbits.LATA0 = 0;
+  2675                           ;main.c: 144: {
+  2676                           ;main.c: 145: LATAbits.LATA0 = 0;
   2677  0473  0022               	movlb	2	; select bank2
   2678  0474  100C               	bcf	12,0	;volatile
   2679                           
-  2680                           ;main.c: 145: ctr = ctr * -1;
+  2680                           ;main.c: 146: ctr = ctr * -1;
   2681  0475  30FF               	movlw	255
   2682  0476  0020               	movlb	0	; select bank0
   2683  0477  00A0               	movwf	___wmul@multiplier
@@ -2707,7 +2707,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2692  0480  0820               	movf	?___wmul,w
   2693  0481  00D6               	movwf	M_control@ctr
   2694                           
-  2695                           ;main.c: 146: PWM_set_duty(ctr);
+  2695                           ;main.c: 147: PWM_set_duty(ctr);
   2696  0482  0857               	movf	M_control@ctr+1,w
   2697  0483  00A1               	movwf	PWM_set_duty@duty+1
   2698  0484  0856               	movf	M_control@ctr,w
@@ -2783,7 +2783,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2768  0505                     __ptext16:	
   2769 ;; *************** function _PWM_set_duty *****************
   2770 ;; Defined at:
-  2771 ;;		line 122 in file "main.c"
+  2771 ;;		line 123 in file "main.c"
   2772 ;; Parameters:    Size  Location     Type
   2773 ;;  duty            2    0[BANK0 ] int 
   2774 ;; Auto vars:     Size  Location     Type
@@ -2820,7 +2820,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2805                           ; Regs used in _PWM_set_duty: [wreg+status,2+status,0]
   2806                           
   2807                           
-  2808                           ;main.c: 124: if (duty < 1024) {
+  2808                           ;main.c: 125: if (duty < 1024) {
   2809  0505  0821               	movf	PWM_set_duty@duty+1,w
   2810  0506  3A80               	xorlw	128
   2811  0507  00A2               	movwf	??_PWM_set_duty
@@ -2834,7 +2834,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2819  050E  1803               	skipnc
   2820  050F  0008               	return
   2821                           
-  2822                           ;main.c: 125: CCPR1L = (0xFF & ((unsigned int) duty >> 2));
+  2822                           ;main.c: 126: CCPR1L = (0xFF & ((unsigned int) duty >> 2));
   2823  0510  0020               	movlb	0	; select bank0
   2824  0511  0821               	movf	PWM_set_duty@duty+1,w
   2825  0512  00A3               	movwf	??_PWM_set_duty+1
@@ -2848,7 +2848,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2833  051A  0025               	movlb	5	; select bank5
   2834  051B  0091               	movwf	17	;volatile
   2835                           
-  2836                           ;main.c: 126: CCP1CON = (0x0C | (0x30 & ((unsigned int) duty << 4)));
+  2836                           ;main.c: 127: CCP1CON = (0x0C | (0x30 & ((unsigned int) duty << 4)));
   2837  051C  0020               	movlb	0	; select bank0
   2838  051D  0E20               	swapf	PWM_set_duty@duty,w
   2839  051E  39F0               	andlw	240
@@ -2863,7 +2863,7 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2848  0004                     __pintentry:	
   2849 ;; *************** function _isr *****************
   2850 ;; Defined at:
-  2851 ;;		line 54 in file "main.c"
+  2851 ;;		line 55 in file "main.c"
   2852 ;; Parameters:    Size  Location     Type
   2853 ;;		None
   2854 ;; Auto vars:     Size  Location     Type
@@ -2900,60 +2900,60 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2885                           ; Regs used in _isr: [wreg+status,2+status,0+pclath+cstack]
   2886  0005  3180               	pagesel	$
   2887                           
-  2888                           ;main.c: 56: if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
+  2888                           ;main.c: 57: if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
   2889  0006  1C0B               	btfss	11,0	;volatile
   2890  0007  281B               	goto	i1l2031
   2891  0008  0027               	movlb	7	; select bank7
   2892  0009  1E13               	btfss	19,4	;volatile
   2893  000A  281B               	goto	i1l2031
   2894                           
-  2895                           ;main.c: 57: {
-  2896                           ;main.c: 58: INTCONbits.IOCIE = 0;
+  2895                           ;main.c: 58: {
+  2896                           ;main.c: 59: INTCONbits.IOCIE = 0;
   2897  000B  118B               	bcf	11,3	;volatile
   2898                           
-  2899                           ;main.c: 59: counter++;
+  2899                           ;main.c: 60: counter++;
   2900  000C  0021               	movlb	1	; select bank1
   2901  000D  0AAC               	incf	_counter^(0+128),f
   2902  000E  1903               	skipnz
   2903  000F  0AAD               	incf	(_counter+1)^(0+128),f
   2904                           
-  2905                           ;main.c: 60: if (steps > 0)
+  2905                           ;main.c: 61: if (steps > 0)
   2906  0010  082A               	movf	_steps^(0+128),w
   2907  0011  042B               	iorwf	(_steps+1)^(0+128),w
   2908  0012  1903               	btfsc	3,2
   2909  0013  2818               	goto	i1l2027
   2910                           
-  2911                           ;main.c: 61: {
-  2912                           ;main.c: 62: steps--;
+  2911                           ;main.c: 62: {
+  2912                           ;main.c: 63: steps--;
   2913  0014  3001               	movlw	1
   2914  0015  02AA               	subwf	_steps^(0+128),f
   2915  0016  3000               	movlw	0
   2916  0017  3BAB               	subwfb	(_steps+1)^(0+128),f
   2917  0018                     i1l2027:	
   2918                           
-  2919                           ;main.c: 63: }
-  2920                           ;main.c: 64: IOCAFbits.IOCAF4 = 0;
+  2919                           ;main.c: 64: }
+  2920                           ;main.c: 65: IOCAFbits.IOCAF4 = 0;
   2921  0018  0027               	movlb	7	; select bank7
   2922  0019  1213               	bcf	19,4	;volatile
   2923                           
-  2924                           ;main.c: 65: INTCONbits.IOCIE = 1;
+  2924                           ;main.c: 66: INTCONbits.IOCIE = 1;
   2925  001A  158B               	bsf	11,3	;volatile
   2926  001B                     i1l2031:	
   2927                           
-  2928                           ;main.c: 66: }
-  2929                           ;main.c: 67: if (PIR1bits.TMR1IF == 1)
+  2928                           ;main.c: 67: }
+  2929                           ;main.c: 68: if (PIR1bits.TMR1IF == 1)
   2930  001B  0020               	movlb	0	; select bank0
   2931  001C  1C11               	btfss	17,0	;volatile
   2932  001D  284C               	goto	i1l73
   2933                           
-  2934                           ;main.c: 68: {
-  2935                           ;main.c: 69: INTCONbits.IOCIE = 0;
+  2934                           ;main.c: 69: {
+  2935                           ;main.c: 70: INTCONbits.IOCIE = 0;
   2936  001E  118B               	bcf	11,3	;volatile
   2937                           
-  2938                           ;main.c: 70: T1CONbits.TMR1ON = 0;
+  2938                           ;main.c: 71: T1CONbits.TMR1ON = 0;
   2939  001F  1018               	bcf	24,0	;volatile
   2940                           
-  2941                           ;main.c: 71: rpm = (counter * 300) / gear;
+  2941                           ;main.c: 72: rpm = (counter * 300) / gear;
   2942  0020  3096               	movlw	150
   2943  0021  00F6               	movwf	___lwdiv@divisor
   2944  0022  01F7               	clrf	___lwdiv@divisor+1
@@ -2977,17 +2977,17 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2962  0034  0876               	movf	?___lwdiv,w
   2963  0035  00A8               	movwf	_rpm^(0+128)
   2964                           
-  2965                           ;main.c: 72: counter = 0;
+  2965                           ;main.c: 73: counter = 0;
   2966  0036  01AC               	clrf	_counter^(0+128)
   2967  0037  01AD               	clrf	(_counter+1)^(0+128)
   2968                           
-  2969                           ;main.c: 73: if (LATAbits.LATA0 == 0)
+  2969                           ;main.c: 74: if (LATAbits.LATA0 == 0)
   2970  0038  0022               	movlb	2	; select bank2
   2971  0039  180C               	btfsc	12,0	;volatile
   2972  003A  2848               	goto	i1l2043
   2973                           
-  2974                           ;main.c: 74: {
-  2975                           ;main.c: 75: rpm = rpm *-1;
+  2974                           ;main.c: 75: {
+  2975                           ;main.c: 76: rpm = rpm *-1;
   2976  003B  30FF               	movlw	255
   2977  003C  00F0               	movwf	i1___wmul@multiplier
   2978  003D  00F1               	movwf	i1___wmul@multiplier+1
@@ -3003,15 +3003,15 @@ Microchip Technology Omniscient Code Generator v1.43 (PRO mode) build 2017072503
   2988  0047  00A8               	movwf	_rpm^(0+128)
   2989  0048                     i1l2043:	
   2990                           
-  2991                           ;main.c: 76: }
-  2992                           ;main.c: 77: INTCONbits.IOCIE = 1;
+  2991                           ;main.c: 77: }
+  2992                           ;main.c: 78: INTCONbits.IOCIE = 1;
   2993  0048  158B               	bsf	11,3	;volatile
   2994                           
-  2995                           ;main.c: 78: PIR1bits.TMR1IF = 0;
+  2995                           ;main.c: 79: PIR1bits.TMR1IF = 0;
   2996  0049  0020               	movlb	0	; select bank0
   2997  004A  1011               	bcf	17,0	;volatile
   2998                           
-  2999                           ;main.c: 79: T1CONbits.TMR1ON = 1;
+  2999                           ;main.c: 80: T1CONbits.TMR1ON = 1;
   3000  004B  1418               	bsf	24,0	;volatile
   3001  004C                     i1l73:	
   3002  004C  107E               	bcf	126,0	;clear compiler interrupt flag (level 1)
@@ -3569,7 +3569,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.43 build -156212558 
-Symbol Table                                                                                   Wed Jul 11 15:05:49 2018
+Symbol Table                                                                                   Wed Jul 25 12:46:57 2018
 
             __CFG_CP$OFF 0000                       l98 03B6      ___wmul@multiplicand 0022  
       calculate_pid@rpm2 0061         i1___wmul@product 0074             ___ftadd@exp1 0054  

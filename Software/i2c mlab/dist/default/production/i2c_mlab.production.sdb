@@ -1,0 +1,211 @@
+[p PRO_MODE GLOBOPT AUTOSTATIC PIC14 PIC14E SPEEDOPT ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F1822 ]
+[d frameptr 6 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"88 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+[v _isr isr `II(v  1 e 1 0 ]
+"155
+[v _main main `(v  1 e 1 0 ]
+"349 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1822.h
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+[s S290 . 1 `uc 1 IOCIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 IOCIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"372
+[s S299 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 T0IE 1 0 :1:5 
+]
+[u S304 . 1 `S290 1 . 1 0 `S299 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES304  1 e 1 @11 ]
+[s S38 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"734
+[u S47 . 1 `S38 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES47  1 e 1 @17 ]
+[s S107 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 EEIF 1 0 :1:4 
+`uc 1 C1IF 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 OSFIF 1 0 :1:7 
+]
+"794
+[u S114 . 1 `S107 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES114  1 e 1 @18 ]
+"886
+[v _T1CON T1CON `VEuc  1 e 1 @24 ]
+"1240
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S269 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1307
+[u S278 . 1 `S269 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES278  1 e 1 @145 ]
+[s S252 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 BCL1IE 1 0 :1:3 
+`uc 1 EEIE 1 0 :1:4 
+`uc 1 C1IE 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 OSFIE 1 0 :1:7 
+]
+"1367
+[u S259 . 1 `S252 1 . 1 0 ]
+[v _PIE2bits PIE2bits `VES259  1 e 1 @146 ]
+[s S128 . 1 `uc 1 PS0 1 0 :1:0 
+`uc 1 PS1 1 0 :1:1 
+`uc 1 PS2 1 0 :1:2 
+`uc 1 PSA 1 0 :1:3 
+`uc 1 TMR0SE 1 0 :1:4 
+`uc 1 TMR0CS 1 0 :1:5 
+`uc 1 INTEDG 1 0 :1:6 
+`uc 1 nWPUEN 1 0 :1:7 
+]
+"1415
+[s S137 . 1 `uc 1 PS 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 T0SE 1 0 :1:4 
+`uc 1 T0CS 1 0 :1:5 
+]
+[u S142 . 1 `S128 1 . 1 0 `S137 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES142  1 e 1 @149 ]
+"1643
+[v _OSCCON OSCCON `VEuc  1 e 1 @153 ]
+[s S190 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"1994
+[u S197 . 1 `S190 1 . 1 0 ]
+[v _LATAbits LATAbits `VES197  1 e 1 @268 ]
+[s S160 . 1 `uc 1 CCP1SEL 1 0 :1:0 
+`uc 1 P1BSEL 1 0 :1:1 
+`uc 1 TXCKSEL 1 0 :1:2 
+`uc 1 T1GSEL 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 SSSEL 1 0 :1:5 
+`uc 1 SDOSEL 1 0 :1:6 
+`uc 1 RXDTSEL 1 0 :1:7 
+]
+"2515
+[s S169 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SS1SEL 1 0 :1:5 
+`uc 1 SDO1SEL 1 0 :1:6 
+]
+[u S173 . 1 `S160 1 . 1 0 `S169 1 . 1 0 ]
+[v _APFCONbits APFCONbits `VES173  1 e 1 @285 ]
+"2630
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3186
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3244
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3282
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3358
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S59 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"3380
+[u S68 . 1 `S59 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES68  1 e 1 @532 ]
+"3480
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S81 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3509
+[s S90 . 1 `uc 1 SSPM 1 0 :4:0 
+]
+[u S92 . 1 `S81 1 . 1 0 `S90 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES92  1 e 1 @533 ]
+[s S209 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"3706
+[u S218 . 1 `S209 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES218  1 e 1 @534 ]
+[s S230 . 1 `uc 1 DHEN 1 0 :1:0 
+`uc 1 AHEN 1 0 :1:1 
+`uc 1 SBCDE 1 0 :1:2 
+`uc 1 SDAHT 1 0 :1:3 
+`uc 1 BOEN 1 0 :1:4 
+`uc 1 SCIE 1 0 :1:5 
+`uc 1 PCIE 1 0 :1:6 
+`uc 1 ACKTIM 1 0 :1:7 
+]
+"3828
+[u S239 . 1 `S230 1 . 1 0 ]
+[v _SSP1CON3bits SSP1CON3bits `VES239  1 e 1 @535 ]
+[s S19 _data 32 `f 1 m_kp 3 0 `f 1 m_kd 3 3 `f 1 m_ki 3 6 `f 1 d_kp 3 9 `f 1 d_kd 3 12 `f 1 d_ki 3 15 `i 1 rpm 2 18 `i 1 speed 2 20 `m 1 distance 3 22 `uc 1 diameter 1 25 `ui 1 gear 2 26 `uc 1 address 1 28 `uc 1 ID 1 29 `uc 1 start 1 30 `uc 1 mode 1 31 ]
+"61 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+[u S35 _i2c_buffer 32 `S19 1 data 32 0 `[0]uc 1 b 0 0 ]
+[v _i2c_buffer i2c_buffer `VES35  1 e 32 0 ]
+"78
+[v _first first `uc  1 e 1 0 ]
+"79
+[v _index_i2c index_i2c `uc  1 e 1 0 ]
+"81
+[v _I2C_Array I2C_Array `VE[32]uc  1 e 32 0 ]
+"155
+[v _main main `(v  1 e 1 0 ]
+{
+"189
+} 0
+"88
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"151
+} 0
