@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="8.3.2">
+<eagle version="9.0.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -9,6 +9,20 @@
 <grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
@@ -188,7 +202,7 @@
 <rectangle x1="12.21405" y1="2.46810625" x2="13.73805" y2="2.55294375" layer="21" rot="R90"/>
 <rectangle x1="11.53586875" y1="4.75410625" x2="14.41623125" y2="4.83894375" layer="21" rot="R90"/>
 <rectangle x1="12.34143125" y1="5.474325" x2="13.44125" y2="5.55890625" layer="21" rot="R90"/>
-<text x="10.9" y="0.3" size="0.6096" layer="21" font="vector">Smart Motor Driver</text>
+<text x="0.6" y="6.8" size="0.8128" layer="21" font="vector">SAMI</text>
 <text x="4.7" y="6.5" size="0.6096" layer="21" font="vector">v1.1D</text>
 <rectangle x1="8.7677625" y1="0.42251875" x2="12.0697625" y2="0.5071" layer="22" rot="R180"/>
 <rectangle x1="5.2117625" y1="0.42251875" x2="8.59758125" y2="0.5071" layer="22" rot="R180"/>
@@ -326,13 +340,14 @@
 <rectangle x1="1.23158125" y1="3.0471" x2="4.1094" y2="3.1319375" layer="22" rot="R180"/>
 <rectangle x1="1.4017625" y1="3.1319375" x2="4.1094" y2="3.21651875" layer="22" rot="R180"/>
 <text x="11.4" y="6.8" size="0.8128" layer="22" font="vector" rot="MR0">www.2brobots.com</text>
-<text x="13.4" y="7.7" size="0.8128" layer="22" font="vector" rot="MR0">VL: 1.8-5v   VM: 0-10v</text>
+<text x="13.4" y="7.7" size="0.8128" layer="22" font="vector" rot="MR0">VL: 1.8-5v   VM: 0-11v</text>
 <text x="11.9" y="8.8" size="0.8128" layer="22" font="vector" rot="MR0">Smart Motor Driver</text>
 <text x="13.4" y="4.8" size="0.6096" layer="22" font="vector" rot="MR270" align="center">Made in Mexico
 2018</text>
 <text x="18.1" y="0.4" size="0.6096" layer="22" font="vector" rot="MR0">v1.1D</text>
 <text x="17.8" y="9" size="0.8128" layer="22" font="vector" rot="MR0">1.7A max</text>
 <text x="14.5" y="9.1" size="0.6096" layer="21" font="vector">CC-BY-SA</text>
+<text x="10.8" y="0.3" size="0.6096" layer="21" font="vector">Smart Motor Driver</text>
 </plain>
 <libraries>
 <library name="adafruit">
@@ -422,7 +437,7 @@ chip</description>
 <wire x1="-3.815" y1="-1.275" x2="3.835" y2="-1.275" width="0.127" layer="25"/>
 <wire x1="3.835" y1="-1.275" x2="3.835" y2="3.1" width="0.127" layer="25"/>
 <wire x1="3.835" y1="3.1" x2="-3.815" y2="3.1" width="0.127" layer="25"/>
-<text x="-3.715" y="2.475" size="0.5" layer="25" font="vector">ICSP</text>
+<text x="-2.715" y="1.975" size="0.5" layer="25" font="vector" rot="R90" align="center">ICSP</text>
 <wire x1="-3.74" y1="-0.7" x2="-3.24" y2="-1.2" width="0.127" layer="25"/>
 </package>
 </packages>
@@ -618,10 +633,11 @@ Please make sure your boards conform to these design rules.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
@@ -990,31 +1006,10 @@ Please make sure your boards conform to these design rules.</description>
 </signal>
 </signals>
 <errors>
-<approved hash="18,29,cb277d3824cff258"/>
-<approved hash="18,29,504e9acf7ed3c952"/>
-<approved hash="18,29,72982f999fadb4ac"/>
-<approved hash="18,29,779ff0d570d4f79e"/>
-<approved hash="18,29,bfdc3794b7923fda"/>
-<approved hash="18,29,720ef5447545f20f"/>
-<approved hash="18,29,b94f3107b1013949"/>
-<approved hash="18,29,70b9fbf77bf6f0b8"/>
-<approved hash="18,29,bafe3cb6bcb03af8"/>
-<approved hash="18,29,7f28f8667867ff29"/>
-<approved hash="18,29,b4693e21be27346f"/>
-<approved hash="18,29,8013b6e736ee001a"/>
-<approved hash="18,29,07453e16be1f874c"/>
-<approved hash="18,29,77c7cf8f4f88f7c0"/>
-<approved hash="18,29,b48707c987c93487"/>
-<approved hash="18,29,72e5c4ad44aaf2e2"/>
-<approved hash="18,29,b3a10ceb8ceb33a1"/>
-<approved hash="18,29,7476c23e4239f471"/>
-<approved hash="18,29,b630097a897a3630"/>
-<approved hash="18,29,7950cd184d1ff957"/>
-<approved hash="18,29,bb16045884583b16"/>
-<approved hash="4,1,365589adc5cce6d6"/>
 <approved hash="4,1,3e94bfce87983f46"/>
-<approved hash="4,1,5f4a0cd4dc0c2320"/>
 <approved hash="4,1,1e3a9e14a6e61e04"/>
+<approved hash="4,1,ebe37102bb238d70"/>
+<approved hash="4,1,73890af78010658c"/>
 </errors>
 </board>
 </drawing>
