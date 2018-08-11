@@ -13,10 +13,11 @@ Also the control module will be capable of driving the motor for a desired dista
 
 ![alt text](https://github.com/Danny24/smart_motor_driver/blob/master/Hardware/Renders/6.png)
 
-This is a project under development, so please follow me get updates :) This will be an open source project, so if you have any ideas to improve it you are welcome! I am currently working on the firmware.
+This is a project under development, so please follow me get updates :) This is an open source project, so if you have any ideas to improve it you are welcome!
 
-Here is a video testing the tachometer, just click on the image ;)
-[![Alt text](https://img.youtube.com/vi/lJUFUr4bWiI/0.jpg)](https://www.youtube.com/watch?v=lJUFUr4bWiI)
+Check out the project details on Hackaday: https://hackaday.io/project/158429-smart-motor-driver-for-robotics
 
 
 Thank you for reading :)
+
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" class="lazy" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a><br>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</p>
