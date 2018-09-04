@@ -3,15 +3,15 @@
   <executable name="dist/default/production\MPLAB_XC8.production.hex">
     <memory name="program">
       <units>words</units>
-      <length>2048</length>
-      <used>1444</used>
-      <free>604</free>
+      <length>4096</length>
+      <used>2667</used>
+      <free>1429</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
-      <length>128</length>
-      <used>108</used>
-      <free>20</free>
+      <length>256</length>
+      <used>176</used>
+      <free>80</free>
     </memory>
   </executable>
 </project>

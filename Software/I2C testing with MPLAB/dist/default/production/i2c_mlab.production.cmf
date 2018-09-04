@@ -11,20 +11,16 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-reset_vec CODE 0 0 0 1 2
-end_init CODE 0 50 50 1 2
+$C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 51 51 2 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production\i2c_mlab.production.obj
-cinit CODE 0 51 51 16 2
-maintext CODE 0 67 67 26 2
-inittext CODE 0 AD AD 6 2
-intentry CODE 0 4 4 4C 2
-bssBANK0 BANK0 1 20 20 20 1
-idataBANK0 CODE 0 8D 8D 20 2
-dataBANK0 BANK0 1 40 40 20 1
+cinit CODE 0 53 53 8B 2
+intentry CODE 0 4 4 4D 2
+bssBANK0 BANK0 1 20 20 2B 1
 dataCOMMON COMMON 1 71 71 1 1
-clrtext CODE 0 B3 B3 6 2
+clrtext CODE 0 DE DE 6 2
 bssCOMMON COMMON 1 70 70 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -32,14 +28,16 @@ bssCOMMON COMMON 1 70 70 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 60-6F 1
-RAM A0-BF 1
-BANK0 60-6F 1
-BANK1 A0-BF 1
-CONST 1-3 2
-CONST B9-7FF 2
-ENTRY 1-3 2
-ENTRY B9-7FF 2
+RAM 4B-6F 1
+RAM A0-EF 1
+RAM 120-16F 1
+BANK0 4B-6F 1
+BANK1 A0-EF 1
+BANK2 120-16F 1
+CONST 2-3 2
+CONST E4-FFF 2
+ENTRY 2-3 2
+ENTRY E4-FFF 2
 IDLOC 8000-8003 2
 SFR10 500-56F 1
 SFR11 580-5EF 1
@@ -63,12 +61,12 @@ SFR28 E00-E6F 1
 SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
-STACK 2040-206F 1
-CODE 1-3 2
-CODE B9-7FF 2
+STACK 202B-20EF 1
+CODE 2-3 2
+CODE E4-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
-SFR2 100-16F 1
+SFR2 100-11F 1
 SFR3 180-1EF 1
 SFR4 200-26F 1
 SFR5 280-2EF 1
@@ -76,13 +74,13 @@ SFR6 300-36F 1
 SFR7 380-3EF 1
 SFR8 400-46F 1
 SFR9 480-4EF 1
-BIGRAM 2000-206F 1
+BIGRAM 2000-20EF 1
 COMMON 72-7D 1
 EEDATA F000-F0FF 2
-STRCODE 1-3 2
-STRCODE B9-7FF 2
-STRING 1-3 2
-STRING B9-7FF 2
+STRCODE 2-3 2
+STRCODE E4-FFF 2
+STRING 2-3 2
+STRING E4-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -97,105 +95,109 @@ STRING B9-7FF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\i2c_mlab.production.obj
-51 cinit CODE >396:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-51 cinit CODE >399:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-51 cinit CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-52 cinit CODE >444:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-53 cinit CODE >448:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-54 cinit CODE >449:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-55 cinit CODE >450:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-56 cinit CODE >451:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-57 cinit CODE >452:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-58 cinit CODE >453:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-59 cinit CODE >454:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5A cinit CODE >455:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5B cinit CODE >456:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5C cinit CODE >457:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5D cinit CODE >478:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5E cinit CODE >474:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-5F cinit CODE >479:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-60 cinit CODE >480:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-61 cinit CODE >481:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-62 cinit CODE >482:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-63 cinit CODE >483:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-64 cinit CODE >489:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-64 cinit CODE >491:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-65 cinit CODE >492:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-66 cinit CODE >493:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-4 intentry CODE >88:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-4 intentry CODE >189:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-6 intentry CODE >92:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-9 intentry CODE >94:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-C intentry CODE >96:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-E intentry CODE >98:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-15 intentry CODE >99:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-16 intentry CODE >101:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-18 intentry CODE >103:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-1F intentry CODE >104:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-20 intentry CODE >108:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-22 intentry CODE >110:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-24 intentry CODE >112:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-26 intentry CODE >113:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-27 intentry CODE >114:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-28 intentry CODE >116:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-2A intentry CODE >118:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-2D intentry CODE >120:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-2F intentry CODE >121:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-30 intentry CODE >122:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-31 intentry CODE >126:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-35 intentry CODE >128:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-3C intentry CODE >129:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-3D intentry CODE >132:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-3E intentry CODE >135:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-40 intentry CODE >137:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-41 intentry CODE >138:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-42 intentry CODE >140:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-43 intentry CODE >144:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-46 intentry CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-48 intentry CODE >147:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-4A intentry CODE >148:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-4C intentry CODE >150:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-4E intentry CODE >151:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-67 maintext CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-67 maintext CODE >157:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-6A maintext CODE >158:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-6C maintext CODE >159:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-6E maintext CODE >160:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-70 maintext CODE >161:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-72 maintext CODE >162:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-74 maintext CODE >163:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-75 maintext CODE >164:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-78 maintext CODE >165:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-7A maintext CODE >166:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-7B maintext CODE >167:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-7C maintext CODE >168:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-7D maintext CODE >169:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-7E maintext CODE >170:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-80 maintext CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-82 maintext CODE >172:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-83 maintext CODE >173:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-85 maintext CODE >174:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-86 maintext CODE >175:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-87 maintext CODE >177:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-88 maintext CODE >178:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-8B maintext CODE >181:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-8C maintext CODE >184:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
-B3 clrtext CODE >463:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B3 clrtext CODE >464:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B4 clrtext CODE >465:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B4 clrtext CODE >466:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B5 clrtext CODE >467:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B6 clrtext CODE >468:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B7 clrtext CODE >469:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B8 clrtext CODE >470:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-AD inittext CODE >432:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-AD inittext CODE >433:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-AE inittext CODE >434:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-AE inittext CODE >435:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-AF inittext CODE >436:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B0 inittext CODE >437:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B1 inittext CODE >438:C:\Users\ciro_\AppData\Local\Temp\s1ok.
-B2 inittext CODE >439:C:\Users\ciro_\AppData\Local\Temp\s1ok.
+53 cinit CODE >360:C:\Users\ciro_\AppData\Local\Temp\scqo.
+53 cinit CODE >363:C:\Users\ciro_\AppData\Local\Temp\scqo.
+53 cinit CODE >66:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+54 cinit CODE >390:C:\Users\ciro_\AppData\Local\Temp\scqo.
+55 cinit CODE >411:C:\Users\ciro_\AppData\Local\Temp\scqo.
+56 cinit CODE >407:C:\Users\ciro_\AppData\Local\Temp\scqo.
+57 cinit CODE >412:C:\Users\ciro_\AppData\Local\Temp\scqo.
+58 cinit CODE >413:C:\Users\ciro_\AppData\Local\Temp\scqo.
+59 cinit CODE >414:C:\Users\ciro_\AppData\Local\Temp\scqo.
+5A cinit CODE >415:C:\Users\ciro_\AppData\Local\Temp\scqo.
+5B cinit CODE >416:C:\Users\ciro_\AppData\Local\Temp\scqo.
+5E cinit CODE >422:C:\Users\ciro_\AppData\Local\Temp\scqo.
+5E cinit CODE >424:C:\Users\ciro_\AppData\Local\Temp\scqo.
+5F cinit CODE >425:C:\Users\ciro_\AppData\Local\Temp\scqo.
+60 cinit CODE >426:C:\Users\ciro_\AppData\Local\Temp\scqo.
+61 cinit CODE >162:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+61 cinit CODE >164:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+64 cinit CODE >165:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+66 cinit CODE >166:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+69 cinit CODE >167:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+6B cinit CODE >168:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+6D cinit CODE >169:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+6F cinit CODE >170:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+71 cinit CODE >171:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+72 cinit CODE >172:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+75 cinit CODE >173:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+77 cinit CODE >174:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+78 cinit CODE >175:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+79 cinit CODE >176:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+7A cinit CODE >177:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+7B cinit CODE >178:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+7F cinit CODE >179:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+81 cinit CODE >180:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+82 cinit CODE >181:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+84 cinit CODE >182:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+85 cinit CODE >183:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+86 cinit CODE >185:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+88 cinit CODE >186:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+8B cinit CODE >189:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+8C cinit CODE >191:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+8D cinit CODE >138:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+8D cinit CODE >140:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+90 cinit CODE >141:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+92 cinit CODE >142:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+93 cinit CODE >143:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+95 cinit CODE >144:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+97 cinit CODE >145:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+98 cinit CODE >146:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+99 cinit CODE >147:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+9C cinit CODE >148:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+9F cinit CODE >149:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+A3 cinit CODE >150:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+A7 cinit CODE >151:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+AE cinit CODE >152:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+B5 cinit CODE >153:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+BD cinit CODE >154:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+C5 cinit CODE >155:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+CD cinit CODE >156:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+D5 cinit CODE >157:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+DD cinit CODE >158:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+4 intentry CODE >72:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+4 intentry CODE >158:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+6 intentry CODE >76:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+9 intentry CODE >78:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+C intentry CODE >80:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+E intentry CODE >82:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+15 intentry CODE >83:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+16 intentry CODE >85:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+18 intentry CODE >87:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+1F intentry CODE >88:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+20 intentry CODE >92:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+22 intentry CODE >94:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+24 intentry CODE >96:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+26 intentry CODE >97:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+27 intentry CODE >98:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+28 intentry CODE >100:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+2A intentry CODE >102:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+2D intentry CODE >104:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+2F intentry CODE >105:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+30 intentry CODE >106:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+31 intentry CODE >110:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+35 intentry CODE >112:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+3C intentry CODE >113:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+3D intentry CODE >116:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+3E intentry CODE >119:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+40 intentry CODE >121:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+41 intentry CODE >122:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+42 intentry CODE >124:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+43 intentry CODE >127:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+45 intentry CODE >129:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+47 intentry CODE >131:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+49 intentry CODE >132:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+4B intentry CODE >133:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+4D intentry CODE >134:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+4F intentry CODE >136:E:\ciro_\Documents\GitHub\smart_motor_driver\Software\i2c mlab\main.c
+DE clrtext CODE >396:C:\Users\ciro_\AppData\Local\Temp\scqo.
+DE clrtext CODE >397:C:\Users\ciro_\AppData\Local\Temp\scqo.
+DF clrtext CODE >398:C:\Users\ciro_\AppData\Local\Temp\scqo.
+DF clrtext CODE >399:C:\Users\ciro_\AppData\Local\Temp\scqo.
+E0 clrtext CODE >400:C:\Users\ciro_\AppData\Local\Temp\scqo.
+E1 clrtext CODE >401:C:\Users\ciro_\AppData\Local\Temp\scqo.
+E2 clrtext CODE >402:C:\Users\ciro_\AppData\Local\Temp\scqo.
+E3 clrtext CODE >403:C:\Users\ciro_\AppData\Local\Temp\scqo.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -208,40 +210,38 @@ B2 inittext CODE >439:C:\Users\ciro_\AppData\Local\Temp\s1ok.
 # was defined in a psect then <psect> will be "-". File-name
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
-___latbits 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__LdataBANK0 0 0 ABS 0 dataBANK0 -
+___latbits 1 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Hspace_0 8009 0 ABS 0 - -
 __Hspace_1 72 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__HidataBANK0 0 0 ABS 0 idataBANK0 -
 _SSP1STATbits 214 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _index_i2c 70 0 COMMON 1 bssCOMMON dist/default/production\i2c_mlab.production.obj
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_init_I2C_buffer 1BC 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Hstrings 0 0 ABS 0 strings -
 _WPUA 20C 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-_main CE 0 CODE 0 maintext dist/default/production\i2c_mlab.production.obj
+___sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+_main C2 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 btemp 7E 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-start A0 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
+start A2 0 CODE 0 init C:\Users\ciro_\AppData\Local\Temp\scqo.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__LidataBANK0 0 0 ABS 0 idataBANK0 -
-_I2C_Array 40 0 BANK0 1 dataBANK0 dist/default/production\i2c_mlab.production.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\ciro_\AppData\Local\Temp\scqo.obj
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Hfunctab 0 0 ENTRY 0 functab -
+_init_I2C_buffer 11A 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __pidataCOMMON 0 0 CODE 0 idataCOMMON dist/default/production\i2c_mlab.production.obj
 _ANSELA 18C 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
@@ -252,14 +252,16 @@ _INTCON B 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Lpa_nodes0 0 0 ABS 0 pa_nodes0 -
 __LidataCOMMON 0 0 ABS 0 idataCOMMON -
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-start_initialization A2 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
+start_initialization A6 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 _OSCCON 99 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _APFCONbits 11D 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-clear_ram0 166 0 CODE 0 clrtext dist/default/production\i2c_mlab.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
+__size_of_init_I2C_buffer 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
+clear_ram0 1BC 0 CODE 0 clrtext dist/default/production\i2c_mlab.production.obj
+_first_i2c 71 0 COMMON 1 dataCOMMON dist/default/production\i2c_mlab.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\ciro_\AppData\Local\Temp\scqo.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
-__Hbank2 0 0 BANK2 1 bank2 -
+__Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 BANK3 1 bank3 -
 __Hbank4 0 0 BANK4 1 bank4 -
 __Hbank5 0 0 BANK5 1 bank5 -
@@ -267,7 +269,7 @@ __Hbank6 0 0 BANK6 1 bank6 -
 __Hbank7 0 0 BANK7 1 bank7 -
 __Hbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
-__Hcinit CE 0 CODE 0 cinit -
+__Hcinit 1BC 0 CODE 0 cinit -
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hsfr10 0 0 ABS 0 sfr10 -
 __Hsfr11 0 0 ABS 0 sfr11 -
@@ -321,7 +323,7 @@ __Hcommon 0 0 ABS 0 common -
 __Hconfig 10012 0 CONFIG 0 config -
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
-__Lbank2 0 0 BANK2 1 bank2 -
+__Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 BANK3 1 bank3 -
 __Lbank4 0 0 BANK4 1 bank4 -
 __Lbank5 0 0 BANK5 1 bank5 -
@@ -329,7 +331,7 @@ __Lbank6 0 0 BANK6 1 bank6 -
 __Lbank7 0 0 BANK7 1 bank7 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__Lcinit A2 0 CODE 0 cinit -
+__Lcinit A6 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 0 idloc -
 __Lsfr10 0 0 ABS 0 sfr10 -
 __Lsfr11 0 0 ABS 0 sfr11 -
@@ -354,12 +356,10 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-init_ram 15A 0 CODE 0 inittext dist/default/production\i2c_mlab.production.obj
-__Linittext 0 0 ABS 0 inittext -
 _INTCONbits B 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit A0 0 CODE 0 init -
+__Hinit A2 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -373,7 +373,7 @@ __Hsfr9 0 0 ABS 0 sfr9 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit A0 0 CODE 0 init -
+__Linit A2 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -396,11 +396,10 @@ __S3 0 0 ABS 0 - -
 _isr 8 0 CODE 0 intentry dist/default/production\i2c_mlab.production.obj
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __HidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_isr A0 0 CODE 0 intentry dist/default/production\i2c_mlab.production.obj
+__end_of_isr A2 0 CODE 0 intentry dist/default/production\i2c_mlab.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-__pdataBANK0 40 0 BANK0 1 dataBANK0 dist/default/production\i2c_mlab.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\ciro_\AppData\Local\Temp\scqo.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _PIE1bits 91 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _PIE2bits 92 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
@@ -426,18 +425,17 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext CE 0 CODE 0 maintext dist/default/production\i2c_mlab.production.obj
+__pmaintext C2 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
+_I2C_buffer 20 0 BANK0 1 bssBANK0 dist/default/production\i2c_mlab.production.obj
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__Hinittext 0 0 ABS 0 inittext -
 _LATAbits 10C 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-_i2c_buffer 20 0 BANK0 1 bssBANK0 dist/default/production\i2c_mlab.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
-stacklo 2040 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\s1ok.obj
+stackhi 20EF 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\scqo.obj
+stacklo 202B 0 ABS 0 - C:\Users\ciro_\AppData\Local\Temp\scqo.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -446,21 +444,21 @@ __Lspace_3 0 0 ABS 0 - -
 __pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\i2c_mlab.production.obj
 _PIR1bits 11 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _PIR2bits 12 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__Lend_init A0 0 CODE 0 end_init -
+__Lend_init A2 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization C8 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
-__Hintentry A0 0 CODE 0 intentry -
+end_of_initialization BC 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
+__Hintentry A2 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Lstrings 0 0 ABS 0 strings -
-__Hreset_vec 2 0 CODE 0 reset_vec -
+__Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 11A 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__end_of__initialization C8 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
+__end_of__initialization BC 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 11A 0 CODE 0 idataBANK0 dist/default/production\i2c_mlab.production.obj
 __Lclrtext 0 0 ABS 0 clrtext -
 _SSP1CON1bits 215 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _SSP1CON2bits 216 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
@@ -469,18 +467,16 @@ __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\i2c_mlab.production.obj
 _SSP1ADD 212 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _SSP1BUF 211 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__Hend_init A2 0 CODE 0 end_init -
-__end_of_main 11A 0 CODE 0 maintext dist/default/production\i2c_mlab.production.obj
+__Hend_init A6 0 CODE 0 end_init -
+__end_of_main 11A 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 _T1CON 18 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 _TRISA 8C 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_first 71 0 COMMON 1 dataCOMMON dist/default/production\i2c_mlab.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\i2c_mlab.production.obj
 __size_of_isr 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
-__HdataBANK0 0 0 ABS 0 dataBANK0 -
-__initialization A2 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
+__initialization A6 0 CODE 0 cinit dist/default/production\i2c_mlab.production.obj
 __pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\i2c_mlab.production.obj
 __pdataCOMMON 71 0 COMMON 1 dataCOMMON dist/default/production\i2c_mlab.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
@@ -509,8 +505,8 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\i2c_mlab.production.obj
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 B5 2
-reset_vec 0 0 0 1 2
-bssBANK0 1 20 20 40 1
+intentry 0 4 8 E0 2
+reset_vec 0 0 0 2 2
+bssBANK0 1 20 20 2B 1
 bssCOMMON 1 70 70 2 1
 config 0 8007 1000E 2 2

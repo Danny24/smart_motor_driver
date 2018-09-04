@@ -33,55 +33,39 @@
 #include <stdlib.h>
 #include <xc.h>
 
- //typedef union _float_bytes { float f; unsigned char bf[sizeof(float)]; } float_bytes;
+#define DEVICE_ID 0xF3
+#define I2C_slave_address 0x24 // any value from 0 to 127
  
- volatile union _i2c_buffer 
+ volatile union _I2C_buffer 
  {
     struct _data 
     {
-        float m_kp;
-        float m_kd;
-        float m_ki;
-        float d_kp;
-        float d_kd;
-        float d_ki;
-        int rpm;
-        int speed;
-        short long distance;
-        unsigned char diameter;
-        unsigned int gear;
-        unsigned char address;
         unsigned char ID;
-        unsigned char start;
-        unsigned char mode;
-        //....
-        // y todo lo demas :/
+        unsigned char ADDRESS;
+        unsigned char START_STOP;
+        unsigned char IOWPU;
+        unsigned char MODE;
+        unsigned char SAVE;
+        unsigned char RESET;
+        unsigned int GEAR_RATIO;
+        signed int DIAMETER;
+        signed int RPM;
+        signed int SPEED;
+        long DISTANCE;
+        float RPM_PID_KP;
+        float RPM_PID_KD;
+        float RPM_PID_KI;
+        float ATS_PID_KP;
+        float ATS_PID_KD;
+        float ATS_PID_KI;
     } data; 
- unsigned char b[];
- } i2c_buffer;
+ unsigned char byte[];
+ } I2C_buffer;
 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-#define RX_ELMNTS	32
-#define I2C_slave_address 0x24
-unsigned char first = 1;     
+unsigned char first_i2c = 1;     
 unsigned char index_i2c = 0; 
-
-volatile unsigned char I2C_Array[RX_ELMNTS] =
-{'H','a','c','k','a','d','a','y',' ','P','r','i','z','e',' ','2','0','1','8',' ','R','o','b','o','t','i','c','s',' ',':',')',' '};
-       
-
+const unsigned char RX_ELMNTS = sizeof(I2C_buffer);
 
 // Interrupts
 
@@ -95,12 +79,12 @@ void __interrupt isr()
         {
             if (!SSP1STATbits.D_nA)        // Last byte was an address (D_nA = 0)
             {
-                SSP1BUF = I2C_Array[index_i2c++]; // load with value from array
+                SSP1BUF = I2C_buffer.byte[index_i2c++]; // load with value from array
                 SSP1CON1bits.CKP = 1;             // Release CLK
             }
             if (SSP1STATbits.D_nA)               // Last byte was data (D_nA = 1)
             {
-                SSP1BUF = I2C_Array[index_i2c++]; // load with value from array
+                SSP1BUF = I2C_buffer.byte[index_i2c++]; // load with value from array
                 SSP1CON1bits.CKP = 1;             // Release CLK
             }
 
@@ -109,23 +93,23 @@ void __interrupt isr()
         {
             if (!SSP1STATbits.D_nA) // Last byte was an address (D_nA = 0)
             {
-                first = 1; //last byte was address, next will be data location
+                first_i2c = 1; //last byte was address, next will be data location
                 junk = SSP1BUF;                  // read buffer to clear BF
                 SSP1CON1bits.CKP = 1;            // Release CLK
             }
             if (SSP1STATbits.D_nA)               // Last byte was data (D_nA = 1)
             {
-                if (first) 
+                if (first_i2c) 
                 {
                     index_i2c = SSP1BUF;      // load index with array location
-                    first = 0;               // now clear this since we have 
+                    first_i2c = 0;               // now clear this since we have 
                 }                            //location to read from/write to
                 
                 else
                 {
                     if (index_i2c < RX_ELMNTS)       // make sure index is not
                     {                                //out of range of array
-                        I2C_Array[index_i2c++] = SSP1BUF; //load array with data
+                        I2C_buffer.byte[index_i2c++] = SSP1BUF; //load array with data
                     } 
                     else
                     {
@@ -140,14 +124,37 @@ void __interrupt isr()
                 SSP1CON1bits.CKP = 1;            // Release CLK
             }
         }
+      PIR1bits.SSP1IF = 0;                              // clear SSPIF flag bit
     }
     if (PIR2bits.BCL1IF)                                  // Did a bus collision occur?
     {
         junk = SSP1BUF;                      // dummy read SSPBUF to clear BF bit
         PIR2bits.BCL1IF = 0;                          // clear bus collision Int Flag bit
         SSP1CON1bits.CKP = 1;                // Release CLK
+        PIR1bits.SSP1IF = 0;                              // clear SSPIF flag bit
     }
-    PIR1bits.SSP1IF = 0;                              // clear SSPIF flag bit
+}
+
+void init_I2C_buffer()
+{
+    I2C_buffer.data.ID = DEVICE_ID;
+    I2C_buffer.data.ADDRESS = I2C_slave_address << 1;
+    I2C_buffer.data.START_STOP = 0;
+    I2C_buffer.data.IOWPU = 1;
+    I2C_buffer.data.MODE = 5;
+    I2C_buffer.data.SAVE = 0;
+    I2C_buffer.data.RESET = 0;
+    I2C_buffer.data.GEAR_RATIO = 150;
+    I2C_buffer.data.DIAMETER = 42;
+    I2C_buffer.data.RPM = 1200;
+    I2C_buffer.data.SPEED = 1150;
+    I2C_buffer.data.DISTANCE = 5555;
+    I2C_buffer.data.RPM_PID_KP = 0.1;
+    I2C_buffer.data.RPM_PID_KD = 0.01;
+    I2C_buffer.data.RPM_PID_KI = 0.04;
+    I2C_buffer.data.ATS_PID_KP = 0.15;
+    I2C_buffer.data.ATS_PID_KD = 0.08;
+    I2C_buffer.data.ATS_PID_KI = 0.03;
 }
 
 // Main program
@@ -155,6 +162,7 @@ void __interrupt isr()
 void main() 
 {
     OSCCON = 0b11110000; //configure internal oscilator for 32Mhz
+    init_I2C_buffer();
     TRISA = 0b00011110; //configure IO
     ANSELA = 0b00000000; //analog functions of pins disabled
     WPUA = 0b00011110; //configure weak pull-ups on input pins
@@ -167,7 +175,7 @@ void main()
     SSP1CON3bits.BOEN = 1;       // SSPBUF is updated and NACK is generated for a received address/data byte, ignoring the state of the SSPOV bit only if the BF bit = 0
     SSP1CON3bits.SDAHT = 1;		// Minimum of 300 ns hold time on SDA after the falling edge of SCL
     SSP1CON3bits.SBCDE = 1;		// Enable slave bus collision detect interrupts
-    SSP1ADD = I2C_slave_address << 1; // Load the slave address
+    SSP1ADD = I2C_buffer.data.ADDRESS; // Load the slave address
     PIR1bits.SSP1IF = 0;                  // Clear the serial port interrupt flag
     PIR2bits.BCL1IF = 0;                  // Clear the bus collision interrupt flag
     PIE2bits.BCL1IE = 1;                  // Enable bus collision interrupts
@@ -179,8 +187,7 @@ void main()
     //PIE1bits.TMR1IE = 1; //enable timer1 interrupt
     //T1CONbits.TMR1ON = 1; //start timer1
     INTCONbits.GIE = 1; //run interrupts 
-     
-    
+        
     while(1)                    // main while() loop
     {                           // program will wait here for ISR to be called
         //asm("CLRWDT");          // clear WDT

@@ -1,41 +1,11 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"43 main.c
-[s S268 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `ui 1 `i 1 `i 1 `l 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
+"41 main.c
+[s S268 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `ui 1 `i 1 `i 1 `i 1 `l 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S268 _data ID ADDRESS START_STOP IOWPU MODE SAVE RESET GEAR_RATIO DIAMETER RPM SPEED DISTANCE RPM_PID_KP RPM_PID_KD RPM_PID_KI ATS_PID_KP ATS_PID_KD ATS_PID_KI ]
-"41
+"39
 [u S267 `S268 1 `uc -> 0 `x ]
 [n S267 _I2C_buffer data byte ]
-"355 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1840.h
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"365
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"354
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"372
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"4242
-[s S229 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S229 . IOCAF0 IOCAF1 IOCAF2 IOCAF3 IOCAF4 IOCAF5 ]
-"4250
-[s S230 :6 `uc 1 ]
-[n S230 . IOCAF ]
-"4241
-[u S228 `S229 1 `S230 1 ]
-[n S228 . . . ]
-"4254
-[v _IOCAFbits `VS228 ~T0 @X0 0 e@915 ]
-"1736
-[s S98 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S98 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
-"1735
-[u S97 `S98 1 ]
-[n S97 . . ]
-"1745
-[v _LATAbits `VS97 ~T0 @X0 0 e@268 ]
-"483
+"483 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1840.h
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S36 . TMR1IF TMR2IF CCP1IF SSP1IF TXIF RCIF ADIF TMR1GIF ]
 "482
@@ -43,25 +13,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S35 . . ]
 "494
 [v _PIR1bits `VS35 ~T0 @X0 0 e@17 ]
-"652
-[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S46 . TMR1ON . nT1SYNC T1OSCEN T1CKPS0 T1CKPS1 TMR1CS0 TMR1CS1 ]
-"662
-[s S47 :4 `uc 1 :2 `uc 1 :2 `uc 1 ]
-[n S47 . . T1CKPS TMR1CS ]
-"651
-[u S45 `S46 1 `S47 1 ]
-[n S45 . . . ]
-"668
-[v _T1CONbits `VS45 ~T0 @X0 0 e@24 ]
-"1056
-[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S67 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
-"1055
-[u S66 `S67 1 ]
-[n S66 . . ]
-"1067
-[v _PIE1bits `VS66 ~T0 @X0 0 e@145 ]
 "3166
 [s S184 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S184 . BF UA R_nW S P D_nA CKE SMP ]
@@ -91,20 +42,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S37 . . ]
 "554
 [v _PIR2bits `VS37 ~T0 @X0 0 e@18 ]
-"815
-[v _PR2 `Vuc ~T0 @X0 0 e@27 ]
-"3772
-[v _CCP1CON `Vuc ~T0 @X0 0 e@659 ]
-"3732
-[v _CCPR1L `Vuc ~T0 @X0 0 e@657 ]
-"835
-[v _T2CON `Vuc ~T0 @X0 0 e@28 ]
-[v F2241 `(v ~T0 @X0 1 tf1`ul ]
-"152 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic.h
-[v __delay `JF2241 ~T0 @X0 0 e ]
-[p i __delay ]
 [p mainexit ]
-"1403 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1840.h
+"1403
 [v _OSCCON `Vuc ~T0 @X0 0 e@153 ]
 "1000
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
@@ -134,6 +73,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S122 . . . ]
 "2278
 [v _APFCONbits `VS122 ~T0 @X0 0 e@285 ]
+"1736
+[s S98 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S98 . LATA0 LATA1 LATA2 . LATA4 LATA5 ]
+"1735
+[u S97 `S98 1 ]
+[n S97 . . ]
+"1745
+[v _LATAbits `VS97 ~T0 @X0 0 e@268 ]
 "3155
 [v _SSP1STAT `Vuc ~T0 @X0 0 e@532 ]
 "3277
@@ -164,17 +111,25 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S68 . . ]
 "1127
 [v _PIE2bits `VS68 ~T0 @X0 0 e@146 ]
-"4184
-[s S226 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S226 . IOCAN0 IOCAN1 IOCAN2 IOCAN3 IOCAN4 IOCAN5 ]
-"4192
-[s S227 :6 `uc 1 ]
-[n S227 . IOCAN ]
-"4183
-[u S225 `S226 1 `S227 1 ]
-[n S225 . . . ]
-"4196
-[v _IOCANbits `VS225 ~T0 @X0 0 e@914 ]
+"1056
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . TMR1IE TMR2IE CCP1IE SSP1IE TXIE RCIE ADIE TMR1GIE ]
+"1055
+[u S66 `S67 1 ]
+[n S66 . . ]
+"1067
+[v _PIE1bits `VS66 ~T0 @X0 0 e@145 ]
+"355
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
+"365
+[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S32 . . T0IF . T0IE ]
+"354
+[u S30 `S31 1 `S32 1 ]
+[n S30 . . . ]
+"372
+[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
 "349
 [v _INTCON `Vuc ~T0 @X0 0 e@11 ]
 "646
@@ -2329,904 +2284,416 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 192: extern unsigned char __resetbits;
 [; ;pic.h: 193: extern __bit __powerdown;
 [; ;pic.h: 194: extern __bit __timeout;
-"65 main.c
+"63 main.c
 [v _I2C_buffer `VS267 ~T0 @X0 1 e ]
-[; ;main.c: 41: volatile union _I2C_buffer
+[; ;main.c: 39: volatile union _I2C_buffer
+[; ;main.c: 40: {
+[; ;main.c: 41: struct _data
 [; ;main.c: 42: {
-[; ;main.c: 43: struct _data
-[; ;main.c: 44: {
-[; ;main.c: 45: unsigned char ID;
-[; ;main.c: 46: unsigned char ADDRESS;
-[; ;main.c: 47: unsigned char START_STOP;
-[; ;main.c: 48: unsigned char IOWPU;
-[; ;main.c: 49: unsigned char MODE;
-[; ;main.c: 50: unsigned char SAVE;
-[; ;main.c: 51: unsigned char RESET;
-[; ;main.c: 52: unsigned int GEAR_RATIO;
-[; ;main.c: 53: unsigned int DIAMETER;
-[; ;main.c: 54: int RPM;
-[; ;main.c: 55: int SPEED;
-[; ;main.c: 56: long DISTANCE;
-[; ;main.c: 57: float RPM_PID_KP;
-[; ;main.c: 58: float RPM_PID_KD;
-[; ;main.c: 59: float RPM_PID_KI;
-[; ;main.c: 60: float ATS_PID_KP;
-[; ;main.c: 61: float ATS_PID_KD;
-[; ;main.c: 62: float ATS_PID_KI;
-[; ;main.c: 63: } data;
-[; ;main.c: 64: unsigned char byte[];
-[; ;main.c: 65: } I2C_buffer;
-"67
-[v _RX_ELMNTS `Cuc ~T0 @X0 1 e ]
-[i _RX_ELMNTS
--> -> # _I2C_buffer `ui `uc
-]
-[; ;main.c: 67: const unsigned char RX_ELMNTS = sizeof (I2C_buffer);
-"68
+[; ;main.c: 43: unsigned char ID;
+[; ;main.c: 44: unsigned char ADDRESS;
+[; ;main.c: 45: unsigned char START_STOP;
+[; ;main.c: 46: unsigned char IOWPU;
+[; ;main.c: 47: unsigned char MODE;
+[; ;main.c: 48: unsigned char SAVE;
+[; ;main.c: 49: unsigned char RESET;
+[; ;main.c: 50: unsigned int GEAR_RATIO;
+[; ;main.c: 51: signed int DIAMETER;
+[; ;main.c: 52: signed int RPM;
+[; ;main.c: 53: signed int SPEED;
+[; ;main.c: 54: long DISTANCE;
+[; ;main.c: 55: float RPM_PID_KP;
+[; ;main.c: 56: float RPM_PID_KD;
+[; ;main.c: 57: float RPM_PID_KI;
+[; ;main.c: 58: float ATS_PID_KP;
+[; ;main.c: 59: float ATS_PID_KD;
+[; ;main.c: 60: float ATS_PID_KI;
+[; ;main.c: 61: } data;
+[; ;main.c: 62: unsigned char byte[];
+[; ;main.c: 63: } I2C_buffer;
+"66
 [v _first_i2c `uc ~T0 @X0 1 e ]
 [i _first_i2c
 -> -> 1 `i `uc
 ]
-[; ;main.c: 68: unsigned char first_i2c = 1;
-"69
+[; ;main.c: 66: unsigned char first_i2c = 1;
+"67
 [v _index_i2c `uc ~T0 @X0 1 e ]
 [i _index_i2c
 -> -> 0 `i `uc
 ]
-[; ;main.c: 69: unsigned char index_i2c = 0;
-"70
-[v _counter `us ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `us
+[; ;main.c: 67: unsigned char index_i2c = 0;
+"68
+[v _RX_ELMNTS `Cuc ~T0 @X0 1 e ]
+[i _RX_ELMNTS
+-> -> # _I2C_buffer `ui `uc
 ]
-[; ;main.c: 70: unsigned short counter = 0;
-"71
-[v _lset `i ~T0 @X0 1 e ]
-[i _lset
--> 0 `i
-]
-[; ;main.c: 71: int lset = 0;
-"72
-[v _zero_cross `b ~T0 @X0 1 e ]
-[i _zero_cross
--> 0 `i
-]
-[; ;main.c: 72: bit zero_cross = 0;
-"73
-[v _accumulator `f ~T0 @X0 1 e ]
-[i _accumulator
--> -> 0 `i `f
-]
-[; ;main.c: 73: float accumulator = 0;
-"74
-[v _lasterror `f ~T0 @X0 1 e ]
-[i _lasterror
--> -> 0 `i `f
-]
-[; ;main.c: 74: float lasterror = 0;
-"75
-[v _warming_up `b ~T0 @X0 1 e ]
-[i _warming_up
--> 0 `i
-]
-[; ;main.c: 75: bit warming_up = 0;
+[; ;main.c: 68: const unsigned char RX_ELMNTS = sizeof(I2C_buffer);
 [v $root$_isr `(v ~T0 @X0 0 e ]
-[v F2284 `(v ~T0 @X0 1 tf ]
-"79
-[v _isr `IF2284 ~T0 @X0 1 e ]
+[v F2278 `(v ~T0 @X0 1 tf ]
+"72
+[v _isr `IF2278 ~T0 @X0 1 e ]
+"73
 {
-[; ;main.c: 79: void __interrupt isr() {
+[; ;main.c: 72: void __interrupt isr()
+[; ;main.c: 73: {
 [e :U _isr ]
 [f ]
-[; ;main.c: 81: if (INTCONbits.IOCIF == 1 && IOCAFbits.IOCAF4 == 1)
-"81
-[e $ ! && == -> . . _INTCONbits 0 0 `i -> 1 `i == -> . . _IOCAFbits 0 4 `i -> 1 `i 270  ]
-[; ;main.c: 82: {
-"82
-{
-[; ;main.c: 83: INTCONbits.IOCIE = 0;
-"83
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 84: counter++;
-"84
-[e ++ _counter -> -> 1 `i `us ]
-[; ;main.c: 85: if (LATAbits.LATA0 == 0) {
-"85
-[e $ ! == -> . . _LATAbits 0 0 `i -> 0 `i 271  ]
-{
-[; ;main.c: 86: I2C_buffer.data.DISTANCE--;
-"86
-[e -- . . _I2C_buffer 0 11 -> -> 1 `i `l ]
-"87
-}
-[; ;main.c: 87: }
-[e $U 272  ]
-"88
-[e :U 271 ]
-[; ;main.c: 88: else
-[; ;main.c: 89: {
-"89
-{
-[; ;main.c: 90: I2C_buffer.data.DISTANCE++;
-"90
-[e ++ . . _I2C_buffer 0 11 -> -> 1 `i `l ]
-"91
-}
-[e :U 272 ]
-[; ;main.c: 91: }
-[; ;main.c: 92: IOCAFbits.IOCAF4 = 0;
-"92
-[e = . . _IOCAFbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 93: INTCONbits.IOCIE = 1;
-"93
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"94
-}
-[e :U 270 ]
-[; ;main.c: 94: }
-[; ;main.c: 96: if (PIR1bits.TMR1IF == 1)
-"96
-[e $ ! == -> . . _PIR1bits 0 0 `i -> 1 `i 273  ]
-[; ;main.c: 97: {
-"97
-{
-[; ;main.c: 98: INTCONbits.IOCIE = 0;
-"98
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 99: T1CONbits.TMR1ON = 0;
-"99
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 100: I2C_buffer.data.RPM = (counter * 300) / I2C_buffer.data.GEAR_RATIO;
-"100
-[e = . . _I2C_buffer 0 9 -> / * -> _counter `ui -> -> 300 `i `ui . . _I2C_buffer 0 7 `i ]
-[; ;main.c: 101: counter = 0;
-"101
-[e = _counter -> -> 0 `i `us ]
-[; ;main.c: 102: if (LATAbits.LATA0 == 0) {
-"102
-[e $ ! == -> . . _LATAbits 0 0 `i -> 0 `i 274  ]
-{
-[; ;main.c: 103: I2C_buffer.data.RPM = I2C_buffer.data.RPM *-1;
-"103
-[e = . . _I2C_buffer 0 9 * . . _I2C_buffer 0 9 -U -> 1 `i ]
-"104
-}
-[e :U 274 ]
-[; ;main.c: 104: }
-[; ;main.c: 105: INTCONbits.IOCIE = 1;
-"105
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 106: PIR1bits.TMR1IF = 0;
-"106
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 107: T1CONbits.TMR1ON = 1;
-"107
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"108
-}
-[e :U 273 ]
-"110
-[v F2285 `uc ~T0 @X0 1 s junk ]
-[i F2285
+"74
+[v F2279 `uc ~T0 @X0 1 s junk ]
+[i F2279
 -> -> 0 `i `uc
 ]
-[; ;main.c: 108: }
-[; ;main.c: 110: static unsigned char junk = 0;
-[; ;main.c: 112: if (PIR1bits.SSP1IF)
-"112
-[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 275  ]
-[; ;main.c: 113: {
-"113
+[; ;main.c: 74: static unsigned char junk = 0;
+[; ;main.c: 76: if (PIR1bits.SSP1IF)
+"76
+[e $ ! != -> . . _PIR1bits 0 3 `i -> -> -> 0 `i `Vuc `i 270  ]
+[; ;main.c: 77: {
+"77
 {
-[; ;main.c: 114: INTCONbits.IOCIE = 0;
-"114
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 115: PIE1bits.TMR1IE = 0;
-"115
-[e = . . _PIE1bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 116: if (SSP1STATbits.R_nW)
-"116
-[e $ ! != -> . . _SSP1STATbits 0 2 `i -> -> -> 0 `i `Vuc `i 276  ]
-[; ;main.c: 117: {
-"117
+[; ;main.c: 78: if (SSP1STATbits.R_nW)
+"78
+[e $ ! != -> . . _SSP1STATbits 0 2 `i -> -> -> 0 `i `Vuc `i 271  ]
+[; ;main.c: 79: {
+"79
 {
-[; ;main.c: 118: if (!SSP1STATbits.D_nA)
-"118
-[e $ ! ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 277  ]
-[; ;main.c: 119: {
-"119
+[; ;main.c: 80: if (!SSP1STATbits.D_nA)
+"80
+[e $ ! ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 272  ]
+[; ;main.c: 81: {
+"81
 {
-[; ;main.c: 120: SSP1BUF = I2C_buffer.byte[index_i2c++];
-"120
+[; ;main.c: 82: SSP1BUF = I2C_buffer.byte[index_i2c++];
+"82
 [e = _SSP1BUF *U + &U . _I2C_buffer 1 * -> ++ _index_i2c -> -> 1 `i `uc `ux -> -> # *U &U . _I2C_buffer 1 `ui `ux ]
-[; ;main.c: 121: SSP1CON1bits.CKP = 1;
-"121
+[; ;main.c: 83: SSP1CON1bits.CKP = 1;
+"83
 [e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
-"122
+"84
 }
-[e :U 277 ]
-[; ;main.c: 122: }
-[; ;main.c: 123: if (SSP1STATbits.D_nA)
-"123
-[e $ ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 278  ]
-[; ;main.c: 124: {
-"124
+[e :U 272 ]
+[; ;main.c: 84: }
+[; ;main.c: 85: if (SSP1STATbits.D_nA)
+"85
+[e $ ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 273  ]
+[; ;main.c: 86: {
+"86
 {
-[; ;main.c: 125: SSP1BUF = I2C_buffer.byte[index_i2c++];
-"125
+[; ;main.c: 87: SSP1BUF = I2C_buffer.byte[index_i2c++];
+"87
 [e = _SSP1BUF *U + &U . _I2C_buffer 1 * -> ++ _index_i2c -> -> 1 `i `uc `ux -> -> # *U &U . _I2C_buffer 1 `ui `ux ]
-[; ;main.c: 126: SSP1CON1bits.CKP = 1;
-"126
+[; ;main.c: 88: SSP1CON1bits.CKP = 1;
+"88
 [e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
-"127
+"89
+}
+[e :U 273 ]
+"91
+}
+[e :U 271 ]
+[; ;main.c: 89: }
+[; ;main.c: 91: }
+[; ;main.c: 92: if (!SSP1STATbits.R_nW)
+"92
+[e $ ! ! != -> . . _SSP1STATbits 0 2 `i -> -> -> 0 `i `Vuc `i 274  ]
+[; ;main.c: 93: {
+"93
+{
+[; ;main.c: 94: if (!SSP1STATbits.D_nA)
+"94
+[e $ ! ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 275  ]
+[; ;main.c: 95: {
+"95
+{
+[; ;main.c: 96: first_i2c = 1;
+"96
+[e = _first_i2c -> -> 1 `i `uc ]
+[; ;main.c: 97: junk = SSP1BUF;
+"97
+[e = F2279 _SSP1BUF ]
+[; ;main.c: 98: SSP1CON1bits.CKP = 1;
+"98
+[e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
+"99
+}
+[e :U 275 ]
+[; ;main.c: 99: }
+[; ;main.c: 100: if (SSP1STATbits.D_nA)
+"100
+[e $ ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 276  ]
+[; ;main.c: 101: {
+"101
+{
+[; ;main.c: 102: if (first_i2c)
+"102
+[e $ ! != -> _first_i2c `i -> -> -> 0 `i `uc `i 277  ]
+[; ;main.c: 103: {
+"103
+{
+[; ;main.c: 104: index_i2c = SSP1BUF;
+"104
+[e = _index_i2c _SSP1BUF ]
+[; ;main.c: 105: first_i2c = 0;
+"105
+[e = _first_i2c -> -> 0 `i `uc ]
+"106
+}
+[; ;main.c: 106: }
+[e $U 278  ]
+"108
+[e :U 277 ]
+[; ;main.c: 108: else
+[; ;main.c: 109: {
+"109
+{
+[; ;main.c: 110: if (index_i2c < RX_ELMNTS)
+"110
+[e $ ! < -> _index_i2c `i -> _RX_ELMNTS `i 279  ]
+[; ;main.c: 111: {
+"111
+{
+[; ;main.c: 112: I2C_buffer.byte[index_i2c++] = SSP1BUF;
+"112
+[e = *U + &U . _I2C_buffer 1 * -> ++ _index_i2c -> -> 1 `i `uc `ux -> -> # *U &U . _I2C_buffer 1 `ui `ux _SSP1BUF ]
+"113
+}
+[; ;main.c: 113: }
+[e $U 280  ]
+"114
+[e :U 279 ]
+[; ;main.c: 114: else
+[; ;main.c: 115: {
+"115
+{
+[; ;main.c: 116: junk = SSP1BUF;
+"116
+[e = F2279 _SSP1BUF ]
+"117
+}
+[e :U 280 ]
+"118
 }
 [e :U 278 ]
-"128
+[; ;main.c: 117: }
+[; ;main.c: 118: }
+[; ;main.c: 119: if (SSP1CON1bits.WCOL)
+"119
+[e $ ! != -> . . _SSP1CON1bits 0 7 `i -> -> -> 0 `i `Vuc `i 281  ]
+[; ;main.c: 120: {
+"120
+{
+[; ;main.c: 121: SSP1CON1bits.WCOL = 0;
+"121
+[e = . . _SSP1CON1bits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 122: junk = SSP1BUF;
+"122
+[e = F2279 _SSP1BUF ]
+"123
+}
+[e :U 281 ]
+[; ;main.c: 123: }
+[; ;main.c: 124: SSP1CON1bits.CKP = 1;
+"124
+[e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
+"125
 }
 [e :U 276 ]
-[; ;main.c: 127: }
+"126
+}
+[e :U 274 ]
+[; ;main.c: 125: }
+[; ;main.c: 126: }
+[; ;main.c: 127: PIR1bits.SSP1IF = 0;
+"127
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"128
+}
+[e :U 270 ]
 [; ;main.c: 128: }
-[; ;main.c: 129: if (!SSP1STATbits.R_nW)
+[; ;main.c: 129: if (PIR2bits.BCL1IF)
 "129
-[e $ ! ! != -> . . _SSP1STATbits 0 2 `i -> -> -> 0 `i `Vuc `i 279  ]
+[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 282  ]
 [; ;main.c: 130: {
 "130
 {
-[; ;main.c: 131: if (!SSP1STATbits.D_nA)
+[; ;main.c: 131: junk = SSP1BUF;
 "131
-[e $ ! ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 280  ]
-[; ;main.c: 132: {
+[e = F2279 _SSP1BUF ]
+[; ;main.c: 132: PIR2bits.BCL1IF = 0;
 "132
-{
-[; ;main.c: 133: first_i2c = 1;
-"133
-[e = _first_i2c -> -> 1 `i `uc ]
-[; ;main.c: 134: junk = SSP1BUF;
-"134
-[e = F2285 _SSP1BUF ]
-[; ;main.c: 135: SSP1CON1bits.CKP = 1;
-"135
-[e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
-"136
-}
-[e :U 280 ]
-[; ;main.c: 136: }
-[; ;main.c: 137: if (SSP1STATbits.D_nA)
-"137
-[e $ ! != -> . . _SSP1STATbits 0 5 `i -> -> -> 0 `i `Vuc `i 281  ]
-[; ;main.c: 138: {
-"138
-{
-[; ;main.c: 139: if (first_i2c) {
-"139
-[e $ ! != -> _first_i2c `i -> -> -> 0 `i `uc `i 282  ]
-{
-[; ;main.c: 140: index_i2c = SSP1BUF;
-"140
-[e = _index_i2c _SSP1BUF ]
-[; ;main.c: 141: first_i2c = 0;
-"141
-[e = _first_i2c -> -> 0 `i `uc ]
-"142
-}
-[; ;main.c: 142: }
-[e $U 283  ]
-"144
-[e :U 282 ]
-[; ;main.c: 144: else {
-{
-[; ;main.c: 145: if (index_i2c < RX_ELMNTS)
-"145
-[e $ ! < -> _index_i2c `i -> _RX_ELMNTS `i 284  ]
-[; ;main.c: 146: {
-"146
-{
-[; ;main.c: 147: I2C_buffer.byte[index_i2c++] = SSP1BUF;
-"147
-[e = *U + &U . _I2C_buffer 1 * -> ++ _index_i2c -> -> 1 `i `uc `ux -> -> # *U &U . _I2C_buffer 1 `ui `ux _SSP1BUF ]
-"148
-}
-[; ;main.c: 148: }
-[e $U 285  ]
-"149
-[e :U 284 ]
-[; ;main.c: 149: else {
-{
-[; ;main.c: 150: junk = SSP1BUF;
-"150
-[e = F2285 _SSP1BUF ]
-"151
-}
-[e :U 285 ]
-"152
-}
-[e :U 283 ]
-[; ;main.c: 151: }
-[; ;main.c: 152: }
-[; ;main.c: 153: if (SSP1CON1bits.WCOL)
-"153
-[e $ ! != -> . . _SSP1CON1bits 0 7 `i -> -> -> 0 `i `Vuc `i 286  ]
-[; ;main.c: 154: {
-"154
-{
-[; ;main.c: 155: SSP1CON1bits.WCOL = 0;
-"155
-[e = . . _SSP1CON1bits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 156: junk = SSP1BUF;
-"156
-[e = F2285 _SSP1BUF ]
-"157
-}
-[e :U 286 ]
-[; ;main.c: 157: }
-[; ;main.c: 158: SSP1CON1bits.CKP = 1;
-"158
-[e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
-"159
-}
-[e :U 281 ]
-"160
-}
-[e :U 279 ]
-[; ;main.c: 159: }
-[; ;main.c: 160: }
-[; ;main.c: 161: PIR1bits.SSP1IF = 0;
-"161
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 162: INTCONbits.IOCIE = 1;
-"162
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 163: PIE1bits.TMR1IE = 1;
-"163
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"164
-}
-[e :U 275 ]
-[; ;main.c: 164: }
-[; ;main.c: 166: if (PIR2bits.BCL1IF)
-"166
-[e $ ! != -> . . _PIR2bits 0 1 `i -> -> -> 0 `i `Vuc `i 287  ]
-[; ;main.c: 167: {
-"167
-{
-[; ;main.c: 168: junk = SSP1BUF;
-"168
-[e = F2285 _SSP1BUF ]
-[; ;main.c: 169: PIR2bits.BCL1IF = 0;
-"169
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 170: SSP1CON1bits.CKP = 1;
-"170
+[; ;main.c: 133: SSP1CON1bits.CKP = 1;
+"133
 [e = . . _SSP1CON1bits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 171: PIR1bits.SSP1IF = 0;
-"171
+[; ;main.c: 134: PIR1bits.SSP1IF = 0;
+"134
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"172
+"135
 }
-[e :U 287 ]
-[; ;main.c: 172: }
-[; ;main.c: 173: }
-"173
+[e :U 282 ]
+[; ;main.c: 135: }
+[; ;main.c: 136: }
+"136
 [e :UE 269 ]
 }
-"177
-[v _PWM_Init `(i ~T0 @X0 1 ef ]
-"178
-{
-[; ;main.c: 177: PWM_Init(void)
-[; ;main.c: 178: {
-[e :U _PWM_Init ]
-[f ]
-[; ;main.c: 198: PR2 = 0xFF;
-"198
-[e = _PR2 -> -> 255 `i `uc ]
-[; ;main.c: 199: CCP1CON = 0b00001100;
-"199
-[e = _CCP1CON -> -> 12 `i `uc ]
-[; ;main.c: 200: CCPR1L = 0b00000000;
-"200
-[e = _CCPR1L -> -> 0 `i `uc ]
-[; ;main.c: 201: PIR1bits.TMR2IF = 0;
-"201
-[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 202: T2CON = 0b00000100;
-"202
-[e = _T2CON -> -> 4 `i `uc ]
-[; ;main.c: 212: }
-"212
-[e :UE 288 ]
-}
-"214
-[v _PWM_set_duty `(i ~T0 @X0 1 ef1`i ]
-"215
-{
-[; ;main.c: 214: PWM_set_duty(int duty)
-[; ;main.c: 215: {
-[e :U _PWM_set_duty ]
-"214
-[v _duty `i ~T0 @X0 1 r1 ]
-"215
-[f ]
-[; ;main.c: 216: if (duty < 1024) {
-"216
-[e $ ! < _duty -> 1024 `i 290  ]
-{
-[; ;main.c: 217: CCPR1L = (0xFF & ((unsigned int) duty >> 2));
-"217
-[e = _CCPR1L -> & -> -> 255 `i `ui >> -> _duty `ui -> 2 `i `uc ]
-[; ;main.c: 218: CCP1CON = (0x0C | (0x30 & ((unsigned int) duty << 4)));
-"218
-[e = _CCP1CON -> | -> -> 12 `i `ui & -> -> 48 `i `ui << -> _duty `ui -> 4 `i `uc ]
-"220
-}
-[e :U 290 ]
-[; ;main.c: 220: }
-[; ;main.c: 221: }
-"221
-[e :UE 289 ]
-}
-"223
-[v _M_control `(v ~T0 @X0 1 ef1`i ]
-"224
-{
-[; ;main.c: 223: void M_control(int ctr)
-[; ;main.c: 224: {
-[e :U _M_control ]
-"223
-[v _ctr `i ~T0 @X0 1 r1 ]
-"224
-[f ]
-[; ;main.c: 225: if (ctr == 0)
-"225
-[e $ ! == _ctr -> 0 `i 292  ]
-[; ;main.c: 226: {
-"226
-{
-[; ;main.c: 227: PWM_set_duty(ctr);
-"227
-[e ( _PWM_set_duty (1 _ctr ]
-"228
-}
-[e :U 292 ]
-[; ;main.c: 228: }
-[; ;main.c: 229: if (ctr > 0)
-"229
-[e $ ! > _ctr -> 0 `i 293  ]
-[; ;main.c: 230: {
-"230
-{
-[; ;main.c: 231: LATAbits.LATA0 = 1;
-"231
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 232: PWM_set_duty(ctr);
-"232
-[e ( _PWM_set_duty (1 _ctr ]
-"233
-}
-[e :U 293 ]
-[; ;main.c: 233: }
-[; ;main.c: 234: if (ctr < 0)
-"234
-[e $ ! < _ctr -> 0 `i 294  ]
-[; ;main.c: 235: {
-"235
-{
-[; ;main.c: 236: LATAbits.LATA0 = 0;
-"236
-[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 237: ctr = ctr * -1;
-"237
-[e = _ctr * _ctr -U -> 1 `i ]
-[; ;main.c: 238: PWM_set_duty(ctr);
-"238
-[e ( _PWM_set_duty (1 _ctr ]
-"239
-}
-[e :U 294 ]
-[; ;main.c: 239: }
-[; ;main.c: 240: }
-"240
-[e :UE 291 ]
-}
-"242
-[v _calculate_pid `(v ~T0 @X0 1 ef1`i ]
-"243
-{
-[; ;main.c: 242: void calculate_pid(int set)
-[; ;main.c: 243: {
-[e :U _calculate_pid ]
-"242
-[v _set `i ~T0 @X0 1 r1 ]
-"243
-[f ]
-"244
-[v _error `f ~T0 @X0 1 a ]
-[; ;main.c: 244: float error = 0;
-[e = _error -> -> 0 `i `f ]
-"245
-[v _pid `f ~T0 @X0 1 a ]
-[; ;main.c: 245: float pid = 0;
-[e = _pid -> -> 0 `i `f ]
-"246
-[v _rpm2 `i ~T0 @X0 1 a ]
-[; ;main.c: 246: int rpm2 = I2C_buffer.data.RPM + 600;
-[e = _rpm2 + . . _I2C_buffer 0 9 -> 600 `i ]
-[; ;main.c: 247: set = set + 600;
-"247
-[e = _set + _set -> 600 `i ]
-[; ;main.c: 248: error = set - rpm2;
-"248
-[e = _error -> - _set _rpm2 `f ]
-[; ;main.c: 249: pid = error * I2C_buffer.data.RPM_PID_KP;
-"249
-[e = _pid * _error . . _I2C_buffer 0 12 ]
-[; ;main.c: 250: accumulator += error;
-"250
-[e =+ _accumulator _error ]
-[; ;main.c: 251: pid += I2C_buffer.data.RPM_PID_KI*accumulator;
-"251
-[e =+ _pid * . . _I2C_buffer 0 14 _accumulator ]
-[; ;main.c: 252: pid += I2C_buffer.data.RPM_PID_KD * (error - lasterror);
-"252
-[e =+ _pid * . . _I2C_buffer 0 13 - _error _lasterror ]
-[; ;main.c: 253: lasterror = error;
-"253
-[e = _lasterror _error ]
-[; ;main.c: 254: if (pid >= 2047)
-"254
-[e $ ! >= _pid -> -> 2047 `i `f 296  ]
-[; ;main.c: 255: {
-"255
-{
-[; ;main.c: 256: pid = 2047;
-"256
-[e = _pid -> -> 2047 `i `f ]
-"257
-}
-[e :U 296 ]
-[; ;main.c: 257: }
-[; ;main.c: 258: if (pid <= 0)
-"258
-[e $ ! <= _pid -> -> 0 `i `f 297  ]
-[; ;main.c: 259: {
-"259
-{
-[; ;main.c: 260: pid = 0;
-"260
-[e = _pid -> -> 0 `i `f ]
-"261
-}
-[e :U 297 ]
-[; ;main.c: 261: }
-[; ;main.c: 262: pid = (-1023 + ((2046)*((pid) / (2047))));
-"262
-[e = _pid + -> -U -> 1023 `i `f * -> -> 2046 `i `f / _pid -> -> 2047 `i `f ]
-[; ;main.c: 263: if (set < 600)
-"263
-[e $ ! < _set -> 600 `i 298  ]
-[; ;main.c: 264: {
-"264
-{
-[; ;main.c: 265: if (pid > 0) {
-"265
-[e $ ! > _pid -> -> 0 `i `f 299  ]
-{
-[; ;main.c: 266: pid = 0;
-"266
-[e = _pid -> -> 0 `i `f ]
-"267
-}
-[e :U 299 ]
-"268
-}
-[e :U 298 ]
-[; ;main.c: 267: }
-[; ;main.c: 268: }
-[; ;main.c: 269: if (set > 600)
-"269
-[e $ ! > _set -> 600 `i 300  ]
-[; ;main.c: 270: {
-"270
-{
-[; ;main.c: 271: if (pid < 0) {
-"271
-[e $ ! < _pid -> -> 0 `i `f 301  ]
-{
-[; ;main.c: 272: pid = 0;
-"272
-[e = _pid -> -> 0 `i `f ]
-"273
-}
-[e :U 301 ]
-"274
-}
-[e :U 300 ]
-[; ;main.c: 273: }
-[; ;main.c: 274: }
-[; ;main.c: 275: if (set == 600 && warming_up == 0)
-"275
-[e $ ! && == _set -> 600 `i == -> _warming_up `i -> 0 `i 302  ]
-[; ;main.c: 276: {
-"276
-{
-[; ;main.c: 277: if (pid < 0) {
-"277
-[e $ ! < _pid -> -> 0 `i `f 303  ]
-{
-[; ;main.c: 278: pid = 0;
-"278
-[e = _pid -> -> 0 `i `f ]
-"279
-}
-[e :U 303 ]
-"280
-}
-[e :U 302 ]
-[; ;main.c: 279: }
-[; ;main.c: 280: }
-[; ;main.c: 281: M_control((int) pid);
-"281
-[e ( _M_control (1 -> _pid `i ]
-[; ;main.c: 282: }
-"282
-[e :UE 295 ]
-}
-"284
-[v _PID `(v ~T0 @X0 1 ef1`i ]
-"285
-{
-[; ;main.c: 284: void PID(int set)
-[; ;main.c: 285: {
-[e :U _PID ]
-"284
-[v _set `i ~T0 @X0 1 r1 ]
-"285
-[f ]
-[; ;main.c: 286: if(warming_up == 0)
-"286
-[e $ ! == -> _warming_up `i -> 0 `i 305  ]
-[; ;main.c: 287: {
-"287
-{
-[; ;main.c: 288: if (set != 0)
-"288
-[e $ ! != _set -> 0 `i 306  ]
-[; ;main.c: 289: {
-"289
-{
-[; ;main.c: 290: warming_up = 1;
-"290
-[e = _warming_up -> -> 1 `i `b ]
-"291
-}
-[e :U 306 ]
-"292
-}
-[e :U 305 ]
-[; ;main.c: 291: }
-[; ;main.c: 292: }
-[; ;main.c: 293: zero_cross = ((lset^set) < 0);
-"293
-[e = _zero_cross < ^ _lset _set -> 0 `i ]
-[; ;main.c: 294: if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
-"294
-[e $ ! & & == -> _zero_cross `i -> 1 `i <= _set -> 0 `i <= _lset -> 0 `i 307  ]
-[; ;main.c: 295: {
-"295
-{
-[; ;main.c: 296: zero_cross = 0;
-"296
-[e = _zero_cross -> -> 0 `i `b ]
-"297
-}
-[e :U 307 ]
-[; ;main.c: 297: }
-[; ;main.c: 298: if (zero_cross == 1) {
-"298
-[e $ ! == -> _zero_cross `i -> 1 `i 308  ]
-{
-[; ;main.c: 299: do {
-"299
-[e :U 311 ]
-{
-[; ;main.c: 300: calculate_pid(0);
-"300
-[e ( _calculate_pid (1 -> 0 `i ]
-[; ;main.c: 301: _delay((unsigned long)((10)*(32000000/4000.0)));
-"301
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"302
-}
-[; ;main.c: 302: } while ((I2C_buffer.data.RPM != 0));
-[e $ != . . _I2C_buffer 0 9 -> 0 `i 311  ]
-[e :U 310 ]
-"303
-}
-[e :U 308 ]
-[; ;main.c: 303: }
-[; ;main.c: 304: lset = set;
-"304
-[e = _lset _set ]
-[; ;main.c: 305: calculate_pid(set);
-"305
-[e ( _calculate_pid (1 _set ]
-[; ;main.c: 306: }
-"306
-[e :UE 304 ]
-}
-"315
+"138
 [v _init_I2C_buffer `(v ~T0 @X0 1 ef ]
+"139
 {
-[; ;main.c: 315: void init_I2C_buffer() {
+[; ;main.c: 138: void init_I2C_buffer()
+[; ;main.c: 139: {
 [e :U _init_I2C_buffer ]
 [f ]
-[; ;main.c: 316: I2C_buffer.data.ID = 0xF3;
-"316
+[; ;main.c: 140: I2C_buffer.data.ID = 0xF3;
+"140
 [e = . . _I2C_buffer 0 0 -> -> 243 `i `uc ]
-[; ;main.c: 317: I2C_buffer.data.ADDRESS = 0x24 << 1;
-"317
+[; ;main.c: 141: I2C_buffer.data.ADDRESS = 0x24 << 1;
+"141
 [e = . . _I2C_buffer 0 1 -> << -> 36 `i -> 1 `i `uc ]
-[; ;main.c: 318: I2C_buffer.data.START_STOP = 0;
-"318
+[; ;main.c: 142: I2C_buffer.data.START_STOP = 0;
+"142
 [e = . . _I2C_buffer 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 319: I2C_buffer.data.IOWPU = 1;
-"319
+[; ;main.c: 143: I2C_buffer.data.IOWPU = 1;
+"143
 [e = . . _I2C_buffer 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 320: I2C_buffer.data.MODE = 5;
-"320
+[; ;main.c: 144: I2C_buffer.data.MODE = 5;
+"144
 [e = . . _I2C_buffer 0 4 -> -> 5 `i `uc ]
-[; ;main.c: 321: I2C_buffer.data.SAVE = 0;
-"321
+[; ;main.c: 145: I2C_buffer.data.SAVE = 0;
+"145
 [e = . . _I2C_buffer 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 322: I2C_buffer.data.RESET = 0;
-"322
+[; ;main.c: 146: I2C_buffer.data.RESET = 0;
+"146
 [e = . . _I2C_buffer 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 323: I2C_buffer.data.GEAR_RATIO = 150;
-"323
+[; ;main.c: 147: I2C_buffer.data.GEAR_RATIO = 150;
+"147
 [e = . . _I2C_buffer 0 7 -> -> 150 `i `ui ]
-[; ;main.c: 324: I2C_buffer.data.DIAMETER = 42;
-"324
-[e = . . _I2C_buffer 0 8 -> -> 42 `i `ui ]
-[; ;main.c: 325: I2C_buffer.data.RPM = 0;
-"325
-[e = . . _I2C_buffer 0 9 -> 0 `i ]
-[; ;main.c: 326: I2C_buffer.data.SPEED = 0;
-"326
-[e = . . _I2C_buffer 0 10 -> 0 `i ]
-[; ;main.c: 327: I2C_buffer.data.DISTANCE = 0;
-"327
-[e = . . _I2C_buffer 0 11 -> -> 0 `i `l ]
-[; ;main.c: 328: I2C_buffer.data.RPM_PID_KP = 0.1;
-"328
+[; ;main.c: 148: I2C_buffer.data.DIAMETER = 42;
+"148
+[e = . . _I2C_buffer 0 8 -> 42 `i ]
+[; ;main.c: 149: I2C_buffer.data.RPM = 1200;
+"149
+[e = . . _I2C_buffer 0 9 -> 1200 `i ]
+[; ;main.c: 150: I2C_buffer.data.SPEED = 1150;
+"150
+[e = . . _I2C_buffer 0 10 -> 1150 `i ]
+[; ;main.c: 151: I2C_buffer.data.DISTANCE = 5555;
+"151
+[e = . . _I2C_buffer 0 11 -> -> 5555 `i `l ]
+[; ;main.c: 152: I2C_buffer.data.RPM_PID_KP = 0.1;
+"152
 [e = . . _I2C_buffer 0 12 -> .0.1 `f ]
-[; ;main.c: 329: I2C_buffer.data.RPM_PID_KD = 0.01;
-"329
+[; ;main.c: 153: I2C_buffer.data.RPM_PID_KD = 0.01;
+"153
 [e = . . _I2C_buffer 0 13 -> .0.01 `f ]
-[; ;main.c: 330: I2C_buffer.data.RPM_PID_KI = 0.04;
-"330
+[; ;main.c: 154: I2C_buffer.data.RPM_PID_KI = 0.04;
+"154
 [e = . . _I2C_buffer 0 14 -> .0.04 `f ]
-[; ;main.c: 331: I2C_buffer.data.ATS_PID_KP = 0.15;
-"331
+[; ;main.c: 155: I2C_buffer.data.ATS_PID_KP = 0.15;
+"155
 [e = . . _I2C_buffer 0 15 -> .0.15 `f ]
-[; ;main.c: 332: I2C_buffer.data.ATS_PID_KD = 0.08;
-"332
+[; ;main.c: 156: I2C_buffer.data.ATS_PID_KD = 0.08;
+"156
 [e = . . _I2C_buffer 0 16 -> .0.08 `f ]
-[; ;main.c: 333: I2C_buffer.data.ATS_PID_KI = 0.03;
-"333
+[; ;main.c: 157: I2C_buffer.data.ATS_PID_KI = 0.03;
+"157
 [e = . . _I2C_buffer 0 17 -> .0.03 `f ]
-[; ;main.c: 334: }
-"334
-[e :UE 312 ]
+[; ;main.c: 158: }
+"158
+[e :UE 283 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"338
+"162
 [v _main `(v ~T0 @X0 1 ef ]
+"163
 {
-[; ;main.c: 338: void main() {
+[; ;main.c: 162: void main()
+[; ;main.c: 163: {
 [e :U _main ]
 [f ]
-[; ;main.c: 339: OSCCON = 0b11110000;
-"339
+[; ;main.c: 164: OSCCON = 0b11110000;
+"164
 [e = _OSCCON -> -> 240 `i `uc ]
-[; ;main.c: 340: init_I2C_buffer();
-"340
+[; ;main.c: 165: init_I2C_buffer();
+"165
 [e ( _init_I2C_buffer ..  ]
-[; ;main.c: 341: TRISA = 0b00011110;
-"341
+[; ;main.c: 166: TRISA = 0b00011110;
+"166
 [e = _TRISA -> -> 30 `i `uc ]
-[; ;main.c: 342: ANSELA = 0b00000000;
-"342
+[; ;main.c: 167: ANSELA = 0b00000000;
+"167
 [e = _ANSELA -> -> 0 `i `uc ]
-[; ;main.c: 343: WPUA = 0b00011110;
-"343
+[; ;main.c: 168: WPUA = 0b00011110;
+"168
 [e = _WPUA -> -> 30 `i `uc ]
-[; ;main.c: 344: OPTION_REGbits.nWPUEN = 0;
-"344
+[; ;main.c: 169: OPTION_REGbits.nWPUEN = 0;
+"169
 [e = . . _OPTION_REGbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 345: APFCONbits.CCP1SEL = 1;
-"345
+[; ;main.c: 170: APFCONbits.CCP1SEL = 1;
+"170
 [e = . . _APFCONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 346: LATAbits.LATA0 = 0;
-"346
+[; ;main.c: 171: LATAbits.LATA0 = 0;
+"171
 [e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 347: SSP1STAT = 0b10000000;
-"347
+[; ;main.c: 172: SSP1STAT = 0b10000000;
+"172
 [e = _SSP1STAT -> -> 128 `i `uc ]
-[; ;main.c: 348: SSP1CON1 = 0b00110110;
-"348
+[; ;main.c: 173: SSP1CON1 = 0b00110110;
+"173
 [e = _SSP1CON1 -> -> 54 `i `uc ]
-[; ;main.c: 349: SSP1CON2bits.SEN = 1;
-"349
+[; ;main.c: 174: SSP1CON2bits.SEN = 1;
+"174
 [e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 350: SSP1CON3bits.BOEN = 1;
-"350
+[; ;main.c: 175: SSP1CON3bits.BOEN = 1;
+"175
 [e = . . _SSP1CON3bits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 351: SSP1CON3bits.SDAHT = 1;
-"351
+[; ;main.c: 176: SSP1CON3bits.SDAHT = 1;
+"176
 [e = . . _SSP1CON3bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 352: SSP1CON3bits.SBCDE = 1;
-"352
+[; ;main.c: 177: SSP1CON3bits.SBCDE = 1;
+"177
 [e = . . _SSP1CON3bits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 353: SSP1ADD = I2C_buffer.data.ADDRESS;
-"353
+[; ;main.c: 178: SSP1ADD = I2C_buffer.data.ADDRESS;
+"178
 [e = _SSP1ADD . . _I2C_buffer 0 1 ]
-[; ;main.c: 354: PIR1bits.SSP1IF = 0;
-"354
+[; ;main.c: 179: PIR1bits.SSP1IF = 0;
+"179
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 355: PIR2bits.BCL1IF = 0;
-"355
+[; ;main.c: 180: PIR2bits.BCL1IF = 0;
+"180
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 356: PIE2bits.BCL1IE = 1;
-"356
+[; ;main.c: 181: PIE2bits.BCL1IE = 1;
+"181
 [e = . . _PIE2bits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 357: PIE1bits.SSP1IE = 1;
-"357
+[; ;main.c: 182: PIE1bits.SSP1IE = 1;
+"182
 [e = . . _PIE1bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 358: INTCONbits.PEIE = 1;
-"358
+[; ;main.c: 183: INTCONbits.PEIE = 1;
+"183
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 359: PWM_Init();
-"359
-[e ( _PWM_Init ..  ]
-[; ;main.c: 360: PWM_set_duty(0);
-"360
-[e ( _PWM_set_duty (1 -> 0 `i ]
-[; ;main.c: 361: IOCANbits.IOCAN4 = 1;
-"361
-[e = . . _IOCANbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 362: INTCON = 0b01001000;
-"362
+[; ;main.c: 185: INTCON = 0b01001000;
+"185
 [e = _INTCON -> -> 72 `i `uc ]
-[; ;main.c: 363: T1CON = 0b00110100;
-"363
+[; ;main.c: 186: T1CON = 0b00110100;
+"186
 [e = _T1CON -> -> 52 `i `uc ]
-[; ;main.c: 364: PIE1bits.TMR1IE = 1;
-"364
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 365: T1CONbits.TMR1ON = 1;
-"365
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 366: INTCONbits.GIE = 1;
-"366
+[; ;main.c: 189: INTCONbits.GIE = 1;
+"189
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 368: while (1) {
-"368
-[e :U 315 ]
+[; ;main.c: 191: while(1)
+"191
+[e :U 286 ]
+[; ;main.c: 192: {
+"192
 {
-[; ;main.c: 369: PID(I2C_buffer.data.SPEED);
-"369
-[e ( _PID (1 . . _I2C_buffer 0 10 ]
-[; ;main.c: 370: _delay((unsigned long)((10)*(32000000/4000.0)));
-"370
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 32000000 `l `d .4000.0 `ul ]
-"371
+"194
 }
-[e :U 314 ]
-"368
-[e $U 315  ]
-[e :U 316 ]
-[; ;main.c: 371: }
-[; ;main.c: 384: }
-"384
-[e :UE 313 ]
+[e :U 285 ]
+"191
+[e $U 286  ]
+[e :U 287 ]
+[; ;main.c: 194: }
+[; ;main.c: 196: }
+"196
+[e :UE 284 ]
 }
