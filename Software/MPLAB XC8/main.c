@@ -72,7 +72,6 @@ int lset = 0;
 bit zero_cross = 0;
 float accumulator = 0;
 float lasterror = 0;
-bit warming_up = 0;
 
 // Interrupts
 
@@ -243,53 +242,25 @@ void calculate_pid(int set) //PID calculation function
 {
     float error = 0;
     float pid = 0;
-    int rpm2 = I2C_buffer.data.RPM + 600;
-    set = set + 600;
-    error = set - rpm2; //calculate actual error
+    error = set - I2C_buffer.data.RPM; //calculate actual error
     pid = error * I2C_buffer.data.RPM_PID_KP; // calculate proportional gain
     accumulator += error; // calculate accumulator, is sum of errors
     pid += I2C_buffer.data.RPM_PID_KI*accumulator; // add integral gain and error accumulator
     pid += I2C_buffer.data.RPM_PID_KD * (error - lasterror); //add differential gain
     lasterror = error; //save the error to the next iteration
-    if (pid >= 2047) //next we guarantee that the PID value is in range
+    if (pid >= 1023) //next we guarantee that the PID value is in range
     {
-        pid = 2047;
+        pid = 1023;
     }
-    if (pid <= 0) 
+    if (pid <= -1023) 
     {
-        pid = 0;
-    }
-    pid = (-1023 + ((2046)*((pid) / (2047)))); //scale PID result from 0,2047 to -1023,1023 
-    if (set < 600) //ignore half fordward values for backward
-    {
-        if (pid > 0) {
-            pid = 0;
-        }
-    }
-    if (set > 600) //ignore half backward values for fordward
-    {
-        if (pid < 0) {
-            pid = 0;
-        }
-    }
-     if (set == 600 && warming_up == 0) //this prevents unwanted direction toggle at start-up
-    {
-        if (pid < 0) {
-            pid = 0;
-        }
+        pid = -1023;
     }
     M_control((int) pid);
 }
 
-void PID(int set) //pre PID
+void PID(int set) //pre PID, allows detect zero cross for stoping motor before direction change
 {
-    if(warming_up == 0) //prevent motor kick at startup while pid gets stable values
-    {
-        if (set != 0)
-        {
-            warming_up = 1;
-        }
-    }
     zero_cross = ((lset^set) < 0); //test if a set value has change direction wihout stoping at zero cross
     if (((zero_cross == 1) &(set <= 0) & (lset <= 0))) //discard some extra true cases when trabnsition from negative to posite direction
     {

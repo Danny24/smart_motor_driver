@@ -13,8 +13,6 @@
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "242
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
@@ -28,21 +26,21 @@
 [v _eecpymem eecpymem `(v  1 e 1 0 ]
 "39
 [v _memcpyee memcpyee `(v  1 e 1 0 ]
-"79 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"78 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"177
+"176
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
-"214
+"213
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
-"223
+"222
 [v _M_control M_control `(v  1 e 1 0 ]
-"242
+"241
 [v _calculate_pid calculate_pid `(v  1 e 1 0 ]
-"284
+"262
 [v _PID PID `(v  1 e 1 0 ]
-"315
+"286
 [v _init_I2C_buffer init_I2C_buffer `(v  1 e 1 0 ]
-"338
+"309
 [v _main main `(v  1 e 1 0 ]
 "349 C:\Program Files (x86)\Microchip\xc8\v1.43\include\pic12f1840.h
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
@@ -284,41 +282,37 @@
 [v _accumulator accumulator `f  1 e 4 0 ]
 "74
 [v _lasterror lasterror `f  1 e 4 0 ]
-"75
-[v _warming_up warming_up `b  1 e 0 0 ]
-"338
+"309
 [v _main main `(v  1 e 1 0 ]
 {
-"384
+"355
 } 0
-"315
+"286
 [v _init_I2C_buffer init_I2C_buffer `(v  1 e 1 0 ]
 {
-"334
+"305
 } 0
-"177
+"176
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
 {
-"212
+"211
 } 0
-"284
+"262
 [v _PID PID `(v  1 e 1 0 ]
 {
-[v PID@set set `i  1 p 2 22 ]
-"306
+[v PID@set set `i  1 p 2 12 ]
+"277
 } 0
-"242
+"241
 [v _calculate_pid calculate_pid `(v  1 e 1 0 ]
 {
-"245
-[v calculate_pid@pid pid `f  1 a 4 18 ]
 "244
-[v calculate_pid@error error `f  1 a 4 14 ]
-"246
-[v calculate_pid@rpm2 rpm2 `i  1 a 2 12 ]
-"242
-[v calculate_pid@set set `i  1 p 2 72 ]
-"282
+[v calculate_pid@pid pid `f  1 a 4 8 ]
+"243
+[v calculate_pid@error error `f  1 a 4 4 ]
+"241
+[v calculate_pid@set set `i  1 p 2 63 ]
+"260
 } 0
 "10 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -348,49 +342,49 @@
 "242 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
-[v ___flsub@a a `d  1 p 4 0 ]
-[v ___flsub@b b `d  1 p 4 4 ]
+[v ___flsub@a a `d  1 p 4 55 ]
+[v ___flsub@b b `d  1 p 4 59 ]
 "250
 } 0
 "10
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
-[v ___fladd@grs grs `uc  1 a 1 71 ]
+[v ___fladd@grs grs `uc  1 a 1 54 ]
 "15
-[v ___fladd@bexp bexp `uc  1 a 1 70 ]
+[v ___fladd@bexp bexp `uc  1 a 1 53 ]
 "16
-[v ___fladd@aexp aexp `uc  1 a 1 69 ]
+[v ___fladd@aexp aexp `uc  1 a 1 52 ]
 "13
-[v ___fladd@signs signs `uc  1 a 1 68 ]
+[v ___fladd@signs signs `uc  1 a 1 51 ]
 "10
-[v ___fladd@b b `d  1 p 4 52 ]
-[v ___fladd@a a `d  1 p 4 56 ]
+[v ___fladd@b b `d  1 p 4 35 ]
+[v ___fladd@a a `d  1 p 4 39 ]
 "237
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S781 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S779 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S786 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S789 . 4 `l 1 i 4 0 `d 1 f 4 0 `S781 1 fAsBytes 4 0 `S786 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S789  1 a 4 46 ]
+[s S784 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S787 . 4 `l 1 i 4 0 `d 1 f 4 0 `S779 1 fAsBytes 4 0 `S784 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S787  1 a 4 29 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 42 ]
-[s S858 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 25 ]
+[s S856 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S861 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S858 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S861  1 a 2 50 ]
+[u S859 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S856 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S859  1 a 2 33 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 41 ]
+[v ___flmul@bexp bexp `uc  1 a 1 24 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 40 ]
+[v ___flmul@aexp aexp `uc  1 a 1 23 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 39 ]
+[v ___flmul@sign sign `uc  1 a 1 22 ]
 "8
-[v ___flmul@b b `d  1 p 4 27 ]
-[v ___flmul@a a `d  1 p 4 31 ]
+[v ___flmul@b b `d  1 p 4 10 ]
+[v ___flmul@a a `d  1 p 4 14 ]
 "205
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul8_16.c
@@ -414,31 +408,11 @@
 [v ___flge@ff2 ff2 `d  1 p 4 6 ]
 "19
 } 0
-"8 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 21 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 15 ]
-"20
-[v ___fldiv@new_exp new_exp `i  1 a 2 19 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 26 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 25 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 14 ]
-"8
-[v ___fldiv@a a `d  1 p 4 2 ]
-[v ___fldiv@b b `d  1 p 4 6 ]
-"184
-} 0
-"223 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"222 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _M_control M_control `(v  1 e 1 0 ]
 {
 [v M_control@ctr ctr `i  1 p 2 12 ]
-"240
+"239
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -450,16 +424,16 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"214 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"213 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
 {
 [v PWM_set_duty@duty duty `i  1 p 2 2 ]
-"221
+"220
 } 0
-"79
+"78
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"173
+"172
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v1.43\sources\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]

@@ -2969,7 +2969,6 @@ int lset = 0;
 bit zero_cross = 0;
 float accumulator = 0;
 float lasterror = 0;
-bit warming_up = 0;
 
 
 
@@ -3074,14 +3073,14 @@ PIR1bits.SSP1IF = 0;
 PWM_Init(void)
 {
 
-# 198
+# 197
 PR2 = 0xFF;
 CCP1CON = 0b00001100;
 CCPR1L = 0b00000000;
 PIR1bits.TMR2IF = 0;
 T2CON = 0b00000100;
 
-# 212
+# 211
 }
 
 PWM_set_duty(int duty)
@@ -3116,53 +3115,25 @@ void calculate_pid(int set)
 {
 float error = 0;
 float pid = 0;
-int rpm2 = I2C_buffer.data.RPM + 600;
-set = set + 600;
-error = set - rpm2;
+error = set - I2C_buffer.data.RPM;
 pid = error * I2C_buffer.data.RPM_PID_KP;
 accumulator += error;
 pid += I2C_buffer.data.RPM_PID_KI*accumulator;
 pid += I2C_buffer.data.RPM_PID_KD * (error - lasterror);
 lasterror = error;
-if (pid >= 2047)
+if (pid >= 1023)
 {
-pid = 2047;
+pid = 1023;
 }
-if (pid <= 0)
+if (pid <= -1023)
 {
-pid = 0;
-}
-pid = (-1023 + ((2046)*((pid) / (2047))));
-if (set < 600)
-{
-if (pid > 0) {
-pid = 0;
-}
-}
-if (set > 600)
-{
-if (pid < 0) {
-pid = 0;
-}
-}
-if (set == 600 && warming_up == 0)
-{
-if (pid < 0) {
-pid = 0;
-}
+pid = -1023;
 }
 M_control((int) pid);
 }
 
 void PID(int set)
 {
-if(warming_up == 0)
-{
-if (set != 0)
-{
-warming_up = 1;
-}
-}
 zero_cross = ((lset^set) < 0);
 if (((zero_cross == 1) &(set <= 0) & (lset <= 0)))
 {
@@ -3178,7 +3149,7 @@ lset = set;
 calculate_pid(set);
 }
 
-# 315
+# 286
 void init_I2C_buffer() {
 I2C_buffer.data.ID = 0xF3;
 I2C_buffer.data.ADDRESS = 0x24 << 1;
@@ -3237,6 +3208,6 @@ PID(I2C_buffer.data.SPEED);
 _delay((unsigned long)((10)*(32000000/4000.0)));
 }
 
-# 384
+# 355
 }
 
