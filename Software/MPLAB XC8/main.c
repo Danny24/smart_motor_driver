@@ -8,9 +8,9 @@
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
-#pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
+#pragma config WDTE = ON        // Watchdog Timer Enable (WDT enabled)
 #pragma config PWRTE = ON       // Power-up Timer Enable (PWRT enabled)
-#pragma config MCLRE = ON       // MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
+#pragma config MCLRE = OFF      // MCLR Pin Function Select (MCLR/VPP pin function is digital input)
 #pragma config CP = OFF         // Flash Program Memory Code Protection (Program memory code protection is disabled)
 #pragma config CPD = OFF        // Data Memory Code Protection (Data memory code protection is disabled)
 #pragma config BOREN = ON       // Brown-out Reset Enable (Brown-out Reset enabled)
@@ -28,40 +28,48 @@
 // Includes and definitions
 
 #define _XTAL_FREQ 32000000
-#define pid_time_lapse 10
+#define time_lapse 5
 #define DEVICE_ID 0xF3
-#define I2C_slave_address 0x24 // any value from 0 to 127
+#define I2C_slave_address 0x24 // any value from 0 to 127, this will be the default
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <xc.h>
 
+//EEPROM default values and function prototypes for memory access on program
+
+__EEPROM_DATA(I2C_slave_address, 0x01, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF); //set i2c_address, IOWPU, Gear L-H, diameter L-H, 2 blank bytes
+__EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //PID_KP, PID_KD
+__EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //PID_KI, ATS_KP
+__EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //ATS_KD, ATS_KI
+unsigned char eeprom_read(unsigned char address);
+void eeprom_write(unsigned char address, unsigned char value);
+
 // Global variables declation
 
-volatile union _I2C_buffer
-{
-  struct _data
-  {
-    unsigned char ID;
-    unsigned char ADDRESS;
-    unsigned char START_STOP;
-    unsigned char IOWPU;
-    unsigned char MODE;
-    unsigned char SAVE;
-    unsigned char RESET;
-    unsigned int GEAR_RATIO;
-    unsigned int DIAMETER;
-    int RPM;
-    int SPEED;
-    long DISTANCE;
-    float RPM_PID_KP;
-    float RPM_PID_KD;
-    float RPM_PID_KI;
-    float ATS_PID_KP;
-    float ATS_PID_KD;
-    float ATS_PID_KI;
-  } data;
-  unsigned char byte[];
+volatile union _I2C_buffer {
+
+    struct _data {
+        unsigned char ID;
+        unsigned char ADDRESS;
+        unsigned char START_STOP;
+        unsigned char IOWPU;
+        unsigned char MODE;
+        unsigned char SAVE;
+        unsigned char RESET;
+        unsigned int GEAR_RATIO;
+        unsigned int DIAMETER;
+        int RPM;
+        int SPEED;
+        long DISTANCE;
+        float RPM_PID_KP;
+        float RPM_PID_KD;
+        float RPM_PID_KI;
+        float ATS_PID_KP;
+        float ATS_PID_KD;
+        float ATS_PID_KI;
+    } data;
+    unsigned char byte[];
 } I2C_buffer;
 
 const unsigned char RX_ELMNTS = sizeof (I2C_buffer);
@@ -70,8 +78,10 @@ unsigned char index_i2c = 0;
 unsigned short counter = 0;
 int lset = 0;
 bit zero_cross = 0;
-float accumulator = 0;
-float lasterror = 0;
+float accumulatorM = 0;
+float lasterrorM = 0;
+float accumulatorA = 0;
+float lasterrorA = 0;
 
 // Interrupts
 
@@ -83,15 +93,13 @@ void __interrupt isr() {
         counter++; //increment counter one in one
         if (LATAbits.LATA0 == 0) {
             I2C_buffer.data.DISTANCE--;
-        }
-        else
-        {
+        } else {
             I2C_buffer.data.DISTANCE++;
         }
         IOCAFbits.IOCAF4 = 0; //clear interrupt flag
         INTCONbits.IOCIE = 1; //enable on change interrupts
     }
-    
+
     if (PIR1bits.TMR1IF == 1) //timer1 interrupt, called every 65.536ms
     {
         INTCONbits.IOCIE = 0; //disable on change interrupts
@@ -144,8 +152,7 @@ void __interrupt isr() {
                     if (index_i2c < RX_ELMNTS) // make sure index is not
                     { //out of range of array
                         I2C_buffer.byte[index_i2c++] = SSP1BUF; //load array with data
-                    }
-                    else {
+                    } else {
                         junk = SSP1BUF; //array location not valid, discard data
                     }
                 }
@@ -161,7 +168,7 @@ void __interrupt isr() {
         INTCONbits.IOCIE = 1; //enable on change interrupts
         PIE1bits.TMR1IE = 1; //enable timer1 interrupt
     }
-    
+
     if (PIR2bits.BCL1IF) // Did a bus collision occur?
     {
         junk = SSP1BUF; // dummy read SSPBUF to clear BF bit
@@ -238,28 +245,27 @@ void M_control(int ctr) //motor control function
     }
 }
 
-void calculate_pid(int set) //PID calculation function
+void calculate_pidM(int set) //PID calculation function
 {
     float error = 0;
     float pid = 0;
     error = set - I2C_buffer.data.RPM; //calculate actual error
     pid = error * I2C_buffer.data.RPM_PID_KP; // calculate proportional gain
-    accumulator += error; // calculate accumulator, is sum of errors
-    pid += I2C_buffer.data.RPM_PID_KI*accumulator; // add integral gain and error accumulator
-    pid += I2C_buffer.data.RPM_PID_KD * (error - lasterror); //add differential gain
-    lasterror = error; //save the error to the next iteration
+    accumulatorM += error; // calculate accumulator, is sum of errors
+    pid += I2C_buffer.data.RPM_PID_KI*accumulatorM; // add integral gain and error accumulator
+    pid += I2C_buffer.data.RPM_PID_KD * (error - lasterrorM); //add differential gain
+    lasterrorM = error; //save the error to the next iteration
     if (pid >= 1023) //next we guarantee that the PID value is in range
     {
         pid = 1023;
     }
-    if (pid <= -1023) 
-    {
+    if (pid <= -1023) {
         pid = -1023;
     }
     M_control((int) pid);
 }
 
-void PID(int set) //pre PID, allows detect zero cross for stoping motor before direction change
+void pre_pidM(int set) //pre PID, allows detect zero cross for stoping motor before direction change
 {
     zero_cross = ((lset^set) < 0); //test if a set value has change direction wihout stoping at zero cross
     if (((zero_cross == 1) &(set <= 0) & (lset <= 0))) //discard some extra true cases when trabnsition from negative to posite direction
@@ -268,40 +274,62 @@ void PID(int set) //pre PID, allows detect zero cross for stoping motor before d
     }
     if (zero_cross == 1) {
         do {
-            calculate_pid(0);
-            __delay_ms(pid_time_lapse);
+            calculate_pidM(0);
+            asm("CLRWDT");
+            __delay_ms(time_lapse);
         } while ((I2C_buffer.data.RPM != 0)); //wait until the motor stops completely with PID before ressuming direction change
     }
     lset = set;
-    calculate_pid(set);
+    calculate_pidM(set);
 }
 
-/*
-void auto_stop(unsigned int distance)
-{
-    steps = (unsigned int)(3*(float)gear*((float)distance/(3.1416*(float)diameter)));
-}
- */
-
-void init_I2C_buffer() {
+void init_I2C_buffer() { //load default values of vars
     I2C_buffer.data.ID = DEVICE_ID;
-    I2C_buffer.data.ADDRESS = I2C_slave_address << 1;
+    I2C_buffer.data.ADDRESS = eeprom_read(0);
     I2C_buffer.data.START_STOP = 0;
-    I2C_buffer.data.IOWPU = 1;
-    I2C_buffer.data.MODE = 5;
+    I2C_buffer.data.IOWPU = eeprom_read(1);
+    I2C_buffer.data.MODE = 0;
     I2C_buffer.data.SAVE = 0;
     I2C_buffer.data.RESET = 0;
-    I2C_buffer.data.GEAR_RATIO = 150;
-    I2C_buffer.data.DIAMETER = 42;
+    //I2C_buffer.data.GEAR_RATIO = 0;
+    I2C_buffer.byte[0x07] = eeprom_read(2); //Recover GEAR_RATIO from EEPROM
+    I2C_buffer.byte[0x08] = eeprom_read(3);
+    //I2C_buffer.data.DIAMETER = 0;
+    I2C_buffer.byte[0x09] = eeprom_read(4); //Recover DIAMETER from EEPROM
+    I2C_buffer.byte[0x0A] = eeprom_read(5);
     I2C_buffer.data.RPM = 0;
     I2C_buffer.data.SPEED = 0;
     I2C_buffer.data.DISTANCE = 0;
-    I2C_buffer.data.RPM_PID_KP = 0.1; //0.3
-    I2C_buffer.data.RPM_PID_KD = 0.01;//0.001
-    I2C_buffer.data.RPM_PID_KI = 0.04;//0.1
-    I2C_buffer.data.ATS_PID_KP = 0.15;
-    I2C_buffer.data.ATS_PID_KD = 0.08;
-    I2C_buffer.data.ATS_PID_KI = 0.03;
+    //I2C_buffer.data.RPM_PID_KP = 0; //0.3, 0.1
+    I2C_buffer.byte[0x13] = eeprom_read(8); //Recover RPM_PID_KP from EEPROM
+    I2C_buffer.byte[0x14] = eeprom_read(9);
+    I2C_buffer.byte[0x15] = eeprom_read(10);
+    I2C_buffer.byte[0x16] = eeprom_read(11);
+    //I2C_buffer.data.RPM_PID_KD = 0; //0.001, 0.01
+    I2C_buffer.byte[0x17] = eeprom_read(12); //Recover RPM_PID_KD from EEPROM
+    I2C_buffer.byte[0x18] = eeprom_read(13);
+    I2C_buffer.byte[0x19] = eeprom_read(14);
+    I2C_buffer.byte[0x1A] = eeprom_read(15);
+    //I2C_buffer.data.RPM_PID_KI = 0; //0.1, 0.04
+    I2C_buffer.byte[0x1B] = eeprom_read(16); //Recover RPM_PID_KI from EEPROM
+    I2C_buffer.byte[0x1C] = eeprom_read(17);
+    I2C_buffer.byte[0x1D] = eeprom_read(18);
+    I2C_buffer.byte[0x1E] = eeprom_read(19);
+    //I2C_buffer.data.ATS_PID_KP = 0;
+    I2C_buffer.byte[0x1F] = eeprom_read(20); //Recover ATS_PID_KP from EEPROM
+    I2C_buffer.byte[0x20] = eeprom_read(21);
+    I2C_buffer.byte[0x21] = eeprom_read(22);
+    I2C_buffer.byte[0x22] = eeprom_read(23);
+    //I2C_buffer.data.ATS_PID_KD = 0;
+    I2C_buffer.byte[0x23] = eeprom_read(24); //Recover ATS_PID_KD from EEPROM
+    I2C_buffer.byte[0x24] = eeprom_read(25);
+    I2C_buffer.byte[0x25] = eeprom_read(26);
+    I2C_buffer.byte[0x26] = eeprom_read(27);
+    //I2C_buffer.data.ATS_PID_KI = 0;
+    I2C_buffer.byte[0x27] = eeprom_read(28); //Recover ATS_PID_KI from EEPROM
+    I2C_buffer.byte[0x28] = eeprom_read(29);
+    I2C_buffer.byte[0x29] = eeprom_read(30);
+    I2C_buffer.byte[0x2A] = eeprom_read(31);
 }
 
 // Main program
@@ -312,7 +340,7 @@ void main() {
     TRISA = 0b00011110; //configure IO
     ANSELA = 0b00000000; //analog functions of pins disabled
     WPUA = 0b00011110; //configure weak pull-ups on input pins
-    OPTION_REGbits.nWPUEN = 0; //enable weak pull-ups
+    OPTION_REGbits.nWPUEN = (char) !(I2C_buffer.data.IOWPU & 0x01); //enable/disable weak pull-ups
     APFCONbits.CCP1SEL = 1; //select RA5 as CCP output pin
     LATAbits.LATA0 = 0; //put motor direction pin to low
     SSP1STAT = 0b10000000; // Slew rate control disabled for standardspeed mode (100 kHz and 1 MHz)
@@ -321,7 +349,7 @@ void main() {
     SSP1CON3bits.BOEN = 1; // SSPBUF is updated and NACK is generated for a received address/data byte, ignoring the state of the SSPOV bit only if the BF bit = 0
     SSP1CON3bits.SDAHT = 1; // Minimum of 300 ns hold time on SDA after the falling edge of SCL
     SSP1CON3bits.SBCDE = 1; // Enable slave bus collision detect interrupts
-    SSP1ADD = I2C_buffer.data.ADDRESS; // Load the slave address
+    SSP1ADD = (I2C_buffer.data.ADDRESS << 1); // Load the slave address
     PIR1bits.SSP1IF = 0; // Clear the serial port interrupt flag
     PIR2bits.BCL1IF = 0; // Clear the bus collision interrupt flag
     PIE2bits.BCL1IE = 1; // Enable bus collision interrupts
@@ -336,22 +364,121 @@ void main() {
     T1CONbits.TMR1ON = 1; //start timer1
     INTCONbits.GIE = 1; //run interrupts
 
+    __delay_ms(time_lapse);
+
+    if (PORTAbits.RA3 == 0) { //if reset pin has trigger at boot the reset to default I2C address, this is required to unbrick the device         
+        eeprom_write(0, I2C_slave_address);
+    }
+
     while (1) {
-        PID(I2C_buffer.data.SPEED);
-        __delay_ms(pid_time_lapse);
+        asm("CLRWDT");
+        if (I2C_buffer.data.START_STOP == 1) {
+            switch (I2C_buffer.data.MODE) {
+                case 0:
+                    M_control(0);
+                    break;
+                case 1:
+                    M_control(I2C_buffer.data.SPEED);
+                    break;
+                case 2:
+                    calculate_pidM(I2C_buffer.data.SPEED);
+                    break;
+                case 3:
+                    if (I2C_buffer.data.SPEED < 0) {
+                        if (I2C_buffer.data.DISTANCE > 0) {
+                            calculate_pidM(I2C_buffer.data.SPEED);
+                        } else {
+                            M_control(0);
+                            I2C_buffer.data.START_STOP = 0;
+                        }
+                    }
+                    if (I2C_buffer.data.SPEED > 0) {
+                        if (I2C_buffer.data.DISTANCE < 0) {
+                            calculate_pidM(I2C_buffer.data.SPEED);
+                        } else {
+                            M_control(0);
+                            I2C_buffer.data.START_STOP = 0;
+                        }
+                    }
+                    if (I2C_buffer.data.SPEED == 0) {
+                        calculate_pidM(I2C_buffer.data.SPEED);
+                    }
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+                    pre_pidM(I2C_buffer.data.SPEED);
+                    break;
+                case 6:
+                    if (I2C_buffer.data.SPEED < 0) {
+                        if (I2C_buffer.data.DISTANCE > 0) {
+                            pre_pidM(I2C_buffer.data.SPEED);
+                        } else {
+                            M_control(0);
+                            I2C_buffer.data.START_STOP = 0;
+                        }
+                    }
+                    if (I2C_buffer.data.SPEED > 0) {
+                        if (I2C_buffer.data.DISTANCE < 0) {
+                            pre_pidM(I2C_buffer.data.SPEED);
+                        } else {
+                            M_control(0);
+                            I2C_buffer.data.START_STOP = 0;
+                        }
+                    }
+                    if (I2C_buffer.data.SPEED == 0) {
+                        pre_pidM(I2C_buffer.data.SPEED);
+                    }
+                    break;
+                case 7:
+
+                    break;
+                default:
+                    M_control(0);
+                    break;
+            }
+            __delay_ms(time_lapse);
+        } else {
+            M_control(0);
+        }
+        if (I2C_buffer.data.RESET == 1) {
+            asm("RESET");
+        }
+        if (I2C_buffer.data.SAVE == 1) { //Save non-volatile data into the EEPROM
+            eeprom_write(0, I2C_buffer.data.ADDRESS);
+            eeprom_write(1, I2C_buffer.data.IOWPU);
+            eeprom_write(2, I2C_buffer.byte[0x07]);
+            eeprom_write(3, I2C_buffer.byte[0x08]);
+            eeprom_write(4, I2C_buffer.byte[0x09]);
+            eeprom_write(5, I2C_buffer.byte[0x0A]);
+            eeprom_write(8, I2C_buffer.byte[0x13]);
+            eeprom_write(9, I2C_buffer.byte[0x14]);
+            eeprom_write(10, I2C_buffer.byte[0x15]);
+            eeprom_write(11, I2C_buffer.byte[0x16]);
+            eeprom_write(12, I2C_buffer.byte[0x17]);
+            eeprom_write(13, I2C_buffer.byte[0x18]);
+            eeprom_write(14, I2C_buffer.byte[0x19]);
+            eeprom_write(15, I2C_buffer.byte[0x1A]);
+            eeprom_write(16, I2C_buffer.byte[0x1B]);
+            eeprom_write(17, I2C_buffer.byte[0x1C]);
+            eeprom_write(18, I2C_buffer.byte[0x1D]);
+            eeprom_write(19, I2C_buffer.byte[0x1E]);
+            eeprom_write(20, I2C_buffer.byte[0x1F]);
+            eeprom_write(21, I2C_buffer.byte[0x20]);
+            eeprom_write(22, I2C_buffer.byte[0x21]);
+            eeprom_write(23, I2C_buffer.byte[0x22]);
+            eeprom_write(24, I2C_buffer.byte[0x23]);
+            eeprom_write(25, I2C_buffer.byte[0x24]);
+            eeprom_write(26, I2C_buffer.byte[0x25]);
+            eeprom_write(27, I2C_buffer.byte[0x26]);
+            eeprom_write(28, I2C_buffer.byte[0x27]);
+            eeprom_write(29, I2C_buffer.byte[0x28]);
+            eeprom_write(30, I2C_buffer.byte[0x29]);
+            eeprom_write(31, I2C_buffer.byte[0x2A]);
+            __delay_ms(time_lapse);
+        }
     }
-    /*
-    auto_stop(132);
-    while(steps != 0)
-    {
-      PID(50);
-       __delay_ms(pid_time_lapse);
-    }
-    while(1)
-    {
-        M_control(0);
-    }
-     */
 }
 
 
