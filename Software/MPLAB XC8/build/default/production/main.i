@@ -3345,6 +3345,8 @@ float accumulatorM = 0;
 float lasterrorM = 0;
 float accumulatorA = 0;
 float lasterrorA = 0;
+long auxDistance = 0;
+bit loadDistance = 0;
 
 
 
@@ -3446,14 +3448,14 @@ PIR1bits.SSP1IF = 0;
 PWM_Init(void)
 {
 
-# 204
+# 206
 PR2 = 0xFF;
 CCP1CON = 0b00001100;
 CCPR1L = 0b00000000;
 PIR1bits.TMR2IF = 0;
 T2CON = 0b00000100;
 
-# 218
+# 220
 }
 
 PWM_set_duty(int duty)
@@ -3482,6 +3484,26 @@ LATAbits.LATA0 = 0;
 ctr = ctr * -1;
 PWM_set_duty(ctr);
 }
+}
+
+int calculate_pidA(long set)
+{
+float error = 0;
+float pid = 0;
+error = set - I2C_buffer.data.DISTANCE;
+pid = error * I2C_buffer.data.ATS_PID_KP;
+accumulatorA += error;
+pid += I2C_buffer.data.ATS_PID_KI*accumulatorA;
+pid += I2C_buffer.data.ATS_PID_KD * (error - lasterrorA);
+lasterrorA = error;
+if (pid >= abs(I2C_buffer.data.SPEED))
+{
+pid = abs(I2C_buffer.data.SPEED);
+}
+if (pid <= abs(I2C_buffer.data.SPEED)*-1) {
+pid = abs(I2C_buffer.data.SPEED)*-1;
+}
+return ((int) pid);
 }
 
 void calculate_pidM(int set)
@@ -3588,7 +3610,7 @@ SSP1CON2bits.SEN = 1;
 SSP1CON3bits.BOEN = 1;
 SSP1CON3bits.SDAHT = 1;
 SSP1CON3bits.SBCDE = 1;
-SSP1ADD = (I2C_buffer.data.ADDRESS << 1);
+SSP1ADD = (char) (I2C_buffer.data.ADDRESS << 1);
 PIR1bits.SSP1IF = 0;
 PIR2bits.BCL1IF = 0;
 PIE2bits.BCL1IE = 1;
@@ -3623,55 +3645,83 @@ case 2:
 calculate_pidM(I2C_buffer.data.SPEED);
 break;
 case 3:
-if (I2C_buffer.data.SPEED < 0) {
-if (I2C_buffer.data.DISTANCE > 0) {
-calculate_pidM(I2C_buffer.data.SPEED);
+if (I2C_buffer.data.DISTANCE != 0 && loadDistance == 0) {
+loadDistance = 1;
+auxDistance = I2C_buffer.data.DISTANCE;
+I2C_buffer.data.DISTANCE = 0;
 } else {
+if (auxDistance > 0) {
+calculate_pidM(I2C_buffer.data.SPEED);
+if (auxDistance <= I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
 }
 }
-if (I2C_buffer.data.SPEED > 0) {
-if (I2C_buffer.data.DISTANCE < 0) {
+if (auxDistance < 0) {
 calculate_pidM(I2C_buffer.data.SPEED);
-} else {
+if (auxDistance >= I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
 }
 }
-if (I2C_buffer.data.SPEED == 0) {
-calculate_pidM(I2C_buffer.data.SPEED);
 }
 break;
 case 4:
-
+if (I2C_buffer.data.DISTANCE != 0 && loadDistance == 0) {
+loadDistance = 1;
+auxDistance = I2C_buffer.data.DISTANCE;
+I2C_buffer.data.DISTANCE = 0;
+} else {
+calculate_pidM(calculate_pidA(auxDistance));
+if (auxDistance == I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
+M_control(0);
+I2C_buffer.data.START_STOP = 0;
+}
+}
 break;
 case 5:
 pre_pidM(I2C_buffer.data.SPEED);
 break;
 case 6:
-if (I2C_buffer.data.SPEED < 0) {
-if (I2C_buffer.data.DISTANCE > 0) {
-pre_pidM(I2C_buffer.data.SPEED);
+if (I2C_buffer.data.DISTANCE != 0 && loadDistance == 0) {
+loadDistance = 1;
+auxDistance = I2C_buffer.data.DISTANCE;
+I2C_buffer.data.DISTANCE = 0;
 } else {
+if (auxDistance > 0) {
+pre_pidM(I2C_buffer.data.SPEED);
+if (auxDistance <= I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
 }
 }
-if (I2C_buffer.data.SPEED > 0) {
-if (I2C_buffer.data.DISTANCE < 0) {
+if (auxDistance < 0) {
 pre_pidM(I2C_buffer.data.SPEED);
-} else {
+if (auxDistance >= I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
 }
 }
-if (I2C_buffer.data.SPEED == 0) {
-pre_pidM(I2C_buffer.data.SPEED);
 }
 break;
 case 7:
-
+if (I2C_buffer.data.DISTANCE != 0 && loadDistance == 0) {
+loadDistance = 1;
+auxDistance = I2C_buffer.data.DISTANCE;
+I2C_buffer.data.DISTANCE = 0;
+} else {
+pre_pidM(calculate_pidA(auxDistance));
+if (auxDistance == I2C_buffer.data.DISTANCE) {
+loadDistance = 0;
+M_control(0);
+I2C_buffer.data.START_STOP = 0;
+}
+}
 break;
 default:
 M_control(0);
