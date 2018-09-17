@@ -3300,7 +3300,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 
-# 41 "main.c"
+# 42 "main.c"
 asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); asm("\tdb\t" "0x24" "," "0x01" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0xFF" "," "0xFF");
 asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");
 asm("\tpsect eeprom_data,class=EEDATA,delta=2,space=3,noexec"); asm("\tdb\t" "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00" "," "0x00");
@@ -3448,14 +3448,14 @@ PIR1bits.SSP1IF = 0;
 PWM_Init(void)
 {
 
-# 206
+# 207
 PR2 = 0xFF;
 CCP1CON = 0b00001100;
 CCPR1L = 0b00000000;
 PIR1bits.TMR2IF = 0;
 T2CON = 0b00000100;
 
-# 220
+# 221
 }
 
 PWM_set_duty(int duty)
@@ -3651,7 +3651,7 @@ auxDistance = I2C_buffer.data.DISTANCE;
 I2C_buffer.data.DISTANCE = 0;
 } else {
 if (auxDistance > 0) {
-calculate_pidM(I2C_buffer.data.SPEED);
+calculate_pidM(abs(I2C_buffer.data.SPEED));
 if (auxDistance <= I2C_buffer.data.DISTANCE) {
 loadDistance = 0;
 M_control(0);
@@ -3659,7 +3659,7 @@ I2C_buffer.data.START_STOP = 0;
 }
 }
 if (auxDistance < 0) {
-calculate_pidM(I2C_buffer.data.SPEED);
+calculate_pidM(abs(I2C_buffer.data.SPEED)*-1);
 if (auxDistance >= I2C_buffer.data.DISTANCE) {
 loadDistance = 0;
 M_control(0);
@@ -3675,7 +3675,7 @@ auxDistance = I2C_buffer.data.DISTANCE;
 I2C_buffer.data.DISTANCE = 0;
 } else {
 calculate_pidM(calculate_pidA(auxDistance));
-if (auxDistance == I2C_buffer.data.DISTANCE) {
+if (auxDistance>= I2C_buffer.data.DISTANCE - 5 && auxDistance <= I2C_buffer.data.DISTANCE + 5) {
 loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
@@ -3692,7 +3692,7 @@ auxDistance = I2C_buffer.data.DISTANCE;
 I2C_buffer.data.DISTANCE = 0;
 } else {
 if (auxDistance > 0) {
-pre_pidM(I2C_buffer.data.SPEED);
+pre_pidM(abs(I2C_buffer.data.SPEED));
 if (auxDistance <= I2C_buffer.data.DISTANCE) {
 loadDistance = 0;
 M_control(0);
@@ -3700,7 +3700,7 @@ I2C_buffer.data.START_STOP = 0;
 }
 }
 if (auxDistance < 0) {
-pre_pidM(I2C_buffer.data.SPEED);
+pre_pidM(abs(I2C_buffer.data.SPEED)*-1);
 if (auxDistance >= I2C_buffer.data.DISTANCE) {
 loadDistance = 0;
 M_control(0);
@@ -3716,7 +3716,7 @@ auxDistance = I2C_buffer.data.DISTANCE;
 I2C_buffer.data.DISTANCE = 0;
 } else {
 pre_pidM(calculate_pidA(auxDistance));
-if (auxDistance == I2C_buffer.data.DISTANCE) {
+if (auxDistance>= I2C_buffer.data.DISTANCE - 5 && auxDistance <= I2C_buffer.data.DISTANCE + 5) {
 loadDistance = 0;
 M_control(0);
 I2C_buffer.data.START_STOP = 0;
@@ -3730,6 +3730,10 @@ break;
 _delay((unsigned long)((5)*(32000000/4000.0)));
 } else {
 M_control(0);
+accumulatorM = 0;
+lasterrorM = 0;
+accumulatorA = 0;
+lasterrorA = 0;
 }
 if (I2C_buffer.data.RESET == 1) {
 asm("RESET");
@@ -3766,6 +3770,7 @@ eeprom_write(29, I2C_buffer.byte[0x28]);
 eeprom_write(30, I2C_buffer.byte[0x29]);
 eeprom_write(31, I2C_buffer.byte[0x2A]);
 _delay((unsigned long)((5)*(32000000/4000.0)));
+I2C_buffer.data.SAVE = 0;
 }
 }
 }

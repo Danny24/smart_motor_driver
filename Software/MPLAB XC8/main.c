@@ -31,6 +31,7 @@
 #define time_lapse 5
 #define DEVICE_ID 0xF3
 #define I2C_slave_address 0x24 // any value from 0 to 127, this will be the default
+#define ATS_tolerance 5 
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -412,7 +413,7 @@ void main() {
                         I2C_buffer.data.DISTANCE = 0;
                     } else {
                         if (auxDistance > 0) {
-                            calculate_pidM(I2C_buffer.data.SPEED);
+                            calculate_pidM(abs(I2C_buffer.data.SPEED));
                             if (auxDistance <= I2C_buffer.data.DISTANCE) {
                                 loadDistance = 0;
                                 M_control(0);
@@ -420,7 +421,7 @@ void main() {
                             }
                         }
                         if (auxDistance < 0) {
-                            calculate_pidM(I2C_buffer.data.SPEED);
+                            calculate_pidM(abs(I2C_buffer.data.SPEED)*-1);
                             if (auxDistance >= I2C_buffer.data.DISTANCE) {
                                 loadDistance = 0;
                                 M_control(0);
@@ -436,7 +437,7 @@ void main() {
                         I2C_buffer.data.DISTANCE = 0;
                     } else {
                         calculate_pidM(calculate_pidA(auxDistance));
-                        if (auxDistance == I2C_buffer.data.DISTANCE) {
+                        if (auxDistance>= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
                             loadDistance = 0;
                             M_control(0);
                             I2C_buffer.data.START_STOP = 0;
@@ -453,7 +454,7 @@ void main() {
                         I2C_buffer.data.DISTANCE = 0;
                     } else {
                         if (auxDistance > 0) {
-                            pre_pidM(I2C_buffer.data.SPEED);
+                            pre_pidM(abs(I2C_buffer.data.SPEED));
                             if (auxDistance <= I2C_buffer.data.DISTANCE) {
                                 loadDistance = 0;
                                 M_control(0);
@@ -461,7 +462,7 @@ void main() {
                             }
                         }
                         if (auxDistance < 0) {
-                            pre_pidM(I2C_buffer.data.SPEED);
+                            pre_pidM(abs(I2C_buffer.data.SPEED)*-1);
                             if (auxDistance >= I2C_buffer.data.DISTANCE) {
                                 loadDistance = 0;
                                 M_control(0);
@@ -477,7 +478,7 @@ void main() {
                         I2C_buffer.data.DISTANCE = 0;
                     } else {
                         pre_pidM(calculate_pidA(auxDistance));
-                        if (auxDistance == I2C_buffer.data.DISTANCE) {
+                        if (auxDistance>= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
                             loadDistance = 0;
                             M_control(0);
                             I2C_buffer.data.START_STOP = 0;
@@ -491,6 +492,10 @@ void main() {
             __delay_ms(time_lapse);
         } else {
             M_control(0);
+            accumulatorM = 0;
+            lasterrorM = 0;
+            accumulatorA = 0;
+            lasterrorA = 0;
         }
         if (I2C_buffer.data.RESET == 1) {
             asm("RESET");
@@ -527,6 +532,7 @@ void main() {
             eeprom_write(30, I2C_buffer.byte[0x29]);
             eeprom_write(31, I2C_buffer.byte[0x2A]);
             __delay_ms(time_lapse);
+            I2C_buffer.data.SAVE = 0;
         }
     }
 }
