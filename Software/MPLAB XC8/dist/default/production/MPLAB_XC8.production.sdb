@@ -32,37 +32,37 @@
 [v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eewrite.c
 [v _eeprom_write eeprom_write `(v  1 e 1 0 ]
-"91 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"93 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"186
+"188
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
-"223
+"225
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
-"232
+"234
 [v _M_control M_control `(v  1 e 1 0 ]
-"251
+"253
 [v _calculate_pidA calculate_pidA `(i  1 e 2 0 ]
-"271
+"273
 [v _calculate_pidM calculate_pidM `(v  1 e 1 0 ]
-"291
+"293
 [v _pre_pidM pre_pidM `(v  1 e 1 0 ]
-"309
+"311
 [v _init_I2C_buffer init_I2C_buffer `(v  1 e 1 0 ]
-"360
+"362
 [v _main main `(v  1 e 1 0 ]
-[s S691 . 1 `uc 1 C 1 0 :1:0 
+[s S692 . 1 `uc 1 C 1 0 :1:0 
 `uc 1 DC 1 0 :1:1 
 `uc 1 Z 1 0 :1:2 
 `uc 1 nPD 1 0 :1:3 
 `uc 1 nTO 1 0 :1:4 
 ]
 "131 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic12f1840.h
-[s S697 . 1 `uc 1 CARRY 1 0 :1:0 
+[s S698 . 1 `uc 1 CARRY 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ZERO 1 0 :1:2 
 ]
-[u S701 . 1 `S691 1 . 1 0 `S697 1 . 1 0 ]
-[v _STATUSbits STATUSbits `VES701  1 e 1 @3 ]
+[u S702 . 1 `S692 1 . 1 0 `S698 1 . 1 0 ]
+[v _STATUSbits STATUSbits `VES702  1 e 1 @3 ]
 "351
 [v _INTCON INTCON `VEuc  1 e 1 @11 ]
 [s S44 . 1 `uc 1 IOCIF 1 0 :1:0 
@@ -213,7 +213,7 @@
 [v _EEDATA EEDATA `VEuc  1 e 1 @403 ]
 "2554
 [v _EECON1 EECON1 `VEuc  1 e 1 @405 ]
-[s S667 . 1 `uc 1 RD 1 0 :1:0 
+[s S668 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -223,8 +223,8 @@
 `uc 1 EEPGD 1 0 :1:7 
 ]
 "2571
-[u S676 . 1 `S667 1 . 1 0 ]
-[v _EECON1bits EECON1bits `VES676  1 e 1 @405 ]
+[u S677 . 1 `S668 1 . 1 0 ]
+[v _EECON1bits EECON1bits `VES677  1 e 1 @405 ]
 "2616
 [v _EECON2 EECON2 `VEuc  1 e 1 @406 ]
 "2985
@@ -316,58 +316,60 @@
 [u S85 . 1 `S76 1 . 1 0 `S83 1 . 1 0 ]
 [v _IOCAFbits IOCAFbits `VES85  1 e 1 @915 ]
 [s S22 _data 43 `uc 1 ID 1 0 `uc 1 ADDRESS 1 1 `uc 1 START_STOP 1 2 `uc 1 IOWPU 1 3 `uc 1 MODE 1 4 `uc 1 SAVE 1 5 `uc 1 RESET 1 6 `ui 1 GEAR_RATIO 2 7 `ui 1 DIAMETER 2 9 `i 1 RPM 2 11 `i 1 SPEED 2 13 `l 1 DISTANCE 4 15 `f 1 RPM_PID_KP 4 19 `f 1 RPM_PID_KD 4 23 `f 1 RPM_PID_KI 4 27 `f 1 ATS_PID_KP 4 31 `f 1 ATS_PID_KD 4 35 `f 1 ATS_PID_KI 4 39 ]
-"74 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"75 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [u S41 _I2C_buffer 43 `S22 1 data 43 0 `[0]uc 1 byte 0 0 ]
 [v _I2C_buffer I2C_buffer `VES41  1 e 43 0 ]
-"77
-[v _first_i2c first_i2c `uc  1 e 1 0 ]
 "78
-[v _index_i2c index_i2c `uc  1 e 1 0 ]
+[v _first_i2c first_i2c `uc  1 e 1 0 ]
 "79
-[v _counter counter `us  1 e 2 0 ]
+[v _index_i2c index_i2c `uc  1 e 1 0 ]
 "80
-[v _lset lset `i  1 e 2 0 ]
+[v _counter counter `us  1 e 2 0 ]
 "81
-[v _zero_cross zero_cross `b  1 e 0 0 ]
+[v _lset lset `i  1 e 2 0 ]
 "82
-[v _accumulatorM accumulatorM `f  1 e 4 0 ]
+[v _zero_cross zero_cross `b  1 e 0 0 ]
 "83
-[v _lasterrorM lasterrorM `f  1 e 4 0 ]
+[v _accumulatorM accumulatorM `f  1 e 4 0 ]
 "84
-[v _accumulatorA accumulatorA `f  1 e 4 0 ]
+[v _lasterrorM lasterrorM `f  1 e 4 0 ]
 "85
-[v _lasterrorA lasterrorA `f  1 e 4 0 ]
+[v _accumulatorA accumulatorA `f  1 e 4 0 ]
 "86
-[v _auxDistance auxDistance `l  1 e 4 0 ]
+[v _lasterrorA lasterrorA `f  1 e 4 0 ]
 "87
+[v _auxDistance auxDistance `l  1 e 4 0 ]
+"88
 [v _loadDistance loadDistance `b  1 e 0 0 ]
-"360
+"89
+[v _stable stable `i  1 e 2 0 ]
+"362
 [v _main main `(v  1 e 1 0 ]
 {
-"538
+"555
 } 0
-"291
+"293
 [v _pre_pidM pre_pidM `(v  1 e 1 0 ]
 {
 [v pre_pidM@set set `i  1 p 2 71 ]
-"307
+"309
 } 0
-"271
+"273
 [v _calculate_pidM calculate_pidM `(v  1 e 1 0 ]
 {
-"274
+"276
 [v calculate_pidM@pid pid `f  1 a 4 20 ]
-"273
+"275
 [v calculate_pidM@error error `f  1 a 4 16 ]
-"271
+"273
 [v calculate_pidM@set set `i  1 p 2 69 ]
-"289
+"291
 } 0
-"232
+"234
 [v _M_control M_control `(v  1 e 1 0 ]
 {
 [v M_control@ctr ctr `i  1 p 2 12 ]
-"249
+"251
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
@@ -379,16 +381,16 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 4 ]
 "53
 } 0
-"223 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"225 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _PWM_set_duty PWM_set_duty `(i  1 e 2 0 ]
 {
 [v PWM_set_duty@duty duty `i  1 p 2 2 ]
-"230
+"232
 } 0
-"309
+"311
 [v _init_I2C_buffer init_I2C_buffer `(v  1 e 1 0 ]
 {
-"356
+"358
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\pic\__eeread.c
 [v _eeprom_read eeprom_read `(uc  1 e 1 0 ]
@@ -408,16 +410,16 @@
 [v eeprom_write@addr addr `uc  1 a 1 3 ]
 "9
 } 0
-"251 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"253 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _calculate_pidA calculate_pidA `(i  1 e 2 0 ]
 {
-"254
+"256
 [v calculate_pidA@pid pid `f  1 a 4 8 ]
-"253
+"255
 [v calculate_pidA@error error `f  1 a 4 4 ]
-"251
+"253
 [v calculate_pidA@set set `l  1 p 4 63 ]
-"269
+"271
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
@@ -476,17 +478,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1000 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1001 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1005 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1008 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1000 1 fAsBytes 4 0 `S1005 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1008  1 a 4 29 ]
+[s S1006 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1009 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1001 1 fAsBytes 4 0 `S1006 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1009  1 a 4 29 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 25 ]
-[s S1077 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1078 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1080 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1077 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1080  1 a 2 33 ]
+[u S1081 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1078 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1081  1 a 2 33 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 24 ]
 "11
@@ -519,15 +521,15 @@
 [v ___flge@ff2 ff2 `d  1 p 4 24 ]
 "19
 } 0
-"186 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
+"188 E:\ciro_\Documents\GitHub\smart_motor_driver\Software\MPLAB XC8\main.c
 [v _PWM_Init PWM_Init `(i  1 e 2 0 ]
 {
-"221
+"223
 } 0
-"91
+"93
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"182
+"184
 } 0
 "15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c90\common\Umul16.c
 [v i1___wmul __wmul `(ui  1 e 2 0 ]

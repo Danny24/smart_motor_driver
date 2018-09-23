@@ -28,10 +28,11 @@
 // Includes and definitions
 
 #define _XTAL_FREQ 32000000
-#define time_lapse 5
 #define DEVICE_ID 0xF3
+#define time_lapse 5 //time in ms between updates in control loop
 #define I2C_slave_address 0x24 // any value from 0 to 127, this will be the default
-#define ATS_tolerance 5 
+#define ATS_tolerance 10 //this tolerance is +/- from desired distance CPR, it prevents unwanted shakes and stuck up conditions
+#define stable_time 50 //used for ATS, when distance reach it should be there this value multiplied by time_lapse value
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,7 +40,7 @@
 
 //EEPROM default values and function prototypes for memory access on program
 
-__EEPROM_DATA(I2C_slave_address, 0x01, 0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF); //set i2c_address, IOWPU, Gear L-H, diameter L-H, 2 blank bytes
+__EEPROM_DATA(I2C_slave_address, 0x01, 0x01, 0x00, 0x01, 0x00, 0xFF, 0xFF); //set i2c_address, IOWPU, Gear L-H, diameter L-H, 2 blank bytes
 __EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //PID_KP, PID_KD
 __EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //PID_KI, ATS_KP
 __EEPROM_DATA(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00); //ATS_KD, ATS_KI
@@ -85,6 +86,7 @@ float accumulatorA = 0;
 float lasterrorA = 0;
 long auxDistance = 0;
 bit loadDistance = 0;
+int stable = 0;
 
 // Interrupts
 
@@ -391,6 +393,7 @@ void main() {
 
     if (PORTAbits.RA3 == 0) { //if reset pin has trigger at boot the reset to default I2C address, this is required to unbrick the device         
         eeprom_write(0, I2C_slave_address);
+        __delay_ms(time_lapse);
     }
 
     while (1) {
@@ -435,12 +438,19 @@ void main() {
                         loadDistance = 1;
                         auxDistance = I2C_buffer.data.DISTANCE;
                         I2C_buffer.data.DISTANCE = 0;
+                        stable = 0;
                     } else {
                         calculate_pidM(calculate_pidA(auxDistance));
-                        if (auxDistance>= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
-                            loadDistance = 0;
-                            M_control(0);
-                            I2C_buffer.data.START_STOP = 0;
+                        if (auxDistance >= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
+                            stable++;
+                            if (stable > stable_time) //travel distance stable at desired value for at least some time
+                            {
+                                loadDistance = 0;
+                                M_control(0);
+                                I2C_buffer.data.START_STOP = 0;
+                            }
+                        } else {
+                            stable = 0;
                         }
                     }
                     break;
@@ -476,12 +486,19 @@ void main() {
                         loadDistance = 1;
                         auxDistance = I2C_buffer.data.DISTANCE;
                         I2C_buffer.data.DISTANCE = 0;
+                        stable = 0;
                     } else {
                         pre_pidM(calculate_pidA(auxDistance));
-                        if (auxDistance>= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
-                            loadDistance = 0;
-                            M_control(0);
-                            I2C_buffer.data.START_STOP = 0;
+                        if (auxDistance >= I2C_buffer.data.DISTANCE - ATS_tolerance && auxDistance <= I2C_buffer.data.DISTANCE + ATS_tolerance) {
+                            stable++;
+                            if (stable > stable_time) //travel distance stable at desired value for at least some time
+                            {
+                                loadDistance = 0;
+                                M_control(0);
+                                I2C_buffer.data.START_STOP = 0;
+                            }
+                        } else {
+                            stable = 0;
                         }
                     }
                     break;
