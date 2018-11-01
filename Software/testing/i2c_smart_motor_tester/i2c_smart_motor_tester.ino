@@ -42,7 +42,7 @@ void loop() {
     I2C_buffer.byte[index] = Wire.read();
     index++;
   }
-  Wire.endTransmission();
+  //Wire.endTransmission();
   Wire.beginTransmission(0x24);
   Wire.write(32);
   Wire.endTransmission(false);
@@ -52,7 +52,7 @@ void loop() {
     I2C_buffer.byte[index] = Wire.read();
     index++;
   }
-  Wire.endTransmission();
+  //Wire.endTransmission();
 
   Serial.print("ID: "); Serial.println(I2C_buffer.data.ID);
   Serial.print("ADDRESS: "); Serial.println(I2C_buffer.data.ADDRESS);
